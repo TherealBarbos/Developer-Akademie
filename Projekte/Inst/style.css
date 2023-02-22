@@ -1,0 +1,38 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f9f9;
+}
+
+.post {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post img {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.post h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    width: 80%;
+}
+
+.post .buttons {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.post .buttons i {
+    font-size: 1.5em;
+    margin-right: 10px;
+    cursor: pointer;
+}

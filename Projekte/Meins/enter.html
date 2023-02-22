@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="scripts.js"></script>
+
+
+
+</head>
+
+<body onload="includeHTML()">
+
+  <h3>Trigger Button Click on Enter</h3>
+  <p>Press the "Enter" key inside the input field to trigger the button.</p>
+
+  <input id="myInput" value="Some text..">
+  <button id="myBtn" onclick="javascript:alert('Hello World!')">Button</button>
+
+  <script>
+    let input = document.getElementById("myInput");
+    input.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("myBtn").click();
+      }
+    });
+  </script>
+
+  <!-- footer-->
+
+  <div w3-include-html="./templates/footer.html" class="footer"></div>
+
+
+</body>
+
+</html>

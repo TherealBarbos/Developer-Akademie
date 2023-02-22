@@ -1,0 +1,42 @@
+body {
+    background-color: lightgrey;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 15px;
+    display: flex;   
+    justify-content: space-between;
+    flex-direction: row;
+    width: 450px;
+}
+.card a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.card a:hover{
+    color: blueviolet;
+}
+.card a img{
+    height: 15px;
+    width: 15px;
+    padding-left: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.wappen{
+    display: flex;
+    justify-content: right;
+    }
+
+.wappen img{
+    object-fit: contain;
+    height: 150px;
+    width: 150px;
+    margin-right: 10px;
+}

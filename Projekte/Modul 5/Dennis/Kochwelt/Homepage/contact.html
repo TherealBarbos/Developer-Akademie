@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+
+    <link rel="icon" type="image/x-icon" href="img/logo_small.png">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <script src="script.js"></script>
+
+</head>
+
+<body onload="init()">
+
+    <header>
+        <div w3-include-html="templates/header.html"></div>
+    </header>
+
+    <div class="contact">
+        <div class="contact-text">
+            <h1>Sie können uns jederzeit kontaktieren!</h1>
+        </div>
+
+
+        <div class="new-contact-main">
+
+            <form action="https://gruppe-290.developerakademie.net/Modul%205/Dennis/Kochwelt/Homepage/send_mail.php"
+                method="post" class="new-contact">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="input-1" required
+                    oninvalid="this.setCustomValidity('Bitte tragen Sie ihren Namen ein.')"
+                    oninput="this.setCustomValidity('')">
+                <label for="mail">E-Mail-Adresse</label>
+                <input name="mailadress" class="input-1" type="email" required
+                    oninvalid="this.setCustomValidity('Bitte tragen Sie ihre Email Adresse ein.')"
+                    oninput="this.setCustomValidity('')">
+                <label for="subject">Betreff</label>
+                <select class="input-field1" id="subject" name="subject" required
+                    oninvalid="this.setCustomValidity('Bitte wählen Sie ein Thema aus.')"
+                    oninput="this.setCustomValidity('')">
+                    <option value="" disabled selected>Bitte wählen...</option>
+                    <option value="Technische Probleme">Technische Probleme</option>
+                    <option value="Fragen zu Rezepten">Fragen zu Rezepten</option>
+                    <option value="Rezept vorschläge">Rezeptvorschläge</option>
+                    <option value="Sonstiges">Sonstiges</option>
+                </select>
+                <label for="message">Nachricht</label>
+                <textarea name="message" class="input-field2" type="text" maxlength="200" required
+                    oninvalid="this.setCustomValidity('Bitte teilen Sie uns Ihren Grund für die Kontaktierung mit. Vielen Dank!')"
+                    oninput="this.setCustomValidity('')"></textarea>
+                </select>
+
+                <button type="submit" class="btn">Absenden</button>
+
+            </form>
+
+        </div>
+    </div>
+    <footer>
+        <div w3-include-html="templates/footer.html"></div>
+    </footer>
+
+
+</body>
+
+</html>

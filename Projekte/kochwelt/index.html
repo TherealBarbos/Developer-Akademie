@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kochwelt</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+    <script src="scripts/script.js"></script>
+
+</head>
+
+<body onload="includeHTML()">
+    <!--Header-->
+
+    <div w3-include-html="templates/header.html"></div>
+
+
+    <!--main recipe-->
+    <div>
+        <div class="recipe">
+            <img src="./img/croissant.jpg" alt="croissant" class="recipe-img">
+
+
+            <div class="recipe-text">
+                <h2>Französisches Croissant</h2>
+                <p>Schmackhaftes Croissant können auch zuhause Sehr einfach gebacken werden. Mit ca. 30 Minuten Aufwand
+                    kannst du ein wundervolles Frühstück zaubern.</p>
+
+                <button class="button">Zum Rezept</button>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    <!--random recipe-->
+    <div class="background">
+
+        <div class="headline">Lust auf was Neues?</div>
+
+        <div class="rnd-new-recipe">
+
+            <a href="id=ph-img" id=ph-img class="rnd-a">
+                <p id="ph-name"></p>
+            </a>
+
+
+            <div class="rnd-recipe-box"> <img src="./img/pizza-g2d98a1a89_1280.jpg" alt="Pizza"
+                    class="rnd-recipe-img ">Schinken Pizza</div>
+            <div class="rnd-recipe-box"> <img src="./img/pasta-g77de99cc0_1280.jpg" alt="Pasta"
+                    class="rnd-recipe-img ">Pasta mit Pesto</div>
+            <div class="rnd-recipe-box"> <img src="./img/pancakes-g1806cbd76_1280.jpg" alt="Pancakes"
+                    class="rnd-recipe-img ">Pancakes</div>
+
+
+        </div>
+
+
+
+
+    </div>
+    <!--Infobox -->
+    <div class="bg1">
+
+        <div class="headline">Pfanne vs Wok - Was ist besser?</div>
+        <div class="info-box">
+
+            <p class="info-text"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti commodi totam
+                debitis. Enim eveniet
+                quibusdam minima harum, repellendus, placeat culpa eaque iusto expedita nisi quidem dolore dolorem magni
+                voluptas architecto! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat facilis repellat
+                maiores, sit doloribus ducimus deserunt iure eius nemo optio perferendis non eligendi! Alias illum
+                labore harum tempore. Nulla, quo.</p>
+
+            <img src="./img/wok.jpg" alt="Wok" class="info-img">
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!--Footer-->
+    <div w3-include-html="templates/footer.html"></div>
+</body>
+
+</html>

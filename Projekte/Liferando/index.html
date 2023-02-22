@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/hamburger-32.ico">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+
+    <title>Food Paradise</title>
+</head>
+
+<body onload="init()">
+    <header>
+        <div w3-include-html="templates/header.html"></div>
+    </header>
+
+    <div id="content"></div>
+
+
+    <div class="restaurant">
+        <div class="rLogo"> <img src="img/saku.png" alt="Logo"></div>
+        <div class="rName"> Sakura Rahmen </div>
+        <div class="rRaiting"> 
+            <img src="img/star-on.png" alt="Stars"> 
+            <img src="img/star-on.png" alt="Stars">
+            <img src="img/star-on.png" alt="Stars">
+            <img src="img/star-off.png" alt="Stars">
+            <img src="img/star-off.png" alt="Stars">
+            (418 Bewertungen) 
+        </div>
+    </div>
+
+    <div class="order">
+
+            <img src="img/r1.png" alt="Menu">
+
+        <div class="meal">
+            <h2>Tonkasu Ramen  </h2>
+            <p>Chicken	11,95€   <button onclick="addtoCard()"><img src="img/plus-6-24.png" alt=""></button></p>
+            <p>Beef	12,95€ <button onclick="addtoCard()"><img src="img/plus-6-24.png" alt=""></button></p>
+            <p>Shrimp	13,95€ <button onclick="addtoCard()"><img src="img/plus-6-24.png" alt=""></button></p>
+        </div>
+
+    </div>
+
+    <footer>
+        <div w3-include-html="templates/footer.html"></div>
+    </footer>
+</body>
+
+</html>

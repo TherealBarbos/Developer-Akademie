@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Rezept</title>
+
+    <link rel="icon" type="image/x-icon" href="img/logo_small.png">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <script src="script.js"></script>
+    <script src="recipe.js"></script>
+
+    <script>
+        let recipe = königsbergerklops;
+    </script>
+
+</head>
+
+<body onload="init()">
+
+    <header>
+        <div w3-include-html="./templates/header.html"></div>
+    </header>
+
+    <div id="dialog" class="dialog-bg d-none" onclick="closeDialog()">
+        <div class="dialog">Dies ist nur eine Testseite und daher sind nicht alle Funktionen gegeben.
+            <h1>Vielen Dank! :)</h1>
+        </div>
+    </div>
+
+    <div class="recipe-website">
+        <h1 id="recipeName">Rezeptname</h1>
+        <img id="recipe-img" src="img/pizza-gcc70f62e6_640.jpg">
+
+
+        <div id="containerExplanation">
+            <ul>
+                <li><img src="img/icons/clock-regular.svg" alt="Clock"><span id="prepTime1">65 Min.</span></li>
+                <li><img src="img/icons/brain-solid.svg" alt="Brain"><span id="difficulty">simpel</span></li>
+                <li><img src="img/icons/calendar-alt-regular.svg" alt="Calender"><span id="release">16.08.2022</span>
+                </li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="portionSection">
+            <p>Zutaten für<input id="inputPortion" type="number" min="1" max="20"></p>
+            <button onclick="loadTable()" id="portion-btn" type="button" class="portion-btn">Portion</button>
+        </div>
+
+
+        <table id="recipe">
+            <tbody id="recipeTable"></tbody>
+        </table>
+
+
+
+        <div id="containerExplanation">
+            <h3>Zubereitung</h3>
+            <ul>
+                <li><img src="img/icons/clock-regular.svg" alt="Clock"><span id="prepTime2">ca. 45 Minuten</span></li>
+                <li><img src="img/icons/clock-regular.svg" alt="Clock"><span id="totalDuration">Gesamtzeit ca.</span>
+                </li>
+            </ul>
+        </div>
+
+        <div id="preparation">
+            Das Brötle im kalten Wasser einweichen. <br><br>
+
+            Die Zwiebel klein hacken und mit dem Hackfleisch,dem Ei und dem ausgedrückten Brötle in eine Schüssel
+            geben.Das ganze gut durchkneten und mit Salz,Pfeffer und Senf würzen.Jetzt ca 12 kleine Klösschen
+            formen. <br><br>
+
+            Einen Topf Salzwasser zum Kochen bringen und die Klösschen darin ca 10 min sieden lassen. <br><br>
+
+            Die Klösschen mit einer Schaumkelle aus dem Wasser holen,die Brühe im Topf durch ein Sieb giessen und
+            ein halber Liter davon abmessen. <br><br>
+
+            In einem Topf die Butter schmelzen und das Mehl darin anschwitzen.Unter Rühren den halben Liter Brühe
+            langsam mit unterrühren und das ganze ca 5 min köcheln lassen. <br><br>
+
+            Die Kapern abtropfen lassen. Die Sahne und das Eigelb verrühren. Die Eimischung dann vorsichtig unter
+            rühren in die Sauce geben. Die Sauce darf jetzt nicht mehr kochen! <br><br>
+
+            Die Sauce mit Salz,Pfeffer und Zitronensaft abschmecken und die Kapern dazu. Dazu passen Kartoffeln.
+            <br><br>
+        </div>
+
+        <h4>Rezept erstellt von</h4>
+        <div id="profile">
+            <a onclick="openDialog()" href="#"><img id="profilePic" src="img/profile.png" alt="Profile Picture"></a>
+            <p id="authorName">Max Scheel</p>
+        </div>
+
+    </div>
+
+
+    <footer>
+        <div w3-include-html="templates/footer.html"></div>
+    </footer>
+
+    <script>loadOnStart()
+
+        let input = document.getElementById("inputPortion");
+        input.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("portion-btn").click();
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

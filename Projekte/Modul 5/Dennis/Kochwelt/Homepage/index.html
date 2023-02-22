@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochwelt</title>
+
+    <link rel="icon" type="image/x-icon" href="img/logo_small.png">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <script src="script.js"></script>
+
+    <meta property="og:image" content="img/logo2.png"/>
+
+</head>
+
+<body onload="init()">
+
+    <header>
+        <div w3-include-html="templates/header.html"></div>
+    </header>
+
+
+    <div id="recipeOfTheDay">
+        <a href="pancakes.html"><img class="recipe-img" src="img/pancakes-g59f7f0cca_640.jpg" alt="Pancakes"></a>
+        <div class="recipeDescription">
+            <div class="recipeText">
+                <h3>Amerikanische Pancakes</h3>
+                <p>Super fluffige schmackhafte Pancakes in nur 10 Minuten. Wir zeigen dir wie du sie mit nur ganz
+                    wenigen Zutaten und Aufwand super
+                    schnell zubereiten kannst. Perfekt für das Sonntagsfrüstück mit der ganzen Familie!</p>
+            </div>
+            <a href="pancakes.html" class="openRecipe-btn">Rezept öffnen</a>
+        </div>
+    </div>
+
+    <div id="newRecipesSection">
+        <div class="newRecipesHeadline">
+            <h3>Lust auf was Neues?</h3>
+        </div>
+        <div class="newRecipes">
+            <div class="newRecipe">
+                <a href="" id="rnd-link0"><img src="" alt="" id="rnd-img0"></a>
+                <p id="rnd-name0"></p>
+            </div>
+            <div class="newRecipe">
+                <a href="" id="rnd-link1"><img src="" alt="" id="rnd-img1"></a>
+                <p id="rnd-name1"></p>
+            </div>
+            <div class="newRecipe">
+                <a href="" id="rnd-link2"><img id="rnd-img2" src="" alt="" ></a>
+                <p id="rnd-name2"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="newsSection">
+        <div class="newsHeadline">
+            <h3>Pfanne vs. Wok - Was ist besser?</h3>
+        </div>
+        <div class="newsContainer">
+            <div class="newsText">
+                <p>Du wirst sicherlich bemerkt haben, dass ein klassischer Wok eine ganz andere Form hat. Er ist
+                    deutlich größer als eine normale Bratpfanne.<br><br>
+                    Durch diese besondere Form des Woks hat er in der Mitte
+                    den heißesten Punkt, während die äußeren Flächen beim Braten eine deutlich niedrigere Temperatur
+                    haben.<br><br>
+                    Gerade beim Zubereiten von asiatischen Gerichten hat dies Vorteile, da du beispielsweise in
+                    der Mitte das Fleisch schnell braten kannst, während die restlichen Zutaten nach außen geschoben
+                    werden. So können sie nicht mehr anbrennen. Trotzdem ist ein Wok kein Muss und du kannst auch mit
+                    einer Pfanne beste Ergebnisse erzielen. Es dauert eben nur ein wenig länger als mit dem Wok.</p>
+            </div>
+            <img class="news-img" src="img/wok.jpg" alt="">
+        </div>
+    </div>
+    </div>
+
+
+    <footer>
+        <div w3-include-html="templates/footer.html"></div>
+    </footer>
+
+</body>
+
+</html>

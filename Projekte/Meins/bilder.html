@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilder</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <script>
+        let images = ['img/bridge-gbd1712b73_1280.jpg', 'img/nature-g8c73b74a5_1920.jpg', 'img/road-g37cc44147_1920.jpg', 'img/sea-ga4e949f1a_1280.jpg', 'img/tree-g61865007c_1280.jpg', 'img/trees-gee9f127b9_1280.jpg'];
+        let currentImage = 0;
+
+
+        function startwtf() {
+            let time = +document.getElementById('wtftime').value * 1000;
+            if (time > 10000) {
+                alert('Nicht über 10 sek!')
+            } else {
+
+                if (time < 1000) {
+                    alert('Bitte mindestens 1 sek eingeben');
+                } else {
+                    // Start der diashow
+                    showwtf(currentImage);
+                    currentImage++;
+
+                    if (currentImage == 6) {
+                        currentImage = 0;
+                    }
+
+                    setTimeout(startwtf, time)
+                }
+            }
+        }
+
+        function showwtf(o) {
+            document.getElementById('wtf').src = images[o]
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <input id="wtftime" type="number" placeholder="Sek bis zum nächsten Bild"> <Button
+        onclick="startwtf()">Start</Button>
+    <img id="wtf" src="img/bridge-gbd1712b73_1280.jpg" alt="Bildergalarie" class="dia-image">
+
+</body>
+
+</html>

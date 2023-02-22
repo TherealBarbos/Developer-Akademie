@@ -1,0 +1,345 @@
+/* Allgemein */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+}
+
+/* Kopf */
+
+
+.head {
+    background-image: url(./img/bgr1.jpg);
+    height: 100vh;
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.head-menu {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+    align-items: center;
+
+
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu a {
+    color: white;
+    padding: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    flex-direction: row;
+    text-decoration: none;
+
+}
+
+.menu a:hover {
+    text-decoration: underline;
+
+}
+
+.saku {
+    object-fit: contain;
+    width: 85px;
+}
+
+
+.background1-text {
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 85px;
+
+}
+
+.text2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+
+}
+
+.box {
+    background-color: #7a1616;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px !important;
+
+}
+
+.phone {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+
+
+
+}
+
+/* Bestellen */
+
+.order-text {
+    display: flex;
+    justify-content: center;
+    font-family: 'Economica', sans-serif;
+    font-weight: bold;
+    color: #7a1616;
+    font-size: 65px;
+    padding: 45px;
+}
+
+
+.background1 {
+    background-color: white;
+
+}
+
+.order {
+    display: flex;
+    justify-content: space-evenly;
+    margin-block: 75px;
+    font-family: 'Economica', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 35px;
+    gap: 75px;
+
+
+}
+
+/* Angebot */
+.background2 {
+    background-image: url(./img/background.jpg);
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    font-family: 'Economica', sans-serif;
+    font-weight: bold;
+    color: #7a1616;
+    font-size: 65px;
+    padding: 45px;
+}
+
+
+.card_oa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Economica', sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 35px;
+    padding: 45px;
+}
+
+.card-menu {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+
+}
+
+.card-menu-reverse {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: 90%;
+    justify-content: space-between;
+
+}
+
+.table-head {
+    display: flex;
+    justify-content: flex-start;
+    color: black;
+    font-family: 'Economica', sans-serif;
+    font-size: 55px;
+
+
+}
+
+.table-text {
+    display: flex;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: gray;
+    flex-direction: column;
+    width: 45%;
+
+
+}
+
+/* location */
+
+.loca_head {
+    display: flex;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    color: #7a1616;
+    font-size: 65px;
+    padding: 45px;
+}
+
+.loca_text {
+    display: flex;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+
+    padding-bottom: 45px;
+
+}
+
+.arrow {
+    height: 30px;
+}
+
+/* foot */
+
+.foot {
+    background: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px;
+    margin-left: 75px;
+
+}
+
+.foot img {
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.foot-logo {
+    justify-content: left;
+}
+
+.foot-add {
+    justify-content: right;
+}
+
+/* Handy Css */
+
+@media(max-width: 1000px) {
+    .hide-mobile {
+        display: none;
+    }
+
+    .head-menu {
+        margin: 8%;
+    }
+
+    .text1 {
+        font-size: 4em;
+    }
+
+    .text2 {
+        font-size: 2em;
+
+    }
+
+    .order {
+        flex-direction: column;
+        font-size: 2em;
+    }
+
+    .mobile-head {
+        font-size: 3em;
+    }
+
+    .card {
+        padding: 10%;
+    }
+
+    .card-menu {
+        padding: 10%
+    }
+
+    .card-menu-reverse {
+        flex-direction: row;
+        padding: 10%
+    }
+
+    .card_oa {
+        padding: 5%;
+        font-size: 1em;
+    }
+
+    .table-head {
+        font-size: 1.2em;
+    }
+
+    .loca_text {
+        font-size: 1em;
+    }
+
+    .foot {
+        flex-direction: column-reverse;
+        margin-left: 0;
+        padding: 10%;
+        margin: 0;
+    }
+
+    .foot img {
+        margin: 0;
+    }
+}
+
+.langbtn {
+    background-color: #7a1616;
+    color: white;
+    border-radius: 10px;
+    border: white;
+    text-align: center;
+    justify-content: center;
+    font-size: 25px;
+    font-family: 'Economica', sans-serif;
+    font-weight: bold;
+}
+
+.flagicon {
+    width: 25px;
+    height: 20px;
+}

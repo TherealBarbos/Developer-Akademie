@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(226, 116, 43);
+    height: 150px;
+}
+
+.name {
+    text-align: center;
+    margin-left: 25px;
+    font-size: 32px;
+    color: white;
+
+}
+
+.menu {
+    margin-right: 25px;
+
+}
+
+.phead {
+    text-align: center;
+    font-size: larger;
+
+}
+
+.restaurant {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(165, 42, 42);
+    padding: 20px;
+}
+
+.rLogo {
+    width: 125px;
+    height: 125px;
+     
+}
+
+.rLogo img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.rName{
+    color: black;
+    font-size: 64px;
+}
+
+.rRaiting{
+  color: orange;
+  font-size: 24px;
+}
+
+.order {
+    background-color:rgb(226, 116, 43);
+    display: flex;
+    flex-direction: row;
+}
+
+.order img {
+    margin: 25px;
+    max-width: 250px;
+}
+
+.meal {
+    margin-left: 15%;
+}
+
+.meal img {
+    margin: 0;
+}
+

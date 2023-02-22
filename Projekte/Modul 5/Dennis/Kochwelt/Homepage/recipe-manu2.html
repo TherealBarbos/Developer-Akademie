@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Rezept</title>
+
+    <link rel="icon" type="image/x-icon" href="img/logo_small.png">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <script src="script.js"></script>
+    <script src="recipe.js"></script>
+
+<script>
+    let recipe = spaghetti;
+</script>
+
+</head>
+
+<body onload="includeHTML()">
+
+    <header>
+        <div w3-include-html="./templates/header.html"></div>
+    </header>
+
+
+    <div class="recipe-website">
+        <h1 id="recipeName">Rezeptname</h1>
+        <img id="recipe-img" src="img/pizza-gcc70f62e6_640.jpg">
+
+
+        <div id="containerExplanation">
+            <ul>
+                <li><img src="img/icons/clock-regular.svg" alt="Clock"><span id="prepTime1">15 Min.</span></li>
+                <li><img src="img/icons/brain-solid.svg" alt="Brain"><span id="difficulty">simpel</span></li>
+                <li><img src="img/icons/calendar-alt-regular.svg" alt="Calender"><span id="release">31.07.2022</span></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="portionSection">
+            <p>Zutaten für<input id="inputPortion" type="number submit" min="1" max="20"></p>
+            <button onclick="loadTable()" type="button" class="portion-btn">Portion</button>
+        </div>
+
+
+        <table id="recipe">
+            <tbody id="recipeTable"></tbody>
+        </table>
+
+
+
+        <div id="containerExplanation">
+            <h3>Zubereitung</h3>
+            <ul>
+                <li><img src="img/icons/clock-regular.svg" alt="Clock"><span id="prepTime2">ca. 15 Minuten</span></li>
+                <li><img src="img/icons/clock-regular.svg" alt="Clock"><span id="totalDuration">Gesamtzeit ca. </span></li>
+            </ul>
+        </div>
+
+        <div id="preparation">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam quod aliquam rem minima rerum quidem fugiat
+            pariatur temporibus non deserunt, dignissimos quis explicabo consequuntur, vitae, eos maiores nobis at
+            earum.
+        </div>
+
+        <h4>Rezept erstellt von</h4>
+        <div id="profile">
+            <a href="https://www.instagram.com/stayabroad/"><img id="profilePic" src="img/profile.png" alt="Profile Picture"></a>
+            <p id="authorName">Dennis Köster</p>
+        </div>
+
+    </div>
+
+
+    <footer>
+        <div w3-include-html="templates/footer.html"></div>
+    </footer>
+
+<script>loadOnStart()</script>
+
+</body>
+
+</html>

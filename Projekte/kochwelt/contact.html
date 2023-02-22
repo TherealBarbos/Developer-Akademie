@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontackt</title>
+
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+    <script src="scripts/script.js"></script>
+
+
+
+</head>
+
+<body onload="includeHTML()">
+
+    <div w3-include-html="templates/header.html"></div>
+    <div class="contact">
+        <div class="contact-text">
+            <h1>Sie können uns jederzeit Kontaktieren!</h1>
+        </div>
+
+        <form action="http://students.developerakademie.com/send_mail/send_mail.php" method="POST">
+            <input name="name" placeholder="Dein Name" class="imput">
+
+            <textarea name="message" placeholder="Deine Nachricht an uns" class="textarea"></textarea>
+
+            <button type="submit" class="contact-button">Mail senden</button>
+        </form>
+
+    </div>
+
+    <!---test--->
+
+    <div class="new-contact-main">
+
+        <form action="http://students.developerakademie.com/send_mail/send_mail.php" method="post" class="new-contact">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="input-1" required>
+            <label for="mail">E-Mail-Adresse</label>
+            <input name="mailadress" class="input-1" type="text" required>
+            <label for="subject">Betreff</label>
+            <select class="input-field1" id="subject" name="subject" required>
+                <option value="" disabled selected>Bitte wählen...</option>
+                <option value="Technische Probleme">Technische Probleme</option>
+                <option value="Fragen zu Rezepten">Fragen zu Rezepten</option>
+                <option value="Rezept vorschläge">Rezept vorschläge</option>
+                <option value="Sonstiges">Sonstiges</option>
+            </select>
+            <label for="message">Nachricht</label>
+            <textarea name="message" class="input-field2" type="text" required></textarea>
+            </select>
+
+            <button type="submit" class="btn">Absenden</button>
+
+        </form>
+
+
+
+
+
+    </div>
+
+
+
+    <!--Footer-->
+    <div w3-include-html="templates/footer.html"></div>
+</body>
+
+</html>

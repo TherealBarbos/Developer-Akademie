@@ -1,0 +1,426 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+}
+
+/* Header */
+.header {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    box-shadow: 0px 2px 15px rgb(0 0 0 / 20%);
+}
+
+.header-logo {
+    margin-left: 145px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-right: 65px;
+    gap: 35px;
+}
+
+.header-nav a {
+    color: black;
+    text-decoration: none;
+    border-bottom: 5px solid transparent;
+}
+
+.header-nav a:hover {
+    color: green;
+
+}
+
+.header-nav a:active {
+    color: green;
+    border-bottom: 5px solid green;
+}
+
+/* allgemein */
+
+
+
+.background {
+    background-color: #EFEFEF;
+
+}
+
+.text-center {
+    text-align: center;
+}
+
+.headline {
+    font-size: 32px;
+    text-align: center;
+    padding: 30px;
+}
+
+.button {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    background-color: #008000;
+    color: white;
+    height: 32px;
+    width: 160px;
+    border: none;
+
+    margin-top: 100px;
+    cursor: pointer;
+
+}
+
+/* main recipe */
+
+.recipe {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+.recipe-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    width: 350px;
+    margin-top: 35px;
+
+
+}
+
+.recipe-img {
+    border-radius: 10px;
+    object-fit: contain;
+    width: 45%;
+
+
+
+}
+
+
+
+
+/* random recipe */
+
+.rnd-new-recipe {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    padding: 30px;
+}
+
+.rnd-recipe-box {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.rnd-recipe-img {
+    border-radius: 10px;
+    width: 250px;
+    object-fit: cover;
+
+
+
+}
+
+/* Infobox*/
+
+.info-box {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+}
+
+.info-text {
+    text-align: start;
+    padding: 30px;
+    max-width: 60%;
+
+
+}
+
+.info-img {
+    border-radius: 20px;
+    width: 20%;
+    object-fit: contain;
+}
+
+/* Footer */
+.footer {
+    height: 250px;
+    background-color: #333333;
+    color: aliceblue;
+}
+
+
+/* Contact*/
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin-top: 75px;
+}
+
+.contact-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+.imput {
+    font-size: 16px;
+    height: 32px;
+    border: solid 2px #008000;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.textarea {
+    font-size: 16px;
+    width: 50%;
+    height: 64px;
+    border: solid 4px #008000;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Kontakt CSS */
+.contact-button {
+    color: black;
+    background-color: #008000;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 128px;
+    height: 64px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 75px;
+}
+
+.success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 500px;
+    font-size: 32px;
+
+}
+
+
+/* Rezept CSS */
+
+.rez-all {
+    display: flex;
+    flex-direction: column;
+}
+
+.rez-headline {
+
+    margin-left: 250px;
+    margin-top: 45px;
+    margin-bottom: 25px;
+    font-size: 32px;
+    font-weight: bold;
+    align-items: flex-start;
+}
+
+.rez-img {
+    margin-left: 250px;
+    margin-right: 250px;
+    border-radius: 25px;
+    max-height: 250px;
+    object-fit: cover;
+
+
+}
+
+.rez-infos {
+    margin-left: 250px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.rez-info {
+    padding: 8px;
+    background-color: gray;
+    border-radius: 10px;
+    margin: 8px;
+}
+
+.rez-portion {
+    margin-left: 250px;
+}
+
+.p-imput {
+    width: 240px;
+    height: 25px;
+
+
+}
+
+.p-calc {
+    color: white;
+    background-color: #008000;
+    font-size: 16px;
+    width: 120px;
+    height: 30px;
+}
+
+.rez-zutat-1 {
+    margin-left: 250px;
+    background-color: #EFEFEF;
+    border-radius: 15px;
+    height: 25px;
+    padding: 10px;
+
+}
+
+.rez-zutat-2 {
+    margin-left: 250px;
+    height: 25px;
+    padding: 10px;
+
+}
+
+.rez-table {
+    margin-left: 250px;
+    margin-right: 250px;
+    height: 25px;
+}
+
+.rez-table-left {
+    width: 10%;
+    text-align: right;
+    font-size: 16px;
+
+}
+
+.rez-table-right {
+    width: 90%;
+    font-size: 16px;
+
+}
+
+.rez-zub-hl {
+    margin-left: 250px;
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+.rez-zub {
+    margin-left: 250px;
+    margin-right: 250px;
+    font-size: 16px;
+
+}
+
+.owner-hl {
+    margin-left: 250px;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.owner {
+    margin-left: 250px;
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.owner-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+
+.owner-name {
+    margin-left: 75px;
+    font-size: 28px;
+
+}
+
+
+
+/* Test */
+
+.new-contact-main {
+    margin: 32px 0;
+}
+
+.new-contact {
+    display: flex;
+    flex-direction: column;
+    background-color: #efefef;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.input-field1 {
+    width: 30%;
+    padding: 12px;
+    border: 1px solid rgb(168, 163, 163);
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: 15px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+
+.input-field2 {
+    height: 180px;
+    width: 40%;
+    padding: 12px;
+    border: 1px solid rgb(168, 163, 163);
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: 15px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+
+textarea {
+    font: 13px ;
+    font-family: 'Raleway', sans-serif;
+}
+.btn {
+    cursor: pointer;
+    background-color: #008000;
+    font-size: var(--font-size-primary);
+    color: white;
+    border: 0;
+    padding: 12px 48px;
+}
+
+.contact button {
+    width: 30%;
+}
+
+.further-information {
+    font-size: 12px;
+}

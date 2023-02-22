@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechner</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function add() {
+            let firNum = +document.getElementById('num-1').value;
+            let secNum = +document.getElementById('num-2').value;
+            let result = firNum + secNum;
+
+            document.getElementById('output').innerHTML = `Das Ergebnis lautet ${result}!`;
+        }
+        function sub() {
+            let firNum = +document.getElementById('num-1').value;
+            let secNum = +document.getElementById('num-2').value;
+            let result = firNum - secNum;
+
+            document.getElementById('output').innerHTML = `Das Ergebnis lautet ${result}!`;
+        }
+        function mult() {
+            let firNum = +document.getElementById('num-1').value;
+            let secNum = +document.getElementById('num-2').value;
+            let result = firNum * secNum;
+
+            document.getElementById('output').innerHTML = `Das Ergebnis lautet ${result}!`;
+        }
+        function div() {
+            let firNum = +document.getElementById('num-1').value;
+            let secNum = +document.getElementById('num-2').value;
+            let result = firNum / secNum;
+
+            document.getElementById('output').innerHTML = `Das Ergebnis lautet ${result}!`;
+        }
+
+
+    </script>
+    <style>
+        .rechner {
+            margin: 75px;
+            display: flex;
+            flex-direction: column;
+            border: solid 5px gold;
+            width: 450px;
+            height: 350px;
+            background-color: rgb(40, 8, 99);
+        }
+
+        .zahlen {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 25px;
+        
+        }
+
+        .function {
+            display: flex;
+            flex-direction: column;
+
+
+        }
+        .func-btn{
+            background-color: blueviolet;
+            color: gold;
+            font-size: 20px;
+            height: 25px;
+        }
+
+        .field {
+            background-color: rgb(133, 185, 238);
+            font-size: 20px;
+            font-weight: bold;
+            width: 150px;
+            height: 25px;
+        }
+
+
+        .result {
+            margin-left: 10px;
+            display: flex;
+            justify-content: center;
+            color: gold;
+            text-align: center;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="rechner">
+        <div class="zahlen">
+            <input type="number" id="num-1" class="field" placeholder="Zahl 1">
+            <input type="number" id="num-2" class="field" placeholder="Zahl 2">
+        </div>
+
+        <div class="function">
+            <button onclick="add()" class="func-btn"> +  Addition  + </button>
+            <button onclick="sub()" class="func-btn"> -  Subtraktionn  - </button>
+            <button onclick="mult()" class="func-btn"> *  Multiplikation  x </button>
+            <button onclick="div()" class="func-btn"> /  Division  ÷ </button>
+        </div>
+
+        <h1 id="output" class="result"></h1>
+
+    </div>
+
+
+
+</body>
+
+</html>

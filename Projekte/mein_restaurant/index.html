@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Restaurant</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+	<meta http-equiv="Contend-Type" content="text/html" ; charset="UTF-8">
+	<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="bd7b2268-003f-4b5e-99ae-85ab30a825c7"
+		data-blockingmode="auto" type="text/javascript"></script>
+
+	<style>
+		html {
+
+			scroll-behavior: smooth;
+
+		}
+
+		body {
+			margin: 0px;
+			font-family: 'Ubuntu Condensed', sans-serif;
+		}
+
+
+		.header {
+			width: 100%;
+			height: 450px;
+			object-fit: cover;
+		}
+
+		.bg1 {
+			padding-left: 150px !important;
+			padding-right: 150px !important;
+			padding: 16px;
+			background-color: #F8F8FF;
+		}
+
+		.bg2 {
+			padding-left: 150px !important;
+			padding-right: 150px !important;
+			padding: 16px;
+			background-color: #DCDCDC;
+		}
+
+		.menu {
+			position: fixed;
+			top: 5px;
+			left: 5px;
+			right: 5px;
+			padding: 10px;
+			background-color: rgba(112, 128, 144, 0.5);
+
+		}
+
+		.menu :hover {
+			background-color: gray;
+		}
+
+		.menu a {
+			color: white;
+			font-size: 20px;
+			text-decoration: none;
+			padding: 10px;
+
+		}
+
+		.menu a:hover {
+			color: lightgray;
+			text-decoration: underline;
+
+		}
+
+		.footer {
+			padding: 40px;
+			background-color: #545454;
+			display: flex;
+			justify-content: space-between;
+			font-family: 'DM Serif Display', serif;
+
+		}
+
+		.footerchild {
+			width: 25%;
+			color: white;
+
+		}
+
+		.top {
+			background-color: rgba(112, 128, 144, 0.5);
+			color: white;
+			display: block;
+			padding: 5px;
+			height: 35px;
+			line-height: 35px;
+			text-decoration: none;
+			width: 100px;
+			text-align: center;
+			position: fixed;
+			bottom: 30px;
+		}
+
+		.top :hover {
+			background-color: gray;
+		}
+
+		.top a {
+			color: black;
+			font-size: 20px;
+			text-decoration: none;
+			padding: 10px;
+
+		}
+
+		.top a:hover {
+			color: lightgray;
+			text-decoration: underline;
+	</style>
+
+
+</head>
+
+
+<body id="topofpage">
+
+	<img class="header" src="img/header.jpg">
+
+	<div class="menu">
+		<a href="#topofpage">Unser Restaurant</a>
+		<a href="#menu" title="Die Speisekarte">Karte</a>
+		<a href="#opening">Öffnungszeiten</a>
+		<a href="#route" title="So findet ihr uns">Anfahrt</a>
+		<a href="#contact">Kontakt</a>
+		<a href="#imp">Impressum</a>
+	</div>
+
+	<div class="bg1">
+		<h1> Herzlich Wilkommen</h1> <br>
+		<br>
+		In unserem Restaurant finden sie tolle regionale Spezialitäten.
+	</div>
+
+	<div class="bg2" id="route">
+		<h2>Anfahrt</h2><br>
+		<i>Hauptstraße 23 <br>77656 Offenburg</i><br>
+		Einfach in die Dorfmitte fahren dort treffen sie direkt auf die <u>Hauptstraße</u> <br>
+		Direkt schräg gegenüber vom <u>Rathaus</u><br>
+		<br>
+
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d661.3280292504184!2d7.943604606219172!3d48.46972654217218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796d316d22d2ff5%3A0x2e91f9cadcd3e164!2sBistro%20Unter%20den%20Pagoden!5e0!3m2!1sde!2sde!4v1656540422665!5m2!1sde!2sde"
+			width="550" height="300" style="border:0,5;" allowfullscreen="" loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
+
+
+	<div class="bg1" id="opening">
+		<h2>Unsere Öffnungszeiten</h2><br>
+		Mo-Fr: 12:00-21:00 Uhr<br>
+		Sa: 12:00-24:00 Uhr<br>
+		So: 12:00-23:00 Uhr<br>
+	</div>
+
+	<div class="bg2" id="menu">
+
+		<h2> Tageskarte</h2> <br>
+		<br>
+		<table style="width:75%">
+
+			<tr>
+				<td style="width:3%">1</td>
+				<td style="width:15%">Maultaschen</td>
+				<td style="width:50%">Teigtaschen mit fleisch gefüllt</td>
+				<td style="width:20%">15,50€</td>
+			</tr>
+
+			<tr>
+				<td>2</td>
+				<td>Käsespätzle</td>
+				<td><i>Hausgemacht</i> Spätzle mit Bergkäse</td>
+				<td>13,50€</td>
+			</tr>
+
+			<tr>
+				<td>3</td>
+				<td>Wiener Schnitzel</td>
+				<td>Kalbs Schnitzel mit Beilage</td>
+				<td>21,50€</td>
+			</tr>
+
+			<tr>
+				<td>4</td>
+				<td>Currywurst</td>
+				<td>Rote Bratwurst mit Currysoße</td>
+				<td>10,00€</td>
+			</tr>
+
+
+		</table>
+		<br>
+		Öffnen sie unsere Speisekarte als <a href="downloads/Speisekarte" target="_blank">PDF</a>
+
+
+
+	</div>
+
+	<div class="bg1" id="contact">
+
+		<h2>Kontakt</h2><br>
+		Sie Konnen uns von 11-22 Uhr Telefpnisch oder jederzeit per E-Mail erreichen <br>
+		und einen Tisch Resavieren oder ggf eventuelle Fragen klären<br>
+		<br>
+		<br>
+		Tel:<a href="+49 (0) 781 978564"> +49 (0) 781 978564</a> <br>
+		E-Mail:<a href="info@myrestaurant@bcorp.de"> info@myrestaurant@bcorp.de</a>
+
+
+
+	</div>
+
+	<div class="bg2">
+
+		<h2>Videos</h2><br>
+
+		<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wFwAkfAv3Us"
+			title="YouTube video player" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen></iframe>
+
+
+	</div>
+
+	<div class="footer" id="imp">
+
+		<div class="footerchild">
+			Copyright 2022 - Mein Restaurant GbR
+		</div>
+
+		<div class="footerchild">
+			Impressum<br>
+			Kontakt<br>
+			Datenschutz<br>
+			Cookie-Richtlienen<br>
+		</div>
+
+
+	</div>
+
+	<div class="top">
+		<a href="#topofpage">Go to TOP</a>
+	</div>
+	
+
+</body>
+
+</html>

@@ -49,10 +49,3 @@ function updateCard() {
 
 
 }
-
-function openMenu() {
-    
-
-
-
-}

@@ -42,7 +42,7 @@ body {
 .rLogo {
     width: 125px;
     height: 125px;
-     
+
 }
 
 .rLogo img {
@@ -51,20 +51,29 @@ body {
     min-height: 100%;
 }
 
-.rName{
+.rName {
     color: black;
     font-size: 64px;
 }
 
-.rRaiting{
-  color: orange;
-  font-size: 24px;
+.rRaiting {
+    color: orange;
+    font-size: 24px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+
+
 }
 
 .order {
-    background-color:rgb(226, 116, 43);
+    background-color: rgb(226, 116, 43);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 75%;
+    
 }
 
 .order img {
@@ -72,11 +81,38 @@ body {
     max-width: 250px;
 }
 
+.orderTable {
+    margin-left: 10%;
+}
+
 .meal {
-    margin-left: 15%;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 2.5%;
+    display: flex;
+    flex-direction: row;
 }
 
 .meal img {
     margin: 0;
 }
 
+.addButton {
+    margin: 10px;
+
+}
+
+.bold {
+    font-size: large;
+    font-weight: bold;
+    text-align: left;
+}
+
+.shoppingBarsket {
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    width: 25%;
+    margin-left: 2.5%;
+
+}

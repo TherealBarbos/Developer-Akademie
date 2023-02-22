@@ -25,25 +25,110 @@
     <div class="restaurant">
         <div class="rLogo"> <img src="img/saku.png" alt="Logo"></div>
         <div class="rName"> Sakura Rahmen </div>
-        <div class="rRaiting"> 
-            <img src="img/star-on.png" alt="Stars"> 
+        <div class="rRaiting">
+            <img src="img/star-on.png" alt="Stars">
             <img src="img/star-on.png" alt="Stars">
             <img src="img/star-on.png" alt="Stars">
             <img src="img/star-off.png" alt="Stars">
             <img src="img/star-off.png" alt="Stars">
-            (418 Bewertungen) 
+            (418 Bewertungen)
         </div>
     </div>
+    <div class="main">
 
-    <div class="order">
+        <div class="order">
 
-            <img src="img/r1.png" alt="Menu">
+            <div class="meal">
+                <img src="img/r1.png" alt="Menu">
+                <div class="orderTable">
+                    <h2>Tonkasu Ramen</h2>
+                    <table style="width: 550px" class="bold">
+                        <tbody>
+                            <tr>
+                                <th style="width:70%">Chicken</th>
+                                <td style="width:20%">11,95</td>
+                                <td style="width:10%"><img src="img/plus-6-24.png" alt="" onclick="addtoCard()"
+                                        class="addButton"></td>
+                            </tr>
 
-        <div class="meal">
-            <h2>Tonkasu Ramen  </h2>
-            <p>Chicken	11,95€   <button onclick="addtoCard()"><img src="img/plus-6-24.png" alt=""></button></p>
-            <p>Beef	12,95€ <button onclick="addtoCard()"><img src="img/plus-6-24.png" alt=""></button></p>
-            <p>Shrimp	13,95€ <button onclick="addtoCard()"><img src="img/plus-6-24.png" alt=""></button></p>
+                            <tr>
+                                <td>Beef</td>
+                                <td>12.95</td>
+                                <td><img src="img/plus-6-24.png" alt="" onclick="addtoCard()" class="addButton"></td>
+                            </tr>
+                            <tr>
+                                <td>Shrimp</td>
+                                <td>13.95</td>
+                                <td><img src="img/plus-6-24.png" alt="" onclick="addtoCard()" class="addButton"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="meal">
+                <img src="img/r2.png" alt="Menu">
+                <div class="orderTable">
+                    <h2>Spicy Miso Ramen</h2>
+                    <table style="width: 550px" class="bold">
+                        <tbody>
+                            <tr>
+                                <th style="width:70%">Chicken</th>
+                                <td style="width:20%">11,95</td>
+                                <td style="width:10%"><img src="img/plus-6-24.png" alt="" onclick="addtoCard()"
+                                        class="addButton"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Beef</td>
+                                <td>12.95</td>
+                                <td><img src="img/plus-6-24.png" alt="" onclick="addtoCard()" class="addButton"></td>
+                            </tr>
+                            <tr>
+                                <td>Shrimp</td>
+                                <td>13.95</td>
+                                <td><img src="img/plus-6-24.png" alt="" onclick="addtoCard()" class="addButton"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="meal">
+                <img src="img/r3.png" alt="Menu">
+                <div class="orderTable">
+                    <h2>Shio Ramen</h2>
+                    <table style="width: 550px" class="bold">
+                        <tbody>
+                            <tr>
+                                <th style="width:70%">Chicken</th>
+                                <td style="width:20%">11,95</td>
+                                <td style="width:10%"><img src="img/plus-6-24.png" alt="" onclick="addtoCard()"
+                                        class="addButton"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Beef</td>
+                                <td>12.95</td>
+                                <td><img src="img/plus-6-24.png" alt="" onclick="addtoCard()" class="addButton"></td>
+                            </tr>
+                            <tr>
+                                <td>Shrimp</td>
+                                <td>13.95</td>
+                                <td><img src="img/plus-6-24.png" alt="" onclick="addtoCard()" class="addButton"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="shoppingBarsket" id="sB">
+            <h2> Wahrenkorb</h2>
+            <p id="inhalt"></p>
+
         </div>
 
     </div>

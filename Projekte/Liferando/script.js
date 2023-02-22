@@ -35,6 +35,21 @@ function render() {
 
 }
 
+function addCard(name, price) {
+    names.push(name);
+    
+}
+
+function updateCard() {
+    let sum = 0 ;
+    for (let i = 0; i < price.length; i++) {
+        sum += prices[i];
+        
+    }
+
+
+}
+
 function openMenu() {
     
 

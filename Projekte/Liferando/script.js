@@ -31,7 +31,7 @@ async function includeHTML() {
 function render() {
     let content = document.getElementById('content');
     content.innerHTML = '';
-    content.innerHTML = '${}';
+    content.innerHTML = '';
 }
 
 function addCard(name, price) {

@@ -1,9 +1,10 @@
 let dishes = [
-    { "name": "Tonkasu Ramen", "img":"/img/r1.png", "priceChicken": "11,95", "priceBeef": "12,95", "priceShrimp": "13,95" },
-    { "name": "Spicy Miso Ramen","img":"/img/r2.png", "priceChicken": "11,95", "priceBeef": "12,95", "priceShrimp": "13,95" },
-    { "name": "Shio Ramen","img":"/img/r3.png", "priceChicken": "11,95", "priceBeef": "12,95", "priceShrimp": "13,95" }
+    { "name": "Tonkasu Ramen", "img": "./img/r1.png", "priceChicken": "11,95", "priceBeef": "12,95", "priceShrimp": "13,95" },
+    { "name": "Spicy Miso Ramen", "img": "./img/r2.png", "priceChicken": "11,95", "priceBeef": "12,95", "priceShrimp": "13,95" },
+    { "name": "Shio Ramen", "img": "./img/r3.png", "priceChicken": "11,95", "priceBeef": "12,95", "priceShrimp": "13,95" }
 
-]
+];
+let card = [];
 
 // let priceChicken  = ["11,95","12.95","13.95"]
 // let priceBeef  = ["11,95","12.95","13.95"]
@@ -13,6 +14,7 @@ let dishes = [
 async function init() {
     await includeHTML();
     render();
+    renderCard();
 
 }
 // header & Footer einbinden
@@ -70,14 +72,28 @@ function render() {
 
 }
 
-function addCard(name, price) {
-    names.push(name);
-    prices.push(price);
+function addtoCard(i) {
+    card.push(dishes[i]);
 
-    updateCard()
+
+
 }
 
-function updateCard() {
+function renderCard() {
+    let content = document.getElementById('card');
+    content.innerHTML = '';
+    content.innerHTML = '';
+    for (let i = 0; i < card.length; i++) {
+        const card = card[i];
+        content.innerHTML +=`
+        <div class="card">
+        <h2>${card[""]}</h2>
+        
+        `
+    }
+}
+
+function updatoCard() {
     let sum = 0;
     for (let i = 0; i < price.length; i++) {
         sum += prices[i];

@@ -1,8 +1,10 @@
-let name = [ "Tonkasu Ramen", "Spicy Miso Ramen" , "Shio Ramen" ];
-let price  = ["11,95","12.95","13.95"]
-let priceChicken  = ["11,95","12.95","13.95"]
-let priceBeef  = ["11,95","12.95","13.95"]
-let priceShrimp  = ["11,95","12.95","13.95"]
+let name = ["Tonkasu Ramen", "Spicy Miso Ramen", "Shio Ramen"];
+let price = ["11,95", "12.95", "13.95"]
+let cart = []
+
+// let priceChicken  = ["11,95","12.95","13.95"]
+// let priceBeef  = ["11,95","12.95","13.95"]
+// let priceShrimp  = ["11,95","12.95","13.95"]
 
 
 async function init() {
@@ -29,22 +31,20 @@ async function includeHTML() {
 function render() {
     let content = document.getElementById('content');
     content.innerHTML = '';
-    content.innerHTML =  '';
-
-    
-
+    content.innerHTML = '${}';
 }
 
 function addCard(name, price) {
     names.push(name);
-    
+    prices.push(price);
+
 }
 
 function updateCard() {
-    let sum = 0 ;
+    let sum = 0;
     for (let i = 0; i < price.length; i++) {
         sum += prices[i];
-        
+
     }
 
 

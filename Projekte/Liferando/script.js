@@ -75,7 +75,7 @@ function render() {
 function addtoCard(i) {
     card.push(dishes[i]);
 
-
+    renderCard();
 
 }
 
@@ -87,7 +87,7 @@ function renderCard() {
         const card = card[i];
         content.innerHTML +=`
         <div class="card">
-        <h2>${card[""]}</h2>
+        <h2>${card['']}</h2>
         
         `
     }

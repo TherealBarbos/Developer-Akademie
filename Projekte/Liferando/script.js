@@ -84,10 +84,11 @@ function renderCard() {
     content.innerHTML = '';
     content.innerHTML = '';
     for (let i = 0; i < card.length; i++) {
-        const card = card[i];
+        const cards = card[i];
         content.innerHTML +=`
         <div class="card">
-        <h2>${card['']}</h2>
+        <h2>${card['name']}</h2>
+        <p>${card['price']}</p>
         
         `
     }

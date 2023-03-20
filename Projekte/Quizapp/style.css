@@ -31,3 +31,7 @@ body {
     cursor: pointer;
     background-color: #868E96;
 }
+
+.bg-success, .bg-danger{
+    color: white !important;
+}

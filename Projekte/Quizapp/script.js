@@ -40,15 +40,23 @@ function showQuestion() {
 }
 
 function answer(selection) {
-    let question = questions[currentQuestion];
-    console.log('ausgewählt',selection)
-    let qNumber = selection.slice(-1);
-
-    if (qNumber == question['right_answer']) {
+    let question = questions[currentQuestion]; 
+    let qNumber = selection.slice(-1); 
+ 
+    if (qNumber == question['right_answer']) { 
         console.log('Richtig!')
+        document.getElementById(selection).classList.add('bg-success')
     } else {
         console.log('Falsch!')
+        document.getElementById(selection).classList.add('bg-danger')
     }
+    
+    
+    
+    
+    
+    
+    
 
     
 }

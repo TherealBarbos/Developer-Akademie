@@ -21,3 +21,13 @@ body {
     justify-content: space-between;
 }
 
+.list-group-item {
+    margin: 2px;
+    border-radius: 6px;
+
+}
+
+.quiz-aCard:hover {
+    cursor: pointer;
+    background-color: #868E96;
+}

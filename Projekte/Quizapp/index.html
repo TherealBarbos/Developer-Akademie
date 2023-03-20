@@ -20,7 +20,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
 
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
@@ -33,17 +33,19 @@
         <div class="card" >
             <img src="./img/logo.png" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Frage Nr</h5>
-                <p class="card-text">Frage...</p>
+                <h5 class="card-title">Frage 
+                    <b>1</b> von <b id="all-questions">5</b>
+                </h5>
+                <p class="card-text" id="questionText">Frage...</p>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Antwort A</li>
-                <li class="list-group-item">Antwort B</li>
-                <li class="list-group-item">Antwort C</li>
-                <li class="list-group-item">Antwort D</li>
+            <ul class="list-group ">
+                <li class="list-group-item quiz-aCard" id="answer_1" onclick="answer(answer_1)">Antwort A</li>
+                <li class="list-group-item quiz-aCard" id="answer_2" onclick="answer(answer_2)">Antwort B</li>
+                <li class="list-group-item quiz-aCard" id="answer_3" onclick="answer(answer_3)">Antwort C</li>
+                <li class="list-group-item quiz-aCard" id="answer_4" onclick="answer(answer_4)">Antwort D</li>
             </ul>
             <div class="card-footer">
-                <a class="btn btn-primary" href="#" role="button">vorherige Frage</a>
+                <a class="btn btn-secondary" href="#" role="button">vorherige Frage</a>
                 <a class="btn btn-primary" href="#" role="button">nächste Frage</a>
             </div>
         </div>

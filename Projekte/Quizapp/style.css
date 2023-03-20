@@ -10,4 +10,14 @@ body {
     background-color: #212529 !important;
 }
 
-/* background-color: #2B3035 */
+.card {
+    width: 25rem;
+    background-color: #2B3035 !important;
+    color: aliceblue;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+

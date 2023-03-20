@@ -1,25 +1,3 @@
-let questions = [
-    {
-        "question": "Wie Heißt die Hauptsadt von Deutschland?",
-        "answer_1": "Berlin",
-        "answer_2": "Hammburg",
-        "answer_3": "Offenburg",
-        "answer_4": "München",
-        "right_answer": 1
-
-    },
-    {
-        "question": "Welche Farben hat die Deutschlandflagge?",
-        "answer_1": "Blau, Weis und Rot",
-        "answer_2": "Gelb, Grün und Blau",
-        "answer_3": "Schwarz, Rot und Gelb ",
-        "answer_4": "Weis, Grün und Rot",
-        "right_answer": 3
-
-    }
-
-];
-
 let currentQuestion = 0;
 
 function init() {
@@ -31,6 +9,7 @@ function init() {
 
 function showQuestion() {
     let question = questions[currentQuestion];
+    document.getElementById('curQuestion').innerHTML = currentQuestion + 1;
     document.getElementById('questionText').innerHTML = question['question'];
     document.getElementById('answer_1').innerHTML = question['answer_1'];
     document.getElementById('answer_2').innerHTML = question['answer_2'];
@@ -40,24 +19,50 @@ function showQuestion() {
 }
 
 function answer(selection) {
-    let question = questions[currentQuestion]; 
-    let qNumber = selection.slice(-1); 
- 
-    if (qNumber == question['right_answer']) { 
+    let question = questions[currentQuestion];
+    let qNumber = selection.slice(-1);
+    let rightAnswer = `answer_${question['right_answer']}`
+
+    if (qNumber == question['right_answer']) {
         console.log('Richtig!')
         document.getElementById(selection).classList.add('bg-success')
     } else {
         console.log('Falsch!')
         document.getElementById(selection).classList.add('bg-danger')
+        document.getElementById(rightAnswer).classList.add('bg-success')
     }
-    
-    
-    
-    
-    
-    
-    
+    document.getElementById('next-btn').disabled = false;
 
-    
 }
+
+function nextQuestion() {
+    currentQuestion++
+    document.getElementById('next-btn').disabled = true;
+
+    resetBtn();
+    showQuestion();
+
+}
+
+function lastQuestion() {
+    currentQuestion--
+    document.getElementById('next-btn').disabled = true;
+    showQuestion();
+}
+
+function resetBtn() {
+
+    document.getElementById('answer_1').classList.remove('bg-danger')
+    document.getElementById('answer_1').classList.remove('bg-success')
+    document.getElementById('answer_2').classList.remove('bg-danger')
+    document.getElementById('answer_2').classList.remove('bg-success')
+    document.getElementById('answer_3').classList.remove('bg-danger')
+    document.getElementById('answer_3').classList.remove('bg-success')
+    document.getElementById('answer_4').classList.remove('bg-danger')
+    document.getElementById('answer_4').classList.remove('bg-success')
+
+
+
+}
+
 

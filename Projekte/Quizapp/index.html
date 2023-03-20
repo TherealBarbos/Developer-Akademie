@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="questions.js"></script>
 
 
     <!--Bootstrap files-->
@@ -34,7 +35,7 @@
             <img src="./img/logo.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Frage 
-                    <b>1</b> von <b id="all-questions">5</b>
+                    <b id="curQuestion">1</b> von <b id="all-questions">5</b>
                 </h5>
                 <p class="card-text" id="questionText">Frage...</p>
             </div>
@@ -45,9 +46,9 @@
                 <li class="list-group-item quiz-aCard" id="answer_4" onclick="answer('answer_4')">Antwort D</li>
             </ul>
             <div class="card-footer">
-                <a class="btn btn-secondary" href="#" role="button">vorherige Frage</a>
-                <a class="btn btn-primary" href="#" role="button">nächste Frage</a>
-            </div>
+                <button class="btn btn-secondary" id="last-btn" onclick="lastQuestion()">vorherige Frage</button>
+                <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()" disabled>nächste Frage</button>
+
         </div>
     </div>
 </body>

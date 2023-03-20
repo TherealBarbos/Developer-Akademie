@@ -87,8 +87,9 @@ function renderCard() {
         const cards = card[i];
         content.innerHTML +=`
         <div class="card">
-        <h2>${card['name']}</h2>
-        <p>${card['price']}</p>
+        <h2>${cards['name']}</h2>
+        <p>${cards['price']}</p>
+
         
         `
     }

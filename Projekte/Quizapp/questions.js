@@ -3,6 +3,7 @@ let questions = [
         "question": "Wie Heißt die Hauptsadt von Deutschland?",
         "answer_1": "Berlin",
         "answer_2": "Hamburg",
+        "answer_2": "Hamburg",
         "answer_3": "Offenburg",
         "answer_4": "München",
         "right_answer": 1
@@ -16,11 +17,11 @@ let questions = [
         "right_answer": 3
     },
     {
-        "question": "Wer ist der Boss?",
-        "answer_1": "ich",
-        "answer_2": "du",
-        "answer_3": "wer?",
-        "answer_4": "was?",
+        "question": "Wo spielt die  Sturzzahl eine wichtige Rolle?",
+        "answer_1": "Klettern",
+        "answer_2": "Tauziehen",
+        "answer_3": "Derssurreiten",
+        "answer_4": "Angeln",
         "right_answer": 1
     },
     {

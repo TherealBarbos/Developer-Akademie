@@ -32,12 +32,12 @@ let questions = [
         "right_answer": 3
     },
     {
-        "question": "frage 5d?",
-        "answer_1": "Berlin",
-        "answer_2": "Hammburg",
-        "answer_3": "Offenburg",
-        "answer_4": "München",
-        "right_answer": 1
+        "question": "Wie Heist der Hahn auf der Kelloggs Packung?",
+        "answer_1": "Karl",
+        "answer_2": "Cornelius",
+        "answer_3": "Jackson",
+        "answer_4": "Charlie",
+        "right_answer": 2
     },
     {
         "question": "frage 6?",

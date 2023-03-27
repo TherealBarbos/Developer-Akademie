@@ -64,18 +64,18 @@ let questions = [
         "right_answer": 4
     },
     {
-        "question": "Wie viele Oskars gewann der Film Titanik?",
+        "question": "Wie viele Oscars gewann der Film Titanik?",
         "answer_1": "9",
         "answer_2": "13",
         "answer_3": "11",
         "answer_4": "7",
         "right_answer": 3
     },    {
-        "question": "?",
-        "answer_1": "",
-        "answer_2": "",
-        "answer_3": "",
-        "answer_4": "",
-        "right_answer": 1
+        "question": "Wie lang darf ein Güterzug max. sein?",
+        "answer_1": "1.000m",
+        "answer_2": "880m",
+        "answer_3": "740m",
+        "answer_4": "1.400m",
+        "right_answer": 3
     }
 ];

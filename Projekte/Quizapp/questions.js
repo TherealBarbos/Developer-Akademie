@@ -56,27 +56,26 @@ let questions = [
         "right_answer": 1
     },
     {
-        "question": "Welche Farben hat die Deutschlandflagge?",
-        "answer_1": "Blau, Weis und Rot",
-        "answer_2": "Gelb, Grün und Blau",
-        "answer_3": "Schwarz, Rot und Gelb ",
-        "answer_4": "Weis, Grün und Rot",
-        "right_answer": 3
-    },
-    {
-        "question": "Wie Heißt die Hauptsadt von Deutschland?",
-        "answer_1": "Berlin",
-        "answer_2": "Hammburg",
-        "answer_3": "Offenburg",
-        "answer_4": "München",
+        "question": "?",
+        "answer_1": "",
+        "answer_2": "",
+        "answer_3": "",
+        "answer_4": "",
         "right_answer": 1
     },
     {
-        "question": "Welche Farben hat die Deutschlandflagge?",
-        "answer_1": "Blau, Weis und Rot",
-        "answer_2": "Gelb, Grün und Blau",
-        "answer_3": "Schwarz, Rot und Gelb ",
-        "answer_4": "Weis, Grün und Rot",
-        "right_answer": 3
+        "question": "?",
+        "answer_1": "",
+        "answer_2": "",
+        "answer_3": "",
+        "answer_4": "",
+        "right_answer": 1
+    },    {
+        "question": "?",
+        "answer_1": "",
+        "answer_2": "",
+        "answer_3": "",
+        "answer_4": "",
+        "right_answer": 1
     }
 ];

@@ -2,7 +2,7 @@ let questions = [
     {
         "question": "Wie Heißt die Hauptsadt von Deutschland?",
         "answer_1": "Berlin",
-        "answer_2": "Hammburg",
+        "answer_2": "Hamburg",
         "answer_3": "Offenburg",
         "answer_4": "München",
         "right_answer": 1
@@ -11,16 +11,16 @@ let questions = [
         "question": "Welche Farben hat die Deutschlandflagge?",
         "answer_1": "Blau, Weis und Rot",
         "answer_2": "Gelb, Grün und Blau",
-        "answer_3": "Schwarz, Rot und Gelb ",
+        "answer_3": "Schwarz, Rot und Golb ",
         "answer_4": "Weis, Grün und Rot",
         "right_answer": 3
     },
     {
-        "question": "frage 3?",
-        "answer_1": "Berlin",
-        "answer_2": "Hammburg",
-        "answer_3": "Offenburg",
-        "answer_4": "München",
+        "question": "Wo spielt die  Sturzzahl eine wichtige Rolle?",
+        "answer_1": "Klettern",
+        "answer_2": "Tauziehen",
+        "answer_3": "Derssurreiten",
+        "answer_4": "Angeln",
         "right_answer": 1
     },
     {

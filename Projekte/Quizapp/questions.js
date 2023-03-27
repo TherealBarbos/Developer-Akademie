@@ -40,11 +40,11 @@ let questions = [
         "right_answer": 2
     },
     {
-        "question": "frage 6?",
-        "answer_1": "Blau, Weis und Rot",
-        "answer_2": "Gelb, Grün und Blau",
-        "answer_3": "Schwarz, Rot und Gelb ",
-        "answer_4": "Weis, Grün und Rot",
+        "question": "Die Disignerin des Nike Logos Erhilt für ihren Entwurf..?",
+        "answer_1": "nichts.",
+        "answer_2": "ein Paar Turnschuhe.",
+        "answer_3": "$35 Dollar.",
+        "answer_4": "einen Essensgutschein.",
         "right_answer": 3
     },
     {

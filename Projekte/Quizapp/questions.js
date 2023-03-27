@@ -24,11 +24,11 @@ let questions = [
         "right_answer": 1
     },
     {
-        "question": "Mit circa wie viel Prozent der Erde sind mit Wasser bedeckt?",
-        "answer_1": "42%",
-        "answer_2": "68%",
-        "answer_3": "71%",
-        "answer_4": "58%",
+        "question": "Wie viel Prozent der Erde sind mit Wasser bedeckt?",
+        "answer_1": "ca. 42%",
+        "answer_2": "ca. 68%",
+        "answer_3": "ca. 71%",
+        "answer_4": "ca. 58%",
         "right_answer": 3
     },
     {
@@ -56,20 +56,20 @@ let questions = [
         "right_answer": 1
     },
     {
-        "question": "?",
-        "answer_1": "",
-        "answer_2": "",
-        "answer_3": "",
-        "answer_4": "",
-        "right_answer": 1
+        "question": "Wie viele Zeitzonen hat Russland?",
+        "answer_1": "5",
+        "answer_2": "7",
+        "answer_3": "9",
+        "answer_4": "11",
+        "right_answer": 4
     },
     {
-        "question": "?",
-        "answer_1": "",
-        "answer_2": "",
-        "answer_3": "",
-        "answer_4": "",
-        "right_answer": 1
+        "question": "Wie viele Oskars gewann der Film Titanik?",
+        "answer_1": "9",
+        "answer_2": "13",
+        "answer_3": "11",
+        "answer_4": "7",
+        "right_answer": 3
     },    {
         "question": "?",
         "answer_1": "",

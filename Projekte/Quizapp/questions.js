@@ -1,6 +1,6 @@
 let questions = [
     {
-        "question": "Wie Heißt die Hauptsadt von Deutschland?",
+        "question": "Wie heißt die Hauptsadt von Deutschland?",
         "answer_1": "Berlin",
         "answer_2": "Hamburg",
         "answer_3": "Offenburg",
@@ -16,10 +16,10 @@ let questions = [
         "right_answer": 3
     },
     {
-        "question": "Wo spielt die  Sturzzahl eine wichtige Rolle?",
+        "question": "Wo spielt die Sturzzahl eine wichtige Rolle?",
         "answer_1": "Klettern",
         "answer_2": "Tauziehen",
-        "answer_3": "Derssurreiten",
+        "answer_3": "Dressurreiten",
         "answer_4": "Angeln",
         "right_answer": 1
     },
@@ -32,7 +32,7 @@ let questions = [
         "right_answer": 3
     },
     {
-        "question": "Wie Heist der Hahn auf der Kelloggs Packung?",
+        "question": "Wie heist der Hahn auf der Kelloggs Packung?",
         "answer_1": "Karl",
         "answer_2": "Cornelius",
         "answer_3": "Jackson",
@@ -40,19 +40,19 @@ let questions = [
         "right_answer": 2
     },
     {
-        "question": "Die Disignerin des Nike Logos Erhilt für ihren Entwurf..?",
+        "question": "Die Designerin des Nike Logos erhielt für ihren Entwurf..?",
         "answer_1": "nichts.",
         "answer_2": "ein Paar Turnschuhe.",
-        "answer_3": "$35 Dollar.",
+        "answer_3": "35 Dollar.",
         "answer_4": "einen Essensgutschein.",
         "right_answer": 3
     },
     {
-        "question": "Alle vier Töchter von Karl Marks...?",
+        "question": "Alle vier Töchter von Karl Marx...?",
         "answer_1": "hießen Jenny",
         "answer_2": "wurden erfolgreiche Unternehmerinnen.",
         "answer_3": "waren Farbenblind.",
-        "answer_4": "blieben unverheirated",
+        "answer_4": "blieben unverheiratet",
         "right_answer": 1
     },
     {
@@ -64,13 +64,14 @@ let questions = [
         "right_answer": 4
     },
     {
-        "question": "Wie viele Oscars gewann der Film Titanik?",
+        "question": "Wie viele Oscars gewann der Film Titanic?",
         "answer_1": "9",
         "answer_2": "13",
         "answer_3": "11",
         "answer_4": "7",
         "right_answer": 3
-    },    {
+    },    
+    {
         "question": "Wie lang darf ein Güterzug max. sein?",
         "answer_1": "1.000m",
         "answer_2": "880m",

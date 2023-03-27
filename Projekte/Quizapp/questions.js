@@ -48,11 +48,11 @@ let questions = [
         "right_answer": 3
     },
     {
-        "question": "frage 7?",
-        "answer_1": "Berlin",
-        "answer_2": "Hammburg",
-        "answer_3": "Offenburg",
-        "answer_4": "München",
+        "question": "Alle vier Töchter von Karl Marks...?",
+        "answer_1": "hießen Jenny",
+        "answer_2": "wurden erfolgreiche Unternehmerinnen.",
+        "answer_3": "waren Farbenblind.",
+        "answer_4": "blieben unverheirated",
         "right_answer": 1
     },
     {

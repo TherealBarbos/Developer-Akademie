@@ -35,3 +35,7 @@ body {
 .bg-success, .bg-danger{
     color: white !important;
 }
+
+.card-finish {
+    text-align: center;
+}

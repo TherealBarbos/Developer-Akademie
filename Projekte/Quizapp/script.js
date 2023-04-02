@@ -113,6 +113,7 @@ function restart() {
 
     percent = 0;
     currentQuestion = 0;
+    rightQuestions = 0;
     init()
 
 

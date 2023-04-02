@@ -17,14 +17,14 @@ function showQuestion() {
     } else {
 
         updateQuestion()
-        
+
     }
     progress();
     score();
 }
 
 function updateQuestion() {
-    
+
     let question = questions[currentQuestion];
 
     document.getElementById('curQuestion').innerHTML = currentQuestion + 1;
@@ -50,6 +50,15 @@ function answer(selection) {
         document.getElementById(rightAnswer).classList.add('bg-success')
     }
     document.getElementById('next-btn').disabled = false;
+        
+}
+
+function disableButton() {
+
+    document.getElementById('answer_1').disabled = 'true';
+    document.getElementById('answer_2').disabled = 'true';
+    document.getElementById('answer_3').disabled = 'true';
+    document.getElementById('answer_4').disabled = 'true';
 
 }
 
@@ -67,6 +76,8 @@ function lastQuestion() {
     document.getElementById('next-btn').disabled = true;
     showQuestion();
 }
+
+
 
 function resetBtn() {
 

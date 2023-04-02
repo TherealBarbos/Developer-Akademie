@@ -1,26 +1,22 @@
 let currentQuestion = 0;
-let rightQuestions =0 ;
+let rightQuestions = 0;
 
 function init() {
     document.getElementById('all-questions').innerHTML = questions.length;
 
     showQuestion()
-    
+
 };
 
 function showQuestion() {
 
     if (currentQuestion >= questions.length) {
 
-        document.getElementById('endScreen').style ='';
-        document.getElementById('qImg').style ='display: none';
-        document.getElementById('qBody').style ='display: none';
-        document.getElementById('qText').style ='display: none';
-        document.getElementById('qMenue').style ='display: none';
-
-        document.getElementById('qAmount').innerHTML = questions.length;
-        document.getElementById('qScore').innerHTML = rightQuestions;
-        document.getElementById('score').innerHTML = rightQuestions;
+        document.getElementById('endScreen').style = '';
+        document.getElementById('qImg').style = 'display: none';
+        document.getElementById('qBody').style = 'display: none';
+        document.getElementById('qText').style = 'display: none';
+        document.getElementById('qMenue').style = 'display: none';
 
     } else {
 
@@ -34,7 +30,8 @@ function showQuestion() {
         document.getElementById('answer_4').innerHTML = question['answer_4'];
 
     }
-    progress()
+    progress();
+    score();
 }
 
 function answer(selection) {
@@ -82,15 +79,34 @@ function resetBtn() {
     document.getElementById('answer_4').classList.remove('bg-success')
 }
 
+
+function score() {
+    document.getElementById('qAmount').innerHTML = questions.length;
+    document.getElementById('qScore').innerHTML = rightQuestions;
+    document.getElementById('score').innerHTML = rightQuestions;
+
+}
+
 function progress() {
 
     let percent = currentQuestion / questions.length;
     percent = Math.round(percent * 100);
-    console.log(percent ,'%');
+    console.log(percent, '%');
+    document.getElementById('progress').innerHTML = `${percent} %`;
+    document.getElementById('progress').style.width = `${percent}%`;
+}
 
-    document.getElementById('progress').innerHTML =  `${percent} %`;
-    document.getElementById('progress').style.width =  `${percent}%`;
+function restart() {
 
+    document.getElementById('endScreen').style = 'display: none';
+    document.getElementById('qImg').style = '';
+    document.getElementById('qBody').style = '';
+    document.getElementById('qText').style = '';
+    document.getElementById('qMenue').style = '';
+
+    percent = 0;
+    currentQuestion = 0;
+    init()
 
 
 }

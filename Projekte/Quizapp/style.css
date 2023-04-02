@@ -39,3 +39,7 @@ body {
 .card-finish {
     text-align: center;
 }
+
+.progress-bar{
+    font-size: 18px;
+}

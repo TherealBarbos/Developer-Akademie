@@ -5,7 +5,7 @@ function init() {
     document.getElementById('all-questions').innerHTML = questions.length;
 
     showQuestion()
-
+    
 };
 
 function showQuestion() {
@@ -34,6 +34,7 @@ function showQuestion() {
         document.getElementById('answer_4').innerHTML = question['answer_4'];
 
     }
+    progress()
 }
 
 function answer(selection) {
@@ -81,6 +82,15 @@ function resetBtn() {
     document.getElementById('answer_4').classList.remove('bg-success')
 }
 
-function score() {
+function progress() {
+
+    let percent = currentQuestion / questions.length;
+    percent = Math.round(percent * 100);
+    console.log(percent ,'%');
+
+    document.getElementById('progress').innerHTML =  `${percent} %`;
+    document.getElementById('progress').style.width =  `${percent}%`;
+
+
 
 }

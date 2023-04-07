@@ -89,7 +89,43 @@ function resetBtn() {
     document.getElementById('answer_3').classList.remove('bg-success')
     document.getElementById('answer_4').classList.remove('bg-danger')
     document.getElementById('answer_4').classList.remove('bg-success')
+}
+function endScreen() {
+    document.getElementById('endScreen').style = '';
+    document.getElementById('qImg').style = 'display: none';
+    document.getElementById('qBody').style = 'display: none';
+    document.getElementById('qText').style = 'display: none';
+    document.getElementById('qMenue').style = 'display: none';
+}
 
+function score() {
+    document.getElementById('qAmount').innerHTML = questions.length;
+    document.getElementById('qScore').innerHTML = rightQuestions;
+    document.getElementById('score').innerHTML = rightQuestions;
+
+}
+
+function progress() {
+
+    let percent = currentQuestion / questions.length;
+    percent = Math.round(percent * 100);
+    console.log(percent, '%');
+    document.getElementById('progress').innerHTML = `${percent} %`;
+    document.getElementById('progress').style.width = `${percent}%`;
+}
+
+function restart() {
+
+    document.getElementById('endScreen').style = 'display: none';
+    document.getElementById('qImg').style = '';
+    document.getElementById('qBody').style = '';
+    document.getElementById('qText').style = '';
+    document.getElementById('qMenue').style = '';
+
+    percent = 0;
+    currentQuestion = 0;
+    rightQuestions = 0;
+    init()
 
 
 }

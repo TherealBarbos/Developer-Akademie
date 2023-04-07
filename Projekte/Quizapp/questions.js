@@ -1,6 +1,6 @@
 let questions = [
     {
-        "question": "Wie heißt die Hauptsadt von Deutschland?",
+        "question": "Wie heißt die Hauptstadt von Deutschland?",
         "answer_1": "Berlin",
         "answer_2": "Hamburg",
         "answer_3": "Offenburg",

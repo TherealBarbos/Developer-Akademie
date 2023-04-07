@@ -37,10 +37,12 @@ function answer(selection) {
     console.log("Richtig!");
     document.getElementById(selection).classList.add("bg-success");
     rightQuestions++;
+    blockAnswer()
   } else {
     console.log("Falsch!");
     document.getElementById(selection).classList.add("bg-danger");
     document.getElementById(rightAnswer).classList.add("bg-success");
+    blockAnswer()
   }
   document.getElementById("next-btn").disabled = false;
 }
@@ -60,11 +62,11 @@ function nextQuestion() {
   showQuestion();
 }
 
-function lastQuestion() {
-  currentQuestion--;
-  document.getElementById("next-btn").disabled = true;
-  showQuestion();
-}
+// function lastQuestion() {
+//   currentQuestion--;
+//   document.getElementById("next-btn").disabled = true;
+//   showQuestion();
+// }
 
 function resetBtn() {
   document.getElementById("answer_1").classList.remove("bg-danger");
@@ -75,6 +77,12 @@ function resetBtn() {
   document.getElementById("answer_3").classList.remove("bg-success");
   document.getElementById("answer_4").classList.remove("bg-danger");
   document.getElementById("answer_4").classList.remove("bg-success");
+
+  document.getElementById('answer_1').parentNode.classList.remove('block');
+  document.getElementById('answer_2').parentNode.classList.remove('block');
+  document.getElementById('answer_3').parentNode.classList.remove('block');
+  document.getElementById('answer_4').parentNode.classList.remove('block');
+
 }
 function endScreen() {
   document.getElementById("endScreen").style = "";
@@ -109,4 +117,10 @@ function restart() {
   currentQuestion = 0;
   rightQuestions = 0;
   init();
+}
+function blockAnswer(){
+  document.getElementById('answer_1').parentNode.classList.add('block');
+  document.getElementById('answer_2').parentNode.classList.add('block');
+  document.getElementById('answer_3').parentNode.classList.add('block');
+  document.getElementById('answer_4').parentNode.classList.add('block');
 }

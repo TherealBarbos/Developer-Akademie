@@ -1,47 +1,50 @@
 body {
-    background-color: #212529 !important;
+  background-color: #212529 !important;
 }
 
 .container {
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #212529 !important;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #212529 !important;
 }
 
 .card {
-    width: 20rem;
-    background-color: #2B3035 !important;
-    color: aliceblue;
+  width: 20rem;
+  background-color: #2b3035 !important;
+  color: aliceblue;
 }
 
-
-
 .card-footer {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .list-group-item {
-    margin: 2px;
-    border-radius: 6px;
-
+  margin: 2px;
+  border-radius: 6px;
 }
 
 .quiz-aCard:hover {
-    cursor: pointer;
-    background-color: #868E96;
+  cursor: pointer;
+  background-color: #868e96;
 }
 
-.bg-success, .bg-danger{
-    color: white !important;
+.bg-success,
+.bg-danger {
+  color: white !important;
 }
 
 .card-finish {
-    text-align: center;
+  text-align: center;
 }
 
-.progress-bar{
-    font-size: 18px;
+.progress-bar {
+  font-size: 18px;
+}
+
+.block {
+    pointer-events: none;
 }

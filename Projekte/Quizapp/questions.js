@@ -9,10 +9,10 @@ let questions = [
     },
     {
         "question": "Welche Farben hat die Deutschlandflagge?",
-        "answer_1": "Blau, Weis und Rot",
+        "answer_1": "Blau, Weiß und Rot",
         "answer_2": "Gelb, Grün und Blau",
         "answer_3": "Schwarz, Rot und Gold ",
-        "answer_4": "Weis, Grün und Rot",
+        "answer_4": "Weiß, Grün und Rot",
         "right_answer": 3
     },
     {

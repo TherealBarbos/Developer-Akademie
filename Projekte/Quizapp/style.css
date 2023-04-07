@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,10 +11,12 @@ body {
 }
 
 .card {
-    width: 25rem;
+    width: 20rem;
     background-color: #2B3035 !important;
     color: aliceblue;
 }
+
+
 
 .card-footer {
     display: flex;
@@ -34,4 +36,12 @@ body {
 
 .bg-success, .bg-danger{
     color: white !important;
+}
+
+.card-finish {
+    text-align: center;
+}
+
+.progress-bar{
+    font-size: 18px;
 }

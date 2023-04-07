@@ -8,4 +8,4 @@ git commit
 
 git push
 
-got fetch
+git fetch

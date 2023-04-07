@@ -60,9 +60,8 @@ function resetBtn() {
     document.getElementById('answer_3').classList.remove('bg-success')
     document.getElementById('answer_4').classList.remove('bg-danger')
     document.getElementById('answer_4').classList.remove('bg-success')
-
-
-
 }
 
-
+function score() {
+    
+}

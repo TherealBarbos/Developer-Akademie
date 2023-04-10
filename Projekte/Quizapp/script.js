@@ -34,15 +34,13 @@ function answer(selection) {
   let rightAnswer = `answer_${question["right_answer"]}`;
 
   if (qNumber == question["right_answer"]) {
-    console.log("Richtig!");
     document.getElementById(selection).classList.add("bg-success");
     rightQuestions++;
-    blockAnswer()
+    blockAnswer();
   } else {
-    console.log("Falsch!");
     document.getElementById(selection).classList.add("bg-danger");
     document.getElementById(rightAnswer).classList.add("bg-success");
-    blockAnswer()
+    blockAnswer();
   }
   document.getElementById("next-btn").disabled = false;
 }
@@ -69,6 +67,10 @@ function nextQuestion() {
 // }
 
 function resetBtn() {
+  // for (let index = 0; index < array.length; index++) {
+  //   const element = array[index];
+  // }
+
   document.getElementById("answer_1").classList.remove("bg-danger");
   document.getElementById("answer_1").classList.remove("bg-success");
   document.getElementById("answer_2").classList.remove("bg-danger");
@@ -78,11 +80,10 @@ function resetBtn() {
   document.getElementById("answer_4").classList.remove("bg-danger");
   document.getElementById("answer_4").classList.remove("bg-success");
 
-  document.getElementById('answer_1').parentNode.classList.remove('block');
-  document.getElementById('answer_2').parentNode.classList.remove('block');
-  document.getElementById('answer_3').parentNode.classList.remove('block');
-  document.getElementById('answer_4').parentNode.classList.remove('block');
-
+  document.getElementById("answer_1").parentNode.classList.remove("block");
+  document.getElementById("answer_2").parentNode.classList.remove("block");
+  document.getElementById("answer_3").parentNode.classList.remove("block");
+  document.getElementById("answer_4").parentNode.classList.remove("block");
 }
 function endScreen() {
   document.getElementById("endScreen").style = "";
@@ -101,7 +102,6 @@ function score() {
 function progress() {
   let percent = currentQuestion / questions.length;
   percent = Math.round(percent * 100);
-  console.log(percent, "%");
   document.getElementById("progress").innerHTML = `${percent} %`;
   document.getElementById("progress").style.width = `${percent}%`;
 }
@@ -118,9 +118,9 @@ function restart() {
   rightQuestions = 0;
   init();
 }
-function blockAnswer(){
-  document.getElementById('answer_1').parentNode.classList.add('block');
-  document.getElementById('answer_2').parentNode.classList.add('block');
-  document.getElementById('answer_3').parentNode.classList.add('block');
-  document.getElementById('answer_4').parentNode.classList.add('block');
+function blockAnswer() {
+  document.getElementById("answer_1").parentNode.classList.add("block");
+  document.getElementById("answer_2").parentNode.classList.add("block");
+  document.getElementById("answer_3").parentNode.classList.add("block");
+  document.getElementById("answer_4").parentNode.classList.add("block");
 }

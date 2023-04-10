@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-  min-height: 90vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,9 +42,9 @@ body {
 }
 
 .progress-bar {
-  font-size: 18px;
+  font-size: 12px;
 }
 
 .block {
-    pointer-events: none;
+  pointer-events: none;
 }

@@ -1,71 +1,126 @@
-body {
-  background-color: #373f43;
+:root {
+  --outer-shadow: 0 0 0.1vw 0.4vw #e0f7fa, 0 0 0.4vw 0.6vw #00e5ff,
+    0 0 1vw 0.4vw #26c6da;
+  --inner-shadow: inset 0 0 0.1vw 0.4vw #e0f7fa, inset 0 0 0.4vw 0.6vw #00e5ff,
+    inset 0 0 1vw 0.4vw #26c6da;
+  --all-shadow: 0 0 0.1vw 0.4vw #e0f7fa, 0 0 0.4vw 0.6vw #00e5ff,
+    0 0 1vw 0.4vw #26c6da, inset 0 0 0.1vw 0.4vw #e0f7fa,
+    inset 0 0 0.4vw 0.6vw #00e5ff, inset 0 0 1vw 0.4vw #26c6da;
+  --clr-neon: hsl(145, 100%, 54%);
+  --clr-bg: hsl(152, 21%, 16%);
 }
 
-h1 {
+body {
+  background: var(--clr-bg);
+  color: var(--clr-neon);
+}
+
+.head {
   justify-content: center;
   text-align: center;
   font-size: 5rem;
 }
-
-table {
-  margin: 5vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-tr {
-  width: 30vh;
-  height: 30vh;
+.field {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 65%;
+  left: 50%;
   box-shadow: var(--outer-shadow);
 }
-
-td {
-  width: 30vh;
-  height: 30vh;
-  box-shadow: var(--inner-shadow);
+.map {
+  width: 70vmin;
+  height: 70vmin;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vmin;
+}
+.button {
+  height: 22vmin;
+  width: 22vmin;
 }
 
 .neonText {
-      color: #fff;
-  text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #0fa,
-      0 0 82px #0fa,
-      0 0 92px #0fa,
-      0 0 102px #0fa,
-      0 0 151px #0fa;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
 }
 
-:root {
-    --outer-shadow: 
-      0 0 0.1vw 0.4vw #e0f7fa,
-      0 0 0.4vw 0.6vw #00e5ff,
-      0 0 1vw 0.4vw #26c6da;
-    --inner-shadow:
-      inset 0 0 0.1vw 0.4vw #e0f7fa,
-      inset 0 0 0.4vw 0.6vw #00e5ff,
-      inset 0 0 1vw 0.4vw #26c6da;
-    --all-shadow:
-      0 0 0.1vw 0.4vw #e0f7fa,
-      0 0 0.4vw 0.6vw #00e5ff,
-      0 0 1vw 0.4vw #26c6da,
-      inset 0 0 0.1vw 0.4vw #e0f7fa,
-      inset 0 0 0.4vw 0.6vw #00e5ff,
-      inset 0 0 1vw 0.4vw #26c6da;
-  }
+.neonBorder-outer {
+  box-shadow: var(--outer-shadow);
+}
 
-  .neonBorder-outer {
-    box-shadow: var(--outer-shadow);
-  }
-  
-  .neonBorder-inner {
-    box-shadow: var(--inner-shadow);
-  }
-  
-  .neonBorder-both {
-    box-shadow: var(--all-shadow);
-  }
-  
+.neonBorder-inner {
+  box-shadow: var(--inner-shadow);
+}
+
+.neonBorder-both {
+  box-shadow: var(--all-shadow);
+}
+
+.resetButton {
+  display: flex;
+}
+
+/* Reset Butten Experiment */
+
+.reset {
+  margin: 2vmin;
+  font-size: 2.5rem;
+  color: var(--clr-neon);
+  background-color: var(--clr-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  border: var(--clr-neon) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.5em currentColor;
+  box-shadow: 0 0 0.5em 0 var(--clr-neon);
+  position: relative;
+
+  transition: background-color 100ms linear;
+}
+
+.reset::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-neon);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.5);
+  filter: blur(1em);
+  opacity: 0.6;
+}
+
+.reset::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  box-shadow: 0 0 1.5em 0.5em var(--clr-neon);
+  opacity: 0;
+  transition: opacity 100ms linear;
+}
+
+.reset:hover {
+  background-color: var(--clr-neon);
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+.reset:hover::before {
+  opacity: 1;
+}
+
+.reset:hover::after {
+  opacity: 1;
+}

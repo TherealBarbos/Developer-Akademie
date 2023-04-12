@@ -67,7 +67,6 @@ function win() {
   }
   if (winner) {
     gameOver = true;
-    console.log("Gewonnen", winner);
     gameover(winner);
   }
 }
@@ -78,7 +77,7 @@ function gameover(winner) {
     <img src="./img/circle.png" alt="" id="winImg" />
     <span class="neonText">Wins the game</span>
     </div>
-  `
+  `;
   if (winner == "circle") {
     document.getElementById("winImg").src = "./img/circle.png";
   } else {
@@ -89,15 +88,17 @@ function gameover(winner) {
 function restart() {
   gameOver = false;
   fields = [];
-  document.getElementById("player").innerHTML = `<div id="pOne">Circle <img src="./img/circle.png" alt="" /></div>
+  document.getElementById(
+    "player"
+  ).innerHTML = `<div id="pOne">Circle <img src="./img/circle.png" alt="" /></div>
   <div id="pTwo" class="player-inaktiv">
     Cross <img src="./img/cross.png" alt="" />
-  </div>`
-  for (let i = 0; i < 7; i++){
+  </div>`;
+  for (let i = 0; i < 7; i++) {
     document.getElementById("line-" + i).classList.add("hide");
   }
-  for (let i = 0; i < 8; i++){
+  for (let i = 0; i < 8; i++) {
     document.getElementById("circle-" + i).classList.add("hide");
-  document.getElementById("cross-" + i).classList.add("hide");
+    document.getElementById("cross-" + i).classList.add("hide");
   }
 }

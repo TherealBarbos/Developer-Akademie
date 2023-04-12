@@ -21,6 +21,7 @@ body {
 .player {
   display: flex;
   font-size: 3.5rem;
+  text-shadow: 0 0 0.2em hsl(0 0% 100% / 0.5), 0 0 1em currentColor;
 }
 
 .player-inaktiv {
@@ -68,11 +69,9 @@ body {
   background-color: var(--clr-neon);
   position: absolute;
   box-shadow: 0 0 1.5em 0.5em var(--clr-neon);
-  /* transform: scaleX(0); */
-    
 }
 
-.vertical{
+.vertical {
   transform: rotate(90deg);
 }
 
@@ -85,6 +84,9 @@ body {
   width: 22vmin;
   box-shadow: var(--inner-shadow);
   background-color: var(--clr-bg);
+}
+.win {
+  font-size: 3rem;
 }
 
 .neonText {
@@ -108,7 +110,7 @@ body {
 .resetButton {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 100%;
+  top: 105%;
   left: 50%;
 }
 
@@ -125,14 +127,12 @@ body {
   .map img {
     width: 65px;
   }
-
   .resetButton {
     scale: 0.5;
     top: 85%;
     left: 35%;
   }
 }
-
 .block {
   pointer-events: none;
 }

@@ -13,6 +13,32 @@
 body {
   background: var(--clr-bg);
   color: var(--clr-neon);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.player {
+  display: flex;
+  font-size: 3.5rem;
+}
+
+.player-inaktiv {
+  opacity: 0.25;
+}
+
+.player div {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.player img {
+  width: 60px;
+  height: 60px;
+  margin-left: 16px;
 }
 
 .head {
@@ -22,8 +48,8 @@ body {
 }
 .field {
   position: absolute;
-  transform: translate(-50%, -50%);
-  top: 65%;
+  transform: translate(-50%, -35%);
+  top: 50%;
   left: 50%;
   box-shadow: var(--outer-shadow);
 }
@@ -33,10 +59,32 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 2vmin;
+  position: relative;
 }
+
+.line {
+  height: 1vmin;
+  width: 65vmin;
+  background-color: var(--clr-neon);
+  position: absolute;
+  box-shadow: 0 0 1.5em 0.5em var(--clr-neon);
+  /* transform: scaleX(0); */
+    
+}
+
+.vertical{
+  transform: rotate(90deg);
+}
+
+.hide {
+  display: none;
+}
+
 .button {
   height: 22vmin;
   width: 22vmin;
+  box-shadow: var(--inner-shadow);
+  background-color: var(--clr-bg);
 }
 
 .neonText {
@@ -58,7 +106,35 @@ body {
 }
 
 .resetButton {
-  display: flex;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 100%;
+  left: 50%;
+}
+
+@media (max-width: 450px) {
+  .head {
+    font-size: 3rem;
+  }
+  .player {
+    font-size: 1.5rem;
+  }
+  .player img {
+    width: 50px;
+  }
+  .map img {
+    width: 65px;
+  }
+
+  .resetButton {
+    scale: 0.5;
+    top: 85%;
+    left: 35%;
+  }
+}
+
+.block {
+  pointer-events: none;
 }
 
 /* Reset Butten Experiment */
@@ -68,19 +144,14 @@ body {
   font-size: 2.5rem;
   color: var(--clr-neon);
   background-color: var(--clr-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   text-decoration: none;
   border: var(--clr-neon) 0.125em solid;
   padding: 0.25em 1em;
   border-radius: 0.25em;
-
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.5em currentColor;
   box-shadow: 0 0 0.5em 0 var(--clr-neon);
   position: relative;
-
   transition: background-color 100ms linear;
 }
 

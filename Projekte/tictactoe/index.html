@@ -14,21 +14,65 @@
       <span class="neonText">Tic Tac Toe</span>
     </div>
 
-    <div class="field">
-      <div class="map">
-        <button class="button"></button>
-        <button class="button"></button>
-        <button class="button"></button>
-        <button class="button"></button>
-        <button class="button"></button>
-        <button class="button"></button>
-        <button class="button"></button>
-        <button class="button"></button>
-        <button class="button"></button>
+    <div class="player">
+      <div id="pOne">Circle <img src="./img/circle.png" alt="" /></div>
+      <div id="pTwo" class="player-inaktiv">
+        Cross <img src="./img/cross.png" alt="" />
       </div>
     </div>
+
+    <div class="field">
+      <div class="map">
+        <button class="button" onclick="fill(0)">
+          <img id="circle-0" src="./img/circle.png" alt="O" class="hide" />
+          <img id="cross-0" src="./img/cross.png" alt="X" class="hide" />
+        </button>
+        <button class="button" onclick="fill(1)">
+          <img id="circle-1" src="./img/circle.png" alt="O" class="hide" />
+          <img id="cross-1" src="./img/cross.png" alt="X" class="hide" />
+        </button>
+        <button class="button" onclick="fill(2)">
+          <img id="circle-2" src="./img/circle.png" alt="O" class="hide" />
+          <img id="cross-2" src="./img/cross.png" alt="X" class="hide" />
+        </button>
+        <button class="button" onclick="fill(3)">
+          <img id="circle-3" src="./img/circle.png" alt="O" class="hide" />
+          <img id="cross-3" src="./img/cross.png" alt="X" class="hide" />
+        </button>
+        <button class="button" onclick="fill(4)">
+          <img id="circle-4" src="./img/circle.png" alt="O" class="hide" />
+          <img id="cross-4" src="./img/cross.png" alt="X" class="hide" />
+        </button>
+        <button class="button" onclick="fill(5)">
+          <img id="circle-5" src="./img/circle.png" alt="O" class="hide" />
+          <img id="cross-5" src="./img/cross.png" alt="X" class="hide" />
+        </button>
+        <button class="button" onclick="fill(6)">
+          <img id="circle-6" src="./img/circle.png" alt="O" class="hide" />
+          <img id="cross-6" src="./img/cross.png" alt="X" class="hide" />
+        </button>
+        <button class="button" onclick="fill(7)">
+          <img id="circle-7" src="./img/circle.png" alt="O" class="hide" />
+          <img id="cross-7" src="./img/cross.png" alt="X" class="hide" />
+        </button>
+        <button class="button" onclick="fill(8)">
+          <img id="circle-8" src="./img/circle.png" alt="O" class="hide" />
+          <img id="cross-8" src="./img/cross.png" alt="X" class="hide" />
+        </button>
+        <div id="line-0" class="line hide" style="top: 49%; left: 3%;"></div>
+        <div id="line-1" class="line hide" style="top: 15%; left: 3%;"></div>
+        <div id="line-2" class="line hide" style="top: 84%; left: 3%;"></div>
+        <div id="line-3" class="line vertical hide" style="top: 49%; left: -31%;"></div>
+        <div id="line-4" class="line vertical hide" style="top: 49%; left: 3%;"></div>
+        <div id="line-5" class="line vertical hide" style="top: 49%; left: 37%;"></div>
+        <div id="line-6" class="line hide" style="top: 50%; left: 3%;transform: rotate(45deg) ;"></div>
+        <div id="line-7" class="line hide" style="top: 50%; left: 3%;transform: rotate(-45deg);"></div>
+        
+      </div>
+    </div>
+
     <div class="resetButton">
-      <button class="reset">Restart</button>
+      <button class="reset hide">Restart</button>
     </div>
   </body>
 </html>

@@ -94,10 +94,10 @@ function restart() {
   <div id="pTwo" class="player-inaktiv">
     Cross <img src="./img/cross.png" alt="" />
   </div>`;
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 8; i++) {
     document.getElementById("line-" + i).classList.add("hide");
   }
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 9; i++) {
     document.getElementById("circle-" + i).classList.add("hide");
     document.getElementById("cross-" + i).classList.add("hide");
   }

@@ -32,7 +32,6 @@ function draw() {
 }
 function win() {
   let winner;
-
   if (fields[0] == fields[1] && fields[1] == fields[2] && fields[0]) {
     winner = fields[0];
     document.getElementById("line-1").classList.remove("hide");
@@ -45,7 +44,7 @@ function win() {
     winner = fields[6];
     document.getElementById("line-2").classList.remove("hide");
   }
-  if (fields[0] == fields[3] && fields[3] == fields[6] && fields[0]) {
+    if (fields[0] == fields[3] && fields[3] == fields[6] && fields[0]) {
     winner = fields[0];
     document.getElementById("line-3").classList.remove("hide");
   }
@@ -57,7 +56,7 @@ function win() {
     winner = fields[2];
     document.getElementById("line-5").classList.remove("hide");
   }
-  if (fields[2] == fields[4] && fields[4] == fields[6] && fields[2]) {
+    if (fields[2] == fields[4] && fields[4] == fields[6] && fields[2]) {
     winner = fields[2];
     document.getElementById("line-7").classList.remove("hide");
   }
@@ -65,12 +64,64 @@ function win() {
     winner = fields[0];
     document.getElementById("line-6").classList.remove("hide");
   }
-  if (winner) {
+
+
+    if (winner) {
     gameOver = true;
     gameover(winner);
   }
+  // if(fields == 9)
+  // gameOver = true;
+  // undecided()
 }
 
+// function winVertical(){
+//   if (fields[0] == fields[1] && fields[1] == fields[2] && fields[0]) {
+//     winner = fields[0];
+//     document.getElementById("line-1").classList.remove("hide");
+//   }
+//   if (fields[3] == fields[4] && fields[4] == fields[5] && fields[3]) {
+//     winner = fields[3];
+//     document.getElementById("line-0").classList.remove("hide");
+//   }
+//   if (fields[6] == fields[7] && fields[7] == fields[8] && fields[6]) {
+//     winner = fields[6];
+//     document.getElementById("line-2").classList.remove("hide");
+//   }
+//  
+// }
+// function winHorizontal(){
+//   if (fields[0] == fields[3] && fields[3] == fields[6] && fields[0]) {
+//     winner = fields[0];
+//     document.getElementById("line-3").classList.remove("hide");
+//   }
+//   if (fields[1] == fields[4] && fields[4] == fields[7] && fields[1]) {
+//     winner = fields[1];
+//     document.getElementById("line-4").classList.remove("hide");
+//   }
+//   if (fields[2] == fields[5] && fields[5] == fields[8] && fields[2]) {
+//     winner = fields[2];
+//     document.getElementById("line-5").classList.remove("hide");
+//   }
+// }
+// function winDiagonal(){
+//   if (fields[2] == fields[4] && fields[4] == fields[6] && fields[2]) {
+//     winner = fields[2];
+//     document.getElementById("line-7").classList.remove("hide");
+//   }
+//   if (fields[0] == fields[4] && fields[4] == fields[8] && fields[0]) {
+//     winner = fields[0];
+//     document.getElementById("line-6").classList.remove("hide");
+//   }
+// }
+
+function undecided() {
+  document.getElementById("player").innerHTML = `
+  <div class="win">
+  <span class="neonText">!DRAW!</span>
+  </div>
+`;
+}
 function gameover(winner) {
   document.getElementById("player").innerHTML = `
   <div class="win">

@@ -123,14 +123,23 @@ body {
   }
   .player img {
     width: 50px;
+    height: 50px;
   }
   .map img {
-    width: 65px;
+    width: 65px!important;
   }
   .resetButton {
     scale: 0.5;
     top: 85%;
     left: 35%;
+  }
+
+
+}
+@media (max-width: 715px) {
+  .map img {
+    width: 100px;
+    
   }
 }
 .block {

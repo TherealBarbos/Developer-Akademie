@@ -1,0 +1,16 @@
+body{
+    background-image: url("./img/pokemon-ge98b04f8b_1920.jpg");
+    background-color: #cccccc;
+
+}
+.card{
+    background-color: antiquewhite;
+    width: 25%;
+    
+}
+.pName {
+  color: black;
+}
+.pName:first-letter {
+  text-transform: uppercase;
+}

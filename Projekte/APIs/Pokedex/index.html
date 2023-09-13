@@ -15,20 +15,13 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
   </head>
-  <body onload="loadPokemon()">
-   <div class="card" id="card">
-      <h2 id="pokeName" class="pName">Name</h2>
-      <h4 id="pokeNum">XXX</h4>
-      <img id="pokeImg" src="" alt="IMG" />
-      <div id="typesOne" class="type"></div>
-      <div id="typesTwo" class="type"></div>
+  <body onload="init()">
+    <div class="headline">Pokedex</div>
+
+    <div id="pokemon" class="list"></div>
+    <div class="more">
+      <button onclick="loadMore()" class="button">More</button>
     </div>
-    <div class="card">
-      <span>Height: <b id="pokeHeight"></b></span>
-      <span>Height: <b id="pokeWeight"></b></span>
-    </div>
-
-
-
+    <div id="details" class="details"></div>
   </body>
 </html>

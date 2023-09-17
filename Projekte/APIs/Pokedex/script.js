@@ -122,12 +122,11 @@ function renderinfo(currentPokemon) {
                               `<div class="type uppercase">${types[0]}</div>
                                <div class="type uppercase">${types[1]}</div>`}
       </div>
-      </div>
-     
     </div>
-    <div class="controlls"> <img onclick="closePopup()" src="img/x-mark-4-32.png"></div>
+  </div>
+    
     <div class="controlls"> <img onclick="navigateNext()" src="img/arrow-28-32.png"></div>
-   
+    <div class="controlls"> <img onclick="closePopup()" src="img/x-mark-4-32.png"></div>
   `;
 }
 

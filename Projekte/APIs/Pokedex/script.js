@@ -1,83 +1,122 @@
 let load = 25;
 let currentLoad = 0;
-
+let allPokemons = [];
+let currentPokemonIndex = -1;
+let initLoaded = false;
 async function init() {
-  loadPokemon();
+  await loadPokemon();
 }
+
 function loadMore() {
-  load = load + 20;
+  load += 20;
   loadCartContent();
 }
 
 async function loadPokemon() {
-  let url = `https://pokeapi.co/api/v2/pokemon/?limit=100000&offset=0`;
-  let response = await fetch(url);
-  let respondPokemon = await response.json();
-  let allPokemon = respondPokemon["results"];
-  globalThis.allPokemons = allPokemon;
-  loadCartContent();
+  if (initLoaded === false) {
+    initLoaded = true;
+    let url = `https://pokeapi.co/api/v2/pokemon/?limit=100000&offset=0`;
+    let response = await fetch(url);
+    let respondPokemon = await response.json();
+    allPokemons = respondPokemon.results;
+    loadCartContent();
+  }
 }
 
 async function loadCartContent() {
   for (let i = currentLoad; i < load; i++) {
+    if (i >= allPokemons.length) {
+      return;
+    }
     currentLoad++;
-    let thisPokemonUrl = allPokemons[i]["url"];
+    let thisPokemonUrl = allPokemons[i].url;
     let thisPokemon = await fetch(thisPokemonUrl);
     let currentPokemon = await thisPokemon.json();
-    rendercard(currentPokemon);
-   }
+    rendercard(currentPokemon, i);
+  }
 }
-function rendercard(currentPokemon) {
-  document.getElementById("pokemon").innerHTML += `
-    <div class="card" id="card" onclick="popup(${currentPokemon})" >
-      <div class="cHead">
-         <h2 id="pokeName" class="pName">${currentPokemon["name"]}</h2>
-         <h4 id="pokeNum">${"#" + currentPokemon["id"]}</h4>
-       </div>
-      <img id="pokeImg" src="${
-        currentPokemon["sprites"]["other"]["official-artwork"]["front_default"]
-      }" alt="IMG" />
-      <div class="cType">
-    </div> `;
-}
-// pokemoninfo/typen muss noch gefixed werden
-// <div id="typesOne" class="type uppercase">${currentPokemon["types"][0]["type"]["name"]}</div>
-// <div id="typesTwo" class="type uppercase">${currentPokemon["types"][1]["type"]["name"]}</div>
-// <div>
-// <span>Height: <b id="pokeHeight">${currentPokemon["height"]}</b></span>
-// <span>Height: <b id="pokeWeight">${currentPokemon["weight"]}</b></span>
-// </div>
 
-function popup(currentPokemon) {
 
-  let popupPokemon = currentPokemon[i]
-
-  document.getElementById('pokemon').classList.add('d-none');
-  document.getElementById('details').classList.remove('d-none');
-  document.getElementById('details').innerHTML = renderinfo(popupPokemon, i);
-
-}
-function renderinfo() 
-{
-  document.getElementById("details").innerHTML += `
-      <div>
-        <div class="dHead">${popupPokemon["name"]}${popupPokemon["id"]} </div>
-        <img src="${
-          popupPokemon["sprites"]["other"]["official-artwork"]["front_default"]
-        }" alt="" />
-        <div class="dAbout">größe gewicht</div>
-        <div class="dStats">
-          HP 
-          Attack 
-          Defense 
-          Special-Attack 
-          Special-Defense 
-          Speed
-          <div id="pHP" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
-                    aria-valuemax="100">100</div>
-        </div>
-      </div>
+function rendercard(currentPokemon, index) {
+    console.log("Current", currentPokemon)
+  let cardContainer = document.getElementById("pokemon");
+  let card = document.createElement("div");
+  card.className = "card";
+  card.setAttribute("data-url", currentPokemon.url); // Um die URL des Pokémon zu speichern
+  card.innerHTML = `
+    <div class="cHead">
+      <h2 class="pName">${currentPokemon.name}</h2>
+      <h4>${"#" + currentPokemon.id}</h4>
     </div>
-  `
-  
+    <img src="${currentPokemon.sprites.other["official-artwork"].front_default}" alt="IMG" />
+  `;
+  card.addEventListener("click", function () {
+    popup(currentPokemon, index);
+  });
+  cardContainer.appendChild(card);
 }
+
+function popup(currentPokemon, index) {
+  let popupContainer = document.getElementById("details");
+  popupContainer.innerHTML = renderinfo(currentPokemon);
+  currentPokemonIndex = index;
+  document.getElementById("pokemon").classList.add("d-none");
+  popupContainer.classList.remove("d-none");
+}
+
+function closePopup() {
+  document.getElementById("pokemon").classList.remove("d-none");
+  document.getElementById("details").classList.add("d-none");
+}
+
+function navigateNext() {
+  if (currentPokemonIndex < currentLoad - 1) {
+    currentPokemonIndex++;
+    let nextPokemonUrl = allPokemons[currentPokemonIndex].url;
+    fetch(nextPokemonUrl)
+      .then(response => response.json())
+      .then(data => popup(data, currentPokemonIndex));
+  }
+}
+
+function navigatePrevious() {
+  if (currentPokemonIndex > 0) {
+    currentPokemonIndex--;
+    let previousPokemonUrl = allPokemons[currentPokemonIndex].url;
+    fetch(previousPokemonUrl)
+      .then(response => response.json())
+      .then(data => popup(data, currentPokemonIndex));
+  }
+}
+
+function renderinfo(currentPokemon) {
+  const types = currentPokemon.types.map(type => type.type.name);
+  const stats = currentPokemon.stats;
+
+  return `
+    <div>
+      <div class="dHead">${currentPokemon.name}#${currentPokemon.id}</div>
+      <img src="${currentPokemon.sprites.other["official-artwork"].front_default}" alt="" />
+      <div class="dAbout">Größe: ${currentPokemon.height}, Gewicht: ${currentPokemon.weight}</div>
+      <div class="dStats">
+        HP: ${stats[0].base_stat} <progress value="${stats[0].base_stat}" max="255"></progress><br />
+        Attack: ${stats[1].base_stat} <progress value="${stats[1].base_stat}" max="255"></progress><br />
+        Defense: ${stats[2].base_stat} <progress value="${stats[2].base_stat}" max="255"></progress><br />
+        Special Attack: ${stats[3].base_stat} <progress value="${stats[3].base_stat}" max="255"></progress><br />
+        Special Defense: ${stats[4].base_stat} <progress value="${stats[4].base_stat}" max="255"></progress><br />
+        Speed: ${stats[5].base_stat} <progress value="${stats[5].base_stat}" max="255"></progress><br />
+      </div>
+      <div class="dTypes">
+        ${types.length === 1 ? `<div class="type uppercase">${types[0]}</div>` :
+                              `<div class="type uppercase">${types[0]}</div>
+                               <div class="type uppercase">${types[1]}</div>`}
+      </div>
+      <button onclick="navigatePrevious()">Previous</button>
+      <button onclick="closePopup()">Close</button>
+      <button onclick="navigateNext()">Next</button>
+    </div>
+  `;
+}
+
+// Initialisierung
+init();

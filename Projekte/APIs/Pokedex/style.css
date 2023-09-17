@@ -66,9 +66,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-.dCard{
+.dCard {
   margin: 1.5rem;
   background-color: rgb(94, 226, 149);
   width: 50rem;
@@ -81,7 +80,7 @@ body {
   align-items: row;
   justify-content: space-between;
 }
-.dImage{
+.dImage {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,32 +91,30 @@ body {
   justify-content: center;
   align-items: center;
 }
-.dAbout{
+.dAbout {
   font-size: 2rem;
   text-align: center;
   padding: 1rem;
 }
-.dStats{
-   font-size: 1.75rem;
-   padding: 1rem;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+.dStats {
+  font-size: 1.75rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.dTypes{
+.dTypes {
   width: 15rem;
   display: flex;
   justify-content: space-evenly;
   padding: 1rem;
 }
-.type{
+.type {
   border: solid 0.1rem;
   border-radius: 15px;
   padding: 5px;
 }
 
-.controlls img{
+.controlls img {
   width: 3rem;
- }
-
+}

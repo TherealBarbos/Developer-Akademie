@@ -61,12 +61,21 @@ function popup(currentPokemon, index) {
   popupContainer.innerHTML = renderinfo(currentPokemon);
   currentPokemonIndex = index;
   document.getElementById("pokemon").classList.add("d-none");
-  popupContainer.classList.remove("d-none");
+  document.getElementById("buttons").classList.add("d-none");
+   popupContainer.classList.remove("d-none");
 }
 
 function closePopup() {
   document.getElementById("pokemon").classList.remove("d-none");
+  document.getElementById("buttons").classList.remove("d-none");
   document.getElementById("details").classList.add("d-none");
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth" // Für einen sanften Bildlauf (optional)
+  });
 }
 
 function navigateNext() {
@@ -94,27 +103,31 @@ function renderinfo(currentPokemon) {
   const stats = currentPokemon.stats;
 
   return `
-    <div>
-      <div class="dHead">${currentPokemon.name}#${currentPokemon.id}</div>
-      <img src="${currentPokemon.sprites.other["official-artwork"].front_default}" alt="" />
-      <div class="dAbout">Größe: ${currentPokemon.height}, Gewicht: ${currentPokemon.weight}</div>
-      <div class="dStats">
-        HP: ${stats[0].base_stat} <progress value="${stats[0].base_stat}" max="255"></progress><br />
-        Attack: ${stats[1].base_stat} <progress value="${stats[1].base_stat}" max="255"></progress><br />
-        Defense: ${stats[2].base_stat} <progress value="${stats[2].base_stat}" max="255"></progress><br />
-        Special Attack: ${stats[3].base_stat} <progress value="${stats[3].base_stat}" max="255"></progress><br />
-        Special Defense: ${stats[4].base_stat} <progress value="${stats[4].base_stat}" max="255"></progress><br />
-        Speed: ${stats[5].base_stat} <progress value="${stats[5].base_stat}" max="255"></progress><br />
+  <div class="controlls"> <img onclick="navigatePrevious()" src="img/arrow-92-32.png"></div>
+    <div class="dCard">
+      <div class="dHead"><div class="uppercase">${currentPokemon.name}</div><div>#${currentPokemon.id}</div></div>
+      <div class="dImage"><img src="${currentPokemon.sprites.other["official-artwork"].front_default}" alt="" /></div>
+      <div class="dInfos">
+         <div class="dAbout">Größe: ${currentPokemon.height}, Gewicht: ${currentPokemon.weight}</div>
+         <div class="dStats">
+          HP: ${stats[0].base_stat} <progress value="${stats[0].base_stat}" max="255"></progress><br />
+          Attack: ${stats[1].base_stat} <progress value="${stats[1].base_stat}" max="255"></progress><br />
+          Defense: ${stats[2].base_stat} <progress value="${stats[2].base_stat}" max="255"></progress><br />
+          Special Attack: ${stats[3].base_stat} <progress value="${stats[3].base_stat}" max="255"></progress><br />
+          Special Defense: ${stats[4].base_stat} <progress value="${stats[4].base_stat}" max="255"></progress><br />
+          Speed:${stats[5].base_stat} <progress value="${stats[5].base_stat}" max="255">${stats[5].base_stat}</progress><br />
       </div>
       <div class="dTypes">
         ${types.length === 1 ? `<div class="type uppercase">${types[0]}</div>` :
                               `<div class="type uppercase">${types[0]}</div>
                                <div class="type uppercase">${types[1]}</div>`}
       </div>
-      <button onclick="navigatePrevious()">Previous</button>
-      <button onclick="closePopup()">Close</button>
-      <button onclick="navigateNext()">Next</button>
+      </div>
+     
     </div>
+    <div class="controlls"> <img onclick="closePopup()" src="img/x-mark-4-32.png"></div>
+    <div class="controlls"> <img onclick="navigateNext()" src="img/arrow-28-32.png"></div>
+   
   `;
 }
 

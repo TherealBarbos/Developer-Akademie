@@ -54,11 +54,11 @@ async function loadCartContent() {
     let thisPokemonUrl = allPokemons[i].url;
     let thisPokemon = await fetch(thisPokemonUrl);
     let currentPokemon = await thisPokemon.json();
-    rendercard(currentPokemon, i);
+    renderCard(currentPokemon, i);
   }
 }
 
-function rendercard(currentPokemon, index) {
+function renderCard(currentPokemon, index) {
   console.log("Current", currentPokemon);
   let cardContainer = document.getElementById("pokemon");
   let card = document.createElement("div");
@@ -81,7 +81,7 @@ function rendercard(currentPokemon, index) {
 
 function popup(currentPokemon, index) {
   let popupContainer = document.getElementById("details");
-  popupContainer.innerHTML = renderinfo(currentPokemon);
+  popupContainer.innerHTML = renderInfo(currentPokemon);
   currentPokemonIndex = index;
   document.getElementById("pokemon").classList.add("d-none");
   document.getElementById("buttons").classList.add("d-none");
@@ -121,7 +121,7 @@ function navigatePrevious() {
   }
 }
 
-function renderinfo(currentPokemon) {
+function renderInfo(currentPokemon) {
   const types = currentPokemon.types.map((type) => type.type.name);
   const stats = currentPokemon.stats;
 

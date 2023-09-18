@@ -101,15 +101,21 @@ function scrollToTop() {
   });
 }
 
-function navigateNext() {
+async function navigateNext() {
   if (currentPokemonIndex < currentLoad - 1) {
     currentPokemonIndex++;
     let nextPokemonUrl = allPokemons[currentPokemonIndex].url;
     fetch(nextPokemonUrl)
       .then((response) => response.json())
       .then((data) => popup(data, currentPokemonIndex));
+  } else {
+    // Wenn am Ende der geladenen Pokémon, mehr Pokémon laden
+    await loadMore();
+    // Starte die `navigateNext` Funktion erneut, um das neu geladene Pokémon anzuzeigen
+    navigateNext()
   }
 }
+
 
 function navigatePrevious() {
   if (currentPokemonIndex > 0) {

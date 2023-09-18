@@ -4,6 +4,7 @@ body {
   margin: 0;
   background-image: url("./img/pokemon-ge98b04f8b_1920.jpg");
   background-color: #cccccc;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }

@@ -3,6 +3,28 @@ let currentLoad = 0;
 let allPokemons = [];
 let currentPokemonIndex = -1;
 let initLoaded = false;
+
+const typeColors = {
+  normal: '#A8A878',
+  fire: '#F08030',
+  water: '#6890F0',
+  electric: '#F8D030',
+  grass: '#78C850',
+  ice: '#98D8D8',
+  fighting: '#C03028',
+  poison: '#A040A0',
+  ground: '#E0C068',
+  flying: '#A890F0',
+  psychic: '#F85888',
+  bug: '#A8B820',
+  rock: '#B8A038',
+  ghost: '#705898',
+  steel: '#B8B8D0',
+  dragon: '#7038F8',
+  dark: '#705848',
+  fairy: '#EE99AC',
+};
+
 async function init() {
   await loadPokemon();
 }
@@ -98,26 +120,35 @@ function navigatePrevious() {
   }
 }
 
+
 function renderinfo(currentPokemon) {
   const types = currentPokemon.types.map(type => type.type.name);
   const stats = currentPokemon.stats;
 
+  // Umrechnung der Größen- und Gewichtswerte
+  const heightInMeters = currentPokemon.height / 10; // Umrechnung von dm in m
+  const weightInKilograms = currentPokemon.weight / 10; // Umrechnung von hg in kg
+
+  // Verwende nur den ersten Typ für den Hintergrund
+  const firstType = types[0];
+  const backgroundColor = typeColors[firstType] || '#FFF';
+
   return `
   <div class="controlls"> <img onclick="navigatePrevious()" src="img/arrow-92-32.png"></div>
-    <div class="dCard">
+  <div class="dCard" style="background-color: ${backgroundColor};"> <!-- Hier das style-Attribut hinzufügen -->
       <div class="dHead"><div class="uppercase">${currentPokemon.name}</div><div>#${currentPokemon.id}</div></div>
       <div class="dImage"><img src="${currentPokemon.sprites.other["official-artwork"].front_default}" alt="" /></div>
       <div class="dInfos">
-         <div class="dAbout">Größe: ${currentPokemon.height}, Gewicht: ${currentPokemon.weight}</div>
+         <div class="dAbout">Größe: ${heightInMeters} m, Gewicht: ${weightInKilograms} kg</div>
          <div class="dStats">
-          HP: ${stats[0].base_stat} <progress value="${stats[0].base_stat}" max="255"></progress><br />
-          Attack: ${stats[1].base_stat} <progress value="${stats[1].base_stat}" max="255"></progress><br />
-          Defense: ${stats[2].base_stat} <progress value="${stats[2].base_stat}" max="255"></progress><br />
-          Special Attack: ${stats[3].base_stat} <progress value="${stats[3].base_stat}" max="255"></progress><br />
-          Special Defense: ${stats[4].base_stat} <progress value="${stats[4].base_stat}" max="255"></progress><br />
-          Speed:${stats[5].base_stat} <progress value="${stats[5].base_stat}" max="255">${stats[5].base_stat}</progress><br />
+          <div class="dStat">HP: ${stats[0].base_stat} <progress value="${stats[0].base_stat}" max="255"></progress></div>
+          <div class="dStat">Attack: ${stats[1].base_stat} <progress value="${stats[1].base_stat}" max="255"></progress></div>
+          <div class="dStat">Defense: ${stats[2].base_stat} <progress value="${stats[2].base_stat}" max="255"></progress></div>
+          <div class="dStat">Special Attack: ${stats[3].base_stat} <progress value="${stats[3].base_stat}" max="255"></progress></div>
+          <div class="dStat">Special Defense: ${stats[4].base_stat} <progress value="${stats[4].base_stat}" max="255"></progress></div>
+          <div class="dStat">Speed: ${stats[5].base_stat} <progress value="${stats[5].base_stat}" max="255">${stats[5].base_stat}</progress></div>
       </div>
-      <div class="dTypes">
+      <div class="dTypes"">
         ${types.length === 1 ? `<div class="type uppercase">${types[0]}</div>` :
                               `<div class="type uppercase">${types[0]}</div>
                                <div class="type uppercase">${types[1]}</div>`}
@@ -129,6 +160,8 @@ function renderinfo(currentPokemon) {
     <div class="controlls"> <img onclick="closePopup()" src="img/x-mark-4-32.png"></div>
   `;
 }
+
+
 
 // Initialisierung
 init();

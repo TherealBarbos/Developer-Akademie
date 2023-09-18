@@ -5,24 +5,24 @@ let currentPokemonIndex = -1;
 let initLoaded = false;
 
 const typeColors = {
-  normal: '#A8A878',
-  fire: '#F08030',
-  water: '#6890F0',
-  electric: '#F8D030',
-  grass: '#78C850',
-  ice: '#98D8D8',
-  fighting: '#C03028',
-  poison: '#A040A0',
-  ground: '#E0C068',
-  flying: '#A890F0',
-  psychic: '#F85888',
-  bug: '#A8B820',
-  rock: '#B8A038',
-  ghost: '#705898',
-  steel: '#B8B8D0',
-  dragon: '#7038F8',
-  dark: '#705848',
-  fairy: '#EE99AC',
+  normal: "#A8A878",
+  fire: "#F08030",
+  water: "#6890F0",
+  electric: "#F8D030",
+  grass: "#78C850",
+  ice: "#98D8D8",
+  fighting: "#C03028",
+  poison: "#A040A0",
+  ground: "#E0C068",
+  flying: "#A890F0",
+  psychic: "#F85888",
+  bug: "#A8B820",
+  rock: "#B8A038",
+  ghost: "#705898",
+  steel: "#B8B8D0",
+  dragon: "#7038F8",
+  dark: "#705848",
+  fairy: "#EE99AC",
 };
 
 async function init() {
@@ -58,19 +58,20 @@ async function loadCartContent() {
   }
 }
 
-
 function rendercard(currentPokemon, index) {
-    console.log("Current", currentPokemon)
+  console.log("Current", currentPokemon);
   let cardContainer = document.getElementById("pokemon");
   let card = document.createElement("div");
   card.className = "card";
   card.setAttribute("data-url", currentPokemon.url); // Um die URL des Pokémon zu speichern
   card.innerHTML = `
     <div class="cHead">
-      <h2 class="pName">${currentPokemon.name}</h2>
-      <h4>${"#" + currentPokemon.id}</h4>
+      <div class="pName">${currentPokemon.name}</div>
+      <div class="pNo">${"#" + currentPokemon.id}</div>
     </div>
-    <img src="${currentPokemon.sprites.other["official-artwork"].front_default}" alt="IMG" />
+    <img src="${
+      currentPokemon.sprites.other["official-artwork"].front_default
+    }" alt="IMG" />
   `;
   card.addEventListener("click", function () {
     popup(currentPokemon, index);
@@ -84,7 +85,7 @@ function popup(currentPokemon, index) {
   currentPokemonIndex = index;
   document.getElementById("pokemon").classList.add("d-none");
   document.getElementById("buttons").classList.add("d-none");
-   popupContainer.classList.remove("d-none");
+  popupContainer.classList.remove("d-none");
 }
 
 function closePopup() {
@@ -96,7 +97,7 @@ function closePopup() {
 function scrollToTop() {
   window.scrollTo({
     top: 0,
-    behavior: "smooth" // Für einen sanften Bildlauf (optional)
+    behavior: "smooth", // Für einen sanften Bildlauf (optional)
   });
 }
 
@@ -105,8 +106,8 @@ function navigateNext() {
     currentPokemonIndex++;
     let nextPokemonUrl = allPokemons[currentPokemonIndex].url;
     fetch(nextPokemonUrl)
-      .then(response => response.json())
-      .then(data => popup(data, currentPokemonIndex));
+      .then((response) => response.json())
+      .then((data) => popup(data, currentPokemonIndex));
   }
 }
 
@@ -115,14 +116,13 @@ function navigatePrevious() {
     currentPokemonIndex--;
     let previousPokemonUrl = allPokemons[currentPokemonIndex].url;
     fetch(previousPokemonUrl)
-      .then(response => response.json())
-      .then(data => popup(data, currentPokemonIndex));
+      .then((response) => response.json())
+      .then((data) => popup(data, currentPokemonIndex));
   }
 }
 
-
 function renderinfo(currentPokemon) {
-  const types = currentPokemon.types.map(type => type.type.name);
+  const types = currentPokemon.types.map((type) => type.type.name);
   const stats = currentPokemon.stats;
 
   // Umrechnung der Größen- und Gewichtswerte
@@ -131,37 +131,123 @@ function renderinfo(currentPokemon) {
 
   // Verwende nur den ersten Typ für den Hintergrund
   const firstType = types[0];
-  const backgroundColor = typeColors[firstType] || '#FFF';
+  const backgroundColor = typeColors[firstType] || "#FFF";
 
   return `
-  <div class="controlls"> <img onclick="navigatePrevious()" src="img/arrow-96-128.png"></div>
-  <div class="dCard" style="background-color: ${backgroundColor};"> <!-- Hier das style-Attribut hinzufügen -->
-      <div class="dHead"><div class="uppercase">${currentPokemon.name}</div><div>#${currentPokemon.id}</div></div>
-      <div class="dImage"><img src="${currentPokemon.sprites.other["official-artwork"].front_default}" alt="" /></div>
-      <div class="dInfos">
-         <div class="dAbout">Größe: ${heightInMeters} m, Gewicht: ${weightInKilograms} kg</div>
-         <div class="dStats">
-          <div class="dStat"><b>HP:</b> ${stats[0].base_stat} <progress value="${stats[0].base_stat}" max="255"></progress></div>
-          <div class="dStat"><b>Attack:</b> ${stats[1].base_stat} <progress value="${stats[1].base_stat}" max="255"></progress></div>
-          <div class="dStat"><b>Defense:</b> ${stats[2].base_stat} <progress value="${stats[2].base_stat}" max="255"></progress></div>
-          <div class="dStat"><b>Special Attack:</b> ${stats[3].base_stat} <progress value="${stats[3].base_stat}" max="255"></progress></div>
-          <div class="dStat"><b>Special Defense:</b> ${stats[4].base_stat} <progress value="${stats[4].base_stat}" max="255"></progress></div>
-          <div class="dStat"><b>Speed: </b>${stats[5].base_stat} <progress value="${stats[5].base_stat}" max="255">${stats[5].base_stat}</progress></div>
-      </div>
-      <div class="dTypes"">
-        ${types.length === 1 ? `<div class="type uppercase">${types[0]}</div>` :
-                              `<div class="type uppercase">${types[0]}</div>
-                               <div class="type uppercase">${types[1]}</div>`}
-      </div>
-    </div>
-    <div class="close"> <img onclick="closePopup()" src="img/x-mark-5-128.png"></div>
+  <div class="controlls">
+  <img onclick="navigatePrevious()" src="img/arrow-96-128.png" />
+</div>
+<div class="dCard" style="background-color: ${backgroundColor};">
+  <!-- Hier das style-Attribut hinzufügen -->
+  <div class="dHead">
+    <div class="uppercase">${ currentPokemon.name }</div>
+    <div>#${currentPokemon.id}</div>
   </div>
-    
-    <div class="controlls"> <img onclick="navigateNext()" src="img/arrow-32-128.png"></div>
+  <div class="dImage">
+    <img src="${ currentPokemon.sprites.other["official-artwork"].front_default
+    }" alt="" />
+  </div>
+  
+    <div class="dAbout">
+      Größe: ${heightInMeters} m, Gewicht: ${weightInKilograms} kg
+    </div>
+    <div class="dStats">
+      
+        <div class="dStat">
+          <b>HP:</b>
+          <div class="custom-progress-bar">
+            <div
+              class="progress-fill"
+              style="width: ${
+             (stats[0].base_stat / 255) * 100
+           }%;"
+            ></div>
+            <div class="progress-text">${stats[0].base_stat}</div>
+          </div>
+        </div>
 
-  `;
-}
+        <div class="dStat">
+          <b>Attack:</b>
+          <div class="custom-progress-bar">
+            <div
+              class="progress-fill"
+              style="width: ${
+           (stats[1].base_stat / 255) * 100
+         }%;"
+            ></div>
+            <div class="progress-text">${stats[1].base_stat}</div>
+          </div>
+        </div>
 
+        <div class="dStat">
+          <b>Defense:</b>
+          <div class="custom-progress-bar">
+            <div
+              class="progress-fill"
+              style="width: ${
+         (stats[2].base_stat / 255) * 100
+       }%;"
+            ></div>
+            <div class="progress-text">${stats[2].base_stat}</div>
+          </div>
+        </div>
+
+        <div class="dStat">
+          <b>Spec. Attack:</b>
+          <div class="custom-progress-bar">
+            <div
+              class="progress-fill"
+              style="width: ${
+         (stats[3].base_stat / 255) * 100
+       }%;"
+            ></div>
+            <div class="progress-text">${stats[3].base_stat}</div>
+          </div>
+        </div>
+
+        <div class="dStat">
+          <b>Spec. Defense:</b>
+          <div class="custom-progress-bar">
+            <div
+              class="progress-fill"
+              style="width: ${
+   (stats[4].base_stat / 255) * 100
+ }%;"
+            ></div>
+            <div class="progress-text">${stats[4].base_stat}</div>
+          </div>
+        </div>
+        <div class="dStat">
+          <b>Speed:</b>
+          <div class="custom-progress-bar">
+            <div
+              class="progress-fill"
+              style="width: ${
+    (stats[5].base_stat / 255) * 100
+  }%;"
+            ></div>
+            <div class="progress-text">${stats[5].base_stat}</div>
+          </div>
+        </div>
+      </div>
+      <div class="dTypes""> ${ types.length === 1 ? `
+      <div class="type uppercase">${types[0]}</div>
+      ` : `
+      <div class="type uppercase">${types[0]}</div>
+      <div class="type uppercase">${types[1]}</div>
+      ` }
+    </div>
+  
+  <div class="close">
+    <img onclick="closePopup()" src="img/x-mark-5-128.png" />
+  </div>
+</div>
+
+<div class="controlls">
+  <img onclick="navigateNext()" src="img/arrow-32-128.png" />
+</div>
+
+`; }
 
 
 // Initialisierung

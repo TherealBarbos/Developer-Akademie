@@ -27,9 +27,10 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px;
-  color: rgb(185, 120, 35);
+  color: #FFCC01;
   font-size: 5.5em;
   font-family: "Pokemon Solid", sans-serif;
+  border-color: #375DAA;
 }
 .list {
   display: flex;
@@ -104,7 +105,7 @@ body {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  }
+}
 .dStat {
   display: flex;
   flex-direction: row;
@@ -124,6 +125,15 @@ body {
 }
 
 .controlls img {
-  width: 3rem;
-}
+  width: 2.5rem;
+  }
 
+.close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.close img {
+  width: 2.5rem;
+
+}

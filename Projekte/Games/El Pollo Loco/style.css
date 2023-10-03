@@ -11,8 +11,8 @@ h1 {
     font-size: 3rem;
 }
 
-#canvas {
-    background-color: darkturquoise;
+canvas {
+    background-color: black;
     width: 1280px;
     height: 800px;
 }

@@ -1,6 +1,8 @@
+let canvas;
+let ctx;
 
 
-function onload () {
+function init() {
 
-    
+
 }

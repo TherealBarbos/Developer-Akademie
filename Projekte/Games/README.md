@@ -1,6 +1,6 @@
 # Poject for Games 
 
-# two Versions
+# There are two Versions
 
 ## El Pollo Loco
 

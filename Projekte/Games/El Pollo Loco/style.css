@@ -1,18 +1,12 @@
-body {
-    background-color: darkslategrey;
-    color: indigo;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Importieren Sie andere CSS-Dateien */
 
-}
-h1 {
-    font-size: 3rem;
-}
+/* color PAGE */
+/* new css in assets*/
+@import url("assets/css/colors.css");
 
-canvas {
-    background-color: black;
-    width: 1280px;
-    height: 800px;
-}
+/* Importieren Sie andere CSS-Dateien */
+
+/* Basement PAGE */
+/* new css in assets*/
+@import url("assets/css/basement.css");
+

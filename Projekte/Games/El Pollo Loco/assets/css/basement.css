@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    background-color: #BE5742;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+h1 {
+    font-size: 3rem;
+}
+
+canvas {
+    background-color: black;
+    width: 1280px;
+    height: 800px;
+}
+
+.headline {
+    font-size: 3rem;
+    color: var(--mexico);
+    margin: 2rem;
+}

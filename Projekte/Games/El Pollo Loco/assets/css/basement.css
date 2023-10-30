@@ -14,8 +14,10 @@ h1 {
 
 canvas {
     background-color: black;
-    width: 1280px;
-    height: 800px;
+    /* width: 1280px;
+    height: 800px; */
+    width: 720px;
+    height: 480px;
 }
 
 .headline {

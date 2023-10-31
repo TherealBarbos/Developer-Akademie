@@ -23,7 +23,7 @@ class MovableObject {
             let img = new Image();
             img.src = path;
             this.imageCach[path] = path;
-        })
+        });
     }
 
     moveRight(){

@@ -9,7 +9,8 @@ class World {
     new Cloud()
   ];
   backgroundObjects = [
-    new BackgroundObject('assets/img/5_background/layers/1_first_layer/full.png', 0),
+    new BackgroundObject('assets/img/5_background/layers/air.png', 0),
+    new BackgroundObject('assets/img/5_background/layers/3_third_layer/full.png', 0),
     new BackgroundObject('assets/img/5_background/layers/2_second_layer/full.png', 0),
     new BackgroundObject('assets/img/5_background/layers/1_first_layer/full.png', 0),
   ];
@@ -37,6 +38,7 @@ class World {
       self.draw();
     });
   }
+
   addObjectsToMap(Objects) {
     Objects.forEach(o => {
       this.addToMap(o)
@@ -44,7 +46,9 @@ class World {
   }
 
   addToMap(mo) {
-    this.ctx.drawImage(mo.img, mo.x, mo.y, mo.width, mo.height);
+    if (mo.img instanceof HTMLImageElement || mo.img instanceof SVGImageElement) {
+      this.ctx.drawImage(mo.img, mo.x, mo.y, mo.width, mo.height);
+    }
   }
 
 

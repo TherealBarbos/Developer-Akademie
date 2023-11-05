@@ -1,6 +1,6 @@
 class Chicken extends MovableObject{
 
-    y= 355;
+    y= 365;
     height = 60;
     width = 80;
     CHICKEN_WALKING = [
@@ -28,7 +28,7 @@ class Chicken extends MovableObject{
         let path = this.CHICKEN_WALKING[i];
         this.img = this.imageCache[path];
         this.currentImage++;
-        }, 200 );
+        }, 1000 );
     }
 
 

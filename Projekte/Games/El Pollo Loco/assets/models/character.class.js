@@ -1,8 +1,33 @@
 class Character extends MovableObject {
   height = 280;
   y = 155;
+  speed = 2.5;
 
-  PEPE_WALKING = [
+  PEPE_STAND = [
+    "assets/img/2_character_pepe/1_idle/idle/I-1.png",
+    "assets/img/2_character_pepe/1_idle/idle/I-2.png",
+    "assets/img/2_character_pepe/1_idle/idle/I-3.png",
+    "assets/img/2_character_pepe/1_idle/idle/I-4.png",
+    "assets/img/2_character_pepe/1_idle/idle/I-5.png",
+    "assets/img/2_character_pepe/1_idle/idle/I-6.png",
+    "assets/img/2_character_pepe/1_idle/idle/I-7.png",
+    "assets/img/2_character_pepe/1_idle/idle/I-8.png",
+    "assets/img/2_character_pepe/1_idle/idle/I-9.png",
+    "assets/img/2_character_pepe/1_idle/idle/I-10.png",
+  ];
+  PEPE_SLEEP = [
+    "assets/img/2_character_pepe/1_idle/long_idle/I-11.png",
+    "assets/img/2_character_pepe/1_idle/long_idle/I-12.png",
+    "assets/img/2_character_pepe/1_idle/long_idle/I-13.png",
+    "assets/img/2_character_pepe/1_idle/long_idle/I-14.png",
+    "assets/img/2_character_pepe/1_idle/long_idle/I-15.png",
+    "assets/img/2_character_pepe/1_idle/long_idle/I-16.png",
+    "assets/img/2_character_pepe/1_idle/long_idle/I-17.png",
+    "assets/img/2_character_pepe/1_idle/long_idle/I-18.png",
+    "assets/img/2_character_pepe/1_idle/long_idle/I-19.png",
+    "assets/img/2_character_pepe/1_idle/long_idle/I-20.png",
+  ];
+  PEPE_WALK = [
     "assets/img/2_character_pepe/2_walk/W-21.png",
     "assets/img/2_character_pepe/2_walk/W-22.png",
     "assets/img/2_character_pepe/2_walk/W-23.png",
@@ -10,29 +35,90 @@ class Character extends MovableObject {
     "assets/img/2_character_pepe/2_walk/W-25.png",
     "assets/img/2_character_pepe/2_walk/W-26.png",
   ];
+  PEPE_JUMP = [
+    "assets/img/2_character_pepe/3_jump/J-31.png",
+    "assets/img/2_character_pepe/3_jump/J-32.png",
+    "assets/img/2_character_pepe/3_jump/J-33.png",
+    "assets/img/2_character_pepe/3_jump/J-34.png",
+    "assets/img/2_character_pepe/3_jump/J-35.png",
+    "assets/img/2_character_pepe/3_jump/J-36.png",
+    "assets/img/2_character_pepe/3_jump/J-37.png",
+    "assets/img/2_character_pepe/3_jump/J-38.png",
+    "assets/img/2_character_pepe/3_jump/J-39.png",
+  ];
+  PEPE_HURT = [
+    "assets/img/2_character_pepe/4_hurt/H-41.png",
+    "assets/img/2_character_pepe/4_hurt/H-42.png",
+    "assets/img/2_character_pepe/4_hurt/H-43.png",
+  ];
+  PEPE_DEAD = [
+    "assets/img/2_character_pepe/5_dead/D-51.png",
+    "assets/img/2_character_pepe/5_dead/D-52.png",
+    "assets/img/2_character_pepe/5_dead/D-53.png",
+    "assets/img/2_character_pepe/5_dead/D-54.png",
+    "assets/img/2_character_pepe/5_dead/D-55.png",
+    "assets/img/2_character_pepe/5_dead/D-56.png",
+    "assets/img/2_character_pepe/5_dead/D-57.png",
+  ];
+
   world;
+  walking_sound = new Audio("assets/sounds/pepe_walk.mp3");
 
   constructor() {
-    super().loadImage("assets/img/2_character_pepe/2_walk/W-21.png");
-    this.loadImages(this.PEPE_WALKING);
+    super().loadImage(this.PEPE_STAND[0]);
+    this.loadImages(this.PEPE_STAND);
+    this.loadImages(this.PEPE_WALK);
+    this.loadImages(this.PEPE_JUMP);
+    this.stand();
 
-    this.animate();
+    this.walk();
+    this.jump();
   }
 
-  animate() {
 
-
+  stand() {
+    setInterval(() => {}, 1000 / 60);
 
     setInterval(() => {
-      if (this.world.keyboard.RIGHT) {
-        let i = this.currentImage % this.PEPE_WALKING.length;
-        let path = this.PEPE_WALKING[i];
-        this.img = this.imageCache[path];
-        this.currentImage++;
+      this.playAnimation(this.PEPE_STAND);
+    }, 120);
+  }
+  
+  walk() {
+    setInterval(() => {
+      this.walking_sound.pause();
+      if (this.world.keyboard.RIGHT && this.x < this.world.level.levelEndX) {
+        this.x += this.speed;
+        this.otherDirection = false;
+        this.walking_sound.play();
+      }
+      if (this.world.keyboard.LEFT && this.x > 0) {
+        this.x -= this.speed;
+        this.otherDirection = true;
+        this.walking_sound.play();
+      }
+
+      this.world.camera_x = -this.x + 100;
+    }, 1000 / 60);
+
+    setInterval(() => {
+      if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
+        this.playAnimation(this.PEPE_WALK);
       }
     }, 120);
-
   }
 
-  jump() {}
+  jump() {
+    setInterval(() => {
+      if (this.world.keyboard.UP) {
+        this.y -= 5;
+      }
+    }, 1000 / 60);
+
+    setInterval(() => {
+      if (this.world.keyboard.UP) {
+        this.playAnimation(this.PEPE_JUMP);
+      }
+    }, 120);
+  }
 }

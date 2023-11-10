@@ -18,6 +18,16 @@ class World {
     this.character.world = this;
   }
 
+  checkCollisions() {
+    setInterval(() => {
+      this.level.enemies.forech((enemy) => {
+        if (this.character.isColliding(enemy)) {
+          console.log("Collision", enemy);
+        }
+      });
+    }, 500);
+  }
+
   draw() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -44,20 +54,26 @@ class World {
 
   addToMap(mo) {
     if (mo.otherDirection) {
-      this.ctx.save();
-      this.ctx.translate(mo.width, 0);
-      this.ctx.scale(-1, 1);
-      mo.x = mo.x * -1;
+      this.changeDirection(mo);
     }
-    if (
-      mo.img instanceof HTMLImageElement ||
-      mo.img instanceof SVGImageElement
-    ) {
-      this.ctx.drawImage(mo.img, mo.x, mo.y, mo.width, mo.height);
-    }
+
+    mo.draw(this.ctx);
+    mo.drawFrame(this.ctx);
+
     if (mo.otherDirection) {
-      mo.x = mo.x * -1;
-      this.ctx.restore();
+      this.changeDirectionReturn(mo);
     }
+  }
+
+  changeDirection(mo) {
+    this.ctx.save();
+    this.ctx.translate(mo.width, 0);
+    this.ctx.scale(-1, 1);
+    mo.x = mo.x * -1;
+  }
+
+  changeDirectionReturn(mo) {
+    mo.x = mo.x * -1;
+    this.ctx.restore();
   }
 }

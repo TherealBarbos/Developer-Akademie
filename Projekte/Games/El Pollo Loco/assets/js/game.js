@@ -25,9 +25,25 @@ window.addEventListener("keydown", (e) => {
   if (e.key == "ArrowUp"){
     keyboard.UP = true;
   }
-  if (e.key == "Space"){
+  if (e.key == " "){
     keyboard.SPACE = true;
+  } 
+  if (e.key == "w"){
+    keyboard.W = true;
   }
+  if (e.key == "a"){
+    keyboard.A = true;
+  }
+  if (e.key == "s"){
+    keyboard.S = true;
+  }
+  if (e.key == "d"){
+    keyboard.D = true;
+  }
+  if (e.key == "Shift"){
+    keyboard.SHIFT = true;
+  }
+  console.log('keydown', e.key);
 });
 
 
@@ -44,7 +60,22 @@ window.addEventListener("keyup", (e) => {
   if (e.key == "ArrowUp"){
     keyboard.UP = false;
   }
-  if (e.key == "Space"){
+  if (e.key == " "){
     keyboard.SPACE = false;
+  } 
+  if (e.key == "w"){
+    keyboard.W = false;
+  }
+  if (e.key == "a"){
+    keyboard.A = false;
+  }
+  if (e.key == "s"){
+    keyboard.S = false;
+  }
+  if (e.key == "d"){
+    keyboard.D = false;
+  }
+  if (e.key == "Shift"){
+    keyboard.SHIFT = false;
   }
 });

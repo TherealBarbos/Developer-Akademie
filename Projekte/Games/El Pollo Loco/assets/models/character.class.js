@@ -86,12 +86,12 @@ class Character extends MovableObject {
   pepe_walk() {
     setInterval(() => {
       this.walking_sound.pause();
-      if (this.world.keyboard.RIGHT || this.world.keyboard.D && this.x < this.world.level.levelEndX) {
+      if ((this.world.keyboard.RIGHT || this.world.keyboard.D )&& this.x < this.world.level.levelEndX) {
         this.moveRight();
         this.otherDirection = false;
         this.walking_sound.play();
       }
-      if (this.world.keyboard.LEFT || this.world.keyboard.A && this.x > 0) {
+      if ((this.world.keyboard.LEFT || this.world.keyboard.A) && this.x > 0) {
         this.moveLeft();
         this.otherDirection = true;
         this.walking_sound.play();
@@ -109,13 +109,13 @@ class Character extends MovableObject {
 
   pepe_jump() {
     setInterval(() => {
-      if (this.world.keyboard.UP || this.world.keyboard.SPACE) {
+      if ((this.world.keyboard.UP || this.world.keyboard.SPACE) && !this.isAboveGround()) {
         this.jump();
       }
     }, 1000 / 60);
 
     setInterval(() => {
-      if (this.world.keyboard.UP || this.world.keyboard.SPACE) {
+      if ((this.world.keyboard.UP || this.world.keyboard.SPACE) && this.isAboveGround()) {
         this.playAnimation(this.PEPE_JUMP);
       }
     }, 120);

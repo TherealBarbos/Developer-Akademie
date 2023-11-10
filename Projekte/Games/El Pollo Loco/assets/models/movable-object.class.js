@@ -22,7 +22,7 @@ class MovableObject {
   }
 
   isAboveGround() {
-    return this.y < 150;
+    return this.y < 155;
   }
 
 
@@ -88,7 +88,7 @@ isColliding (mo) {
     this.x -= this.speed;
   }
   jump() {
-    this.speedY = 20;
+    this.speedY = 25;
   }
 
 

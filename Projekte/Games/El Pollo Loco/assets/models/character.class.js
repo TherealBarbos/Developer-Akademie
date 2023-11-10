@@ -69,6 +69,8 @@ class Character extends MovableObject {
     this.loadImages(this.PEPE_STAND);
     this.loadImages(this.PEPE_WALK);
     this.loadImages(this.PEPE_JUMP);
+    this.loadImages(this.PEPE_HURT);
+    this.loadImages(this.PEPE_DEAD);
     this.applyGravity();
     this.pepe_stand();
     this.pepe_walk();
@@ -120,4 +122,21 @@ class Character extends MovableObject {
       }
     }, 120);
   }
+//   pepe_hurt() {
+//     setInterval(() => {
+//       if () {
+//         this.playAnimation(this.PEPE_HURT);
+//       }
+//     }, 120);
+//   }
+
+  pepe_dead (){
+    setInterval(() => {
+      if (this.isDead) {
+        this.playAnimation(this.PEPE_DEAD);
+      }
+    }, 120);
+  }
+
+
 }

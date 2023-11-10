@@ -10,6 +10,7 @@ class MovableObject {
   otherDirection = false;
   speedY = 0;
   acceleration = 2.5;
+  energy = 100;
 
   applyGravity() {
     setInterval(() => {
@@ -79,6 +80,17 @@ class MovableObject {
   //           (this.y + this.offsetY) <= (mo.y + mo.height) &&
   //           mo.onCollisionCourse;
   // }
+
+  hit(){
+    this.energy -= 5;
+    if (this.energy < 0) {
+      this.energy =0;
+    }
+  }
+
+  isDead() {
+    return this.energy == 0;
+  }
 
   playAnimation(images) {
     let i = this.currentImage % images.length;

@@ -11,7 +11,6 @@ class MovableObject {
   speedY = 0;
   acceleration = 2.5;
 
-  
   applyGravity() {
     setInterval(() => {
       if (this.isAboveGround() || this.speedY > 0) {
@@ -24,7 +23,6 @@ class MovableObject {
   isAboveGround() {
     return this.y < 155;
   }
-
 
   loadImage(path) {
     this.img = new Image();
@@ -65,13 +63,22 @@ class MovableObject {
       ctx.stroke();
     }
   }
+
+  isColliding(mo) {
+    return this.x + this.width > mo.x &&
+      this.y + this.height > mo.y &&
+      this.x < mo.x &&
+      this.y < mo.y + mo.height
+    
+  }
+
   // Bessere Formel zur Kollisionsberechnung (Genauer)
-isColliding (mo) {
-  return  (this.x + this.width) >= mo.x && this.x <= (mo.x + mo.width) && 
-          (this.y + this.offsetY + this.height) >= mo.y &&
-          (this.y + this.offsetY) <= (mo.y + mo.height) && 
-          mo.onCollisionCourse; 
-}
+  // isColliding (mo) {
+  //   return  (this.x + this.width) >= mo.x && this.x <= (mo.x + mo.width) &&
+  //           (this.y + this.offsetY + this.height) >= mo.y &&
+  //           (this.y + this.offsetY) <= (mo.y + mo.height) &&
+  //           mo.onCollisionCourse;
+  // }
 
   playAnimation(images) {
     let i = this.currentImage % images.length;
@@ -90,10 +97,4 @@ isColliding (mo) {
   jump() {
     this.speedY = 25;
   }
-
-
-
 }
-
-
-

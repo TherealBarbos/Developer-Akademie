@@ -43,7 +43,7 @@ window.addEventListener("keydown", (e) => {
   if (e.key == "Shift"){
     keyboard.SHIFT = true;
   }
-  console.log('keydown', e.key);
+  // console.log('keydown', e.key);
 });
 
 

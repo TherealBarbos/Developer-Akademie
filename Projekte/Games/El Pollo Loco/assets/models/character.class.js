@@ -122,6 +122,7 @@ class Character extends MovableObject {
       }
     }, 120);
   }
+  
 //   pepe_hurt() {
 //     setInterval(() => {
 //       if () {

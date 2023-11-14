@@ -9,6 +9,7 @@ class Keyboard {
     S = false;
     D = false;
     SHIFT = false;
+    CONTROL = false;
 
 
 }

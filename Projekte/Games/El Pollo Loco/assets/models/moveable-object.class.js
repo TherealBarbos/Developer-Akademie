@@ -1,6 +1,7 @@
-class MovableObject extends DrawableObject {
+class MoveableObject extends DrawableObject {
   speed = 0.15;
   otherDirection = false;
+  speedX = 0;
   speedY = 0;
   acceleration = 2.5;
   energy = 100;
@@ -15,16 +16,20 @@ class MovableObject extends DrawableObject {
   }
 
   isAboveGround() {
-    return this.y < 155;
+    if (this instanceof ThrowableObject) {
+      return true;
+    } else {
+      return this.y < 155;
+    }
   }
 
-
   isColliding(mo) {
-    return this.x + this.width > mo.x &&
+    return (
+      this.x + this.width > mo.x &&
       this.y + this.height > mo.y &&
       this.x < mo.x &&
       this.y < mo.y + mo.height
-    
+    );
   }
 
   // Bessere Formel zur Kollisionsberechnung (Genauer)
@@ -35,10 +40,10 @@ class MovableObject extends DrawableObject {
   //           mo.onCollisionCourse;
   // }
 
-  hit(){
+  hit() {
     this.energy -= 20;
     if (this.energy < 0) {
-      this.energy =0;
+      this.energy = 0;
     } else {
       this.lastHit = new Date().getTime();
     }

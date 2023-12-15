@@ -13,5 +13,9 @@ class Level {
     this.bottles = bottle;
     this.backgroundObjects = backgroundObjects;
     this.levelEndX = levelEndX;
+
+    this.maxThrows = bottle.length;
   }
+
+
 }

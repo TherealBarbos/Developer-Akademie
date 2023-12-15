@@ -9,7 +9,7 @@ class World {
   canvas;
   keyboard;
   camera_x = 0;
-  remainingThrows = 2;
+  remainingThrows;
   coinCounter = 0;
 
   constructor(canvas, keyboard) {
@@ -45,6 +45,12 @@ class World {
           }
         }
       });
+      this.collectableObjects.forEach((collectableObject) => {
+        if (this.character.isintouch(collectableObject)) {
+          // Das sammelbare Objekt wurde berührt, führe die Sammel-Logik aus
+          collectableObject.onCollect(this);
+        }
+      });
     }, 500);
   }
 
@@ -63,11 +69,17 @@ class World {
         (this.keyboard.CONTROL || this.keyboard.E) &&
         this.remainingThrows > 0
       ) {
-        let bottle = new ThrowableObject(this.character.x, this.character.y);
-        this.throwableObjects.push(bottle);
-        this.remainingThrows--;
+        if (this.remainingThrows <= this.level.maxThrows) {
+          let bottle = new ThrowableObject(this.character.x, this.character.y);
+          this.throwableObjects.push(bottle);
+          this.remainingThrows--;
+  
 
-        console.log(`Verbleibende Würfe: ${this.remainingThrows}`);
+          let percentage = (this.remainingThrows / this.level.maxThrows*2) * 100;
+          this.bottleBar.setPercentage(percentage);
+  
+          console.log(`Verbleibende Würfe: ${this.remainingThrows}`);
+        }
       }
     }, 250);
   }
@@ -80,6 +92,7 @@ class World {
     }, 1000);
 
     // Zeige "Game Over"-Text an
+
   }
 
   draw() {

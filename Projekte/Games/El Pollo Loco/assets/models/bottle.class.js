@@ -11,23 +11,20 @@ class Bottle extends CollectableObject {
 
     this.float();
   }
+  onCollect(world) {
+    // Logik für das Sammeln einer Flasche
+    // Zum Beispiel: Erhöhe den Flaschenzähler, aktualisiere die Anzeige usw.
+    world.remainingThrows += 2; // Hier musst du die Logik anpassen1
+    console.log(`Verbleibende Würfe: ${world.remainingThrows}`);
 
+    // Aktualisiere die Flaschenladungsanzeige
+    world.bottleBar.setPercentage((world.remainingThrows / world.maxThrows) * 100);
 
+    // Entferne die Flasche
+    const index = world.collectableObjects.indexOf(this);
+    if (index !== -1) {
+      world.collectableObjects.splice(index, 1);
+    }
+  }
 
-
-  // onCollect(world) {
-  //   // Logik für das Sammeln einer Flasche
-  //   // Zum Beispiel: Erhöhe den Flaschenzähler, aktualisiere die Anzeige usw.
-  //   world.remainingThrows += 2; // Hier musst du die Logik anpassen1
-  //   console.log(`Verbleibende Würfe: ${world.remainingThrows}`);
-
-  //   // Aktualisiere die Flaschenladungsanzeige
-  //   world.bottleBar.setPercentage((world.remainingThrows / world.maxThrows) * 100);
-
-  //   // Entferne die Flasche
-  //   const index = world.collectibleObjects.indexOf(this);
-  //   if (index !== -1) {
-  //     world.collectibleObjects.splice(index, 1);
-  //   }
-  // }
 }

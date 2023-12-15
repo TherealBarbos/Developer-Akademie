@@ -1,6 +1,8 @@
 class Character extends MoveableObject {
   height = 280;
+  width = 100;
   y = 155;
+  x = 0;
   speed = 2.5;
 
   PEPE_STAND = [
@@ -62,6 +64,8 @@ class Character extends MoveableObject {
   ];
 
   world;
+  // Sounds
+  
   walking_sound = new Audio("assets/sounds/pepe_walk.mp3");
 
   constructor() {

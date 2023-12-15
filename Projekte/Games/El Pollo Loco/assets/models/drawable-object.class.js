@@ -1,8 +1,8 @@
 class DrawableObject {
-    x = 120;
-    y = 280;
-    height = 150;
-    width = 100;
+    x;
+    y;
+    height;
+    width;
     img;
     imageCache = {};
     currentImage = 0;
@@ -38,6 +38,7 @@ class DrawableObject {
         if (
           this instanceof Character ||
           this instanceof Chicken ||
+          this instanceof Chicken_Small ||
           this instanceof Endboss
         ) {
           ctx.beginPath();

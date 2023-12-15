@@ -25,7 +25,7 @@ class Endboss extends MoveableObject {
         super().loadImage(this.BOSS_ALERT[0]);
         this.loadImages(this.BOSS_ALERT);
         this.loadImages(this.BOSS_WALK);
-        this.x = 950;
+        this.x = 2250;
         this.alert();
     }
 

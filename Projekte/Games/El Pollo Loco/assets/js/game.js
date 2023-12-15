@@ -7,8 +7,6 @@ function init() {
   canvas = document.getElementById('canvas');
   world = new World(canvas, keyboard)
 
-
-  console.log('My Character is', world.character);
 }
 
 
@@ -39,6 +37,9 @@ window.addEventListener("keydown", (e) => {
   }
   if (e.key == "d"){
     keyboard.D = true;
+  }
+  if (e.key == "e"){
+    keyboard.E = true;
   }
   if (e.key == "Control"){
     keyboard.CONTROL = true;
@@ -74,6 +75,9 @@ window.addEventListener("keyup", (e) => {
   }
   if (e.key == "d"){
     keyboard.D = false;
+  }
+  if (e.key == "e"){
+    keyboard.E = false;
   }
   if (e.key == "Control"){
     keyboard.CONTROL = false;

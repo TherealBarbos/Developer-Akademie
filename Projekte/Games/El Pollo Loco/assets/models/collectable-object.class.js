@@ -9,37 +9,6 @@ class CollectableObject extends DrawableObject {
     this.height = 30;
   }
 
-  // Neue Eigenschaften für den Floating-Effekt
-  floatingOffset = 0;
-  floatingDirection = 1; // 1 für Aufwärtsbewegung, -1 für Abwärtsbewegung
-  floatingSpeed = 0.5; // Geschwindigkeit des Floating-Effekts
-
-  // Floating-Effekt anwenden
-  applyFloatingEffect() {
-    // Führe den Floating-Effekt durch
-    this.floatingOffset += this.floatingDirection * this.floatingSpeed;
-
-    // Kehre die Richtung um, wenn das Limit erreicht ist
-    if (Math.abs(this.floatingOffset) > 5) {
-      this.floatingDirection *= -1;
-    }
-  }
-  isintouch(co) 
-  {
-    return (
-      this.x + this.width > co.x &&
-      this.y + this.height > co.y &&
-      this.x < co.x &&
-      this.y < co.y + co.height
-    );
-  }
-
-
-  float() {
-    setInterval(() => {
-      this.applyFloatingEffect(); // Hier wird der Floating-Effekt aufgerufen
-    }, 120);
-  }
 
 }
 

@@ -5,16 +5,15 @@ class Level {
   bottles;
   backgroundObjects;
   levelEndX;
+  maxThrows;
 
-  constructor(enemies, clouds, coins, bottle, backgroundObjects, levelEndX) {
+  constructor(enemies, clouds, coins, bottles, backgroundObjects, levelEndX) {
     this.enemies = enemies;
     this.clouds = clouds;
     this.coins = coins;
-    this.bottles = bottle;
+    this.bottles = bottles;
     this.backgroundObjects = backgroundObjects;
     this.levelEndX = levelEndX;
-
-    this.maxThrows = bottle.length;
   }
 
 

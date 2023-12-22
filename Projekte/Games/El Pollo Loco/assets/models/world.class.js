@@ -9,7 +9,7 @@ class World {
   canvas;
   keyboard;
   camera_x = 0;
-  remainingThrows;
+  remainingThrows = 0;
   coinCounter = 0;
 
   constructor(canvas, keyboard) {
@@ -30,54 +30,82 @@ class World {
     setInterval(() => {
       this.level.enemies.forEach((enemy) => {
         if (this.character.isColliding(enemy)) {
-          if (this.character.isJumping && this.character.y < enemy.y) {
-            // Charakter springt auf den Feind, töte den Feind
+          if (this.character.y < 150 && this.character.y < enemy.y) {
             this.killEnemy(enemy);
           } else {
-            // Charakter wurde getroffen
             this.character.hit();
             this.statusBar.setPercentage(this.character.energy);
 
             if (this.character.energy <= 0) {
-              // Der Charakter hat kein Leben mehr, rufe die Game-Over-Funktion auf
               this.gameOver();
             }
           }
         }
       });
-      this.collectableObjects.forEach((collectableObject) => {
-        if (this.character.isintouch(collectableObject)) {
-          // Das sammelbare Objekt wurde berührt, führe die Sammel-Logik aus
-          collectableObject.onCollect(this);
+    }, 500);
+    setInterval(() => {
+      this.level.coins.forEach((coin) => {
+        if (this.character.isColliding(coin)) {
+          this.collectCoin(coin);
+        }
+      });
+    }, 500);
+    setInterval(() => {
+      this.level.bottles.forEach((bottle) => { 
+        if (this.character.isColliding(bottle)) {
+          console.log("Bottle collected!");
+          this.collectBottle(bottle);
         }
       });
     }, 500);
   }
 
   killEnemy(enemy) {
-    // Entferne den Feind aus dem Array
     const index = this.level.enemies.indexOf(enemy);
     if (index !== -1) {
-      this.level.enemies.splice(index, 1);
       console.log("Gegner getötet!");
+      this.level.enemies.splice(index, 1);
+    }
+  }
+
+  collectBottle(bottle) {
+    const index = this.level.bottles.indexOf(bottle);
+    if (index !== -1) {
+      console.log("Bottle collected!");
+      console.log(this.bottleBar.percentage);
+
+      const newPercentage = (this.remainingThrows / this.level.maxThrows) * 100;
+
+      this.level.bottles.splice(index, 1);
+      this.remainingThrows += 2;
+      this.bottleBar.setPercentage(newPercentage);
+    }
+  }
+  collectCoin(coin) {
+    const index = this.level.coins.indexOf(coin);
+    if (index !== -1) {
+      this.level.coins.splice(index, 1);
+      this.coinCounter++;
+      this.coinBar.setPercentage(this.coinCounter);
+
     }
   }
 
   newThrow() {
     setInterval(() => {
       if (
-        (this.keyboard.CONTROL || this.keyboard.E) &&
-        this.remainingThrows > 0
+        (this.keyboard.CONTROL || this.keyboard.E) 
+        && this.remainingThrows > 0
       ) {
         if (this.remainingThrows <= this.level.maxThrows) {
           let bottle = new ThrowableObject(this.character.x, this.character.y);
           this.throwableObjects.push(bottle);
           this.remainingThrows--;
-  
 
-          let percentage = (this.remainingThrows / this.level.maxThrows*2) * 100;
+          let percentage =
+            (this.remainingThrows / this.level.maxThrows)  * 100;
           this.bottleBar.setPercentage(percentage);
-  
+
           console.log(`Verbleibende Würfe: ${this.remainingThrows}`);
         }
       }
@@ -92,7 +120,6 @@ class World {
     }, 1000);
 
     // Zeige "Game Over"-Text an
-
   }
 
   draw() {

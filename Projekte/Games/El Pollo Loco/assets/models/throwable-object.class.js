@@ -28,7 +28,6 @@ class ThrowableObject extends MoveableObject {
     }
   
     rotateBottle() {
-      // Wechseln Sie das Bild für die Flaschenrotation
       this.rotationIndex = (this.rotationIndex + 1) % this.BOTTLE_ROTATION.length;
       this.loadImage(this.BOTTLE_ROTATION[this.rotationIndex]);
     }

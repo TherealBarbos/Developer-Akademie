@@ -63,10 +63,10 @@ class Character extends MoveableObject {
     "assets/img/2_character_pepe/5_dead/D-57.png",
   ];
 
-  world;
+
+
   // Sounds
-  
-  walking_sound = new Audio("assets/sounds/pepe_walk.mp3");
+    walking_sound = new Audio("assets/sounds/pepe_walk.mp3");
 
   constructor() {
     super().loadImage(this.PEPE_STAND[0]);

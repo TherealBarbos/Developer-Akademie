@@ -1,30 +1,23 @@
 class Bottle extends CollectableObject {
-
+  y = 350;
   height = 90;
   width = 75;
 
+  BOTTLE_GROUND = [
+    "assets/img/6_salsa_bottle/1_salsa_bottle_on_ground.png",
+    "assets/img/6_salsa_bottle/2_salsa_bottle_on_ground.png"
+  ]
+
+
   constructor() {
-    super().loadImage("assets/img/6_salsa_bottle/salsa_bottle.png");
+    super();
+
+    const randomImage = this.BOTTLE_GROUND[Math.floor(Math.random() * this.BOTTLE_GROUND.length)];
+
+    this.loadImage(randomImage);
 
     this.x = 300 + Math.random() * 1850;
-    this.y = Math.max(175, Math.min(300, 175 + Math.random() * 125));
 
-    this.float();
-  }
-  onCollect(world) {
-    // Logik für das Sammeln einer Flasche
-    // Zum Beispiel: Erhöhe den Flaschenzähler, aktualisiere die Anzeige usw.
-    world.remainingThrows += 2; // Hier musst du die Logik anpassen1
-    console.log(`Verbleibende Würfe: ${world.remainingThrows}`);
-
-    // Aktualisiere die Flaschenladungsanzeige
-    world.bottleBar.setPercentage((world.remainingThrows / world.maxThrows) * 100);
-
-    // Entferne die Flasche
-    const index = world.collectableObjects.indexOf(this);
-    if (index !== -1) {
-      world.collectableObjects.splice(index, 1);
-    }
   }
 
 }

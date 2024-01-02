@@ -4,6 +4,8 @@ class Character extends MoveableObject {
   y = 155;
   x = 0;
   speed = 2.5;
+  offsetY = 0;
+  offsetX = 0;
 
   PEPE_STAND = [
     "assets/img/2_character_pepe/1_idle/idle/I-1.png",
@@ -63,10 +65,8 @@ class Character extends MoveableObject {
     "assets/img/2_character_pepe/5_dead/D-57.png",
   ];
 
-
-
   // Sounds
-    walking_sound = new Audio("assets/sounds/pepe_walk.mp3");
+  walking_sound = new Audio("assets/sounds/pepe_walk.mp3");
 
   constructor() {
     super().loadImage(this.PEPE_STAND[0]);
@@ -81,70 +81,81 @@ class Character extends MoveableObject {
     this.pepe_jump();
     this.pepe_hurt();
     this.pepe_dead();
-
   }
 
-    pepe_stand() {
-      setInterval(() => {}, 1000 / 60);
+  pepe_stand() {
+    setInterval(() => {}, 1000 / 60);
 
-      setInterval(() => {
-        this.playAnimation(this.PEPE_STAND);
-      }, 120);
-    }
+    setInterval(() => {
+      this.playAnimation(this.PEPE_STAND);
+    }, 120);
+  }
 
-    pepe_walk() {
-      setInterval(() => {
-        this.walking_sound.pause();
-        if ((this.world.keyboard.RIGHT || this.world.keyboard.D )&& this.x < this.world.level.levelEndX) {
-          this.moveRight();
-          this.otherDirection = false;
-          this.walking_sound.play();
-        }
-        if ((this.world.keyboard.LEFT || this.world.keyboard.A) && this.x > 0) {
-          this.moveLeft();
-          this.otherDirection = true;
-          this.walking_sound.play();
-        }
+  pepe_walk() {
+    setInterval(() => {
+      this.walking_sound.pause();
+      if (
+        (this.world.keyboard.RIGHT || this.world.keyboard.D) &&
+        this.x < this.world.level.levelEndX
+      ) {
+        this.moveRight();
+        this.otherDirection = false;
+        this.walking_sound.play();
+      }
+      if ((this.world.keyboard.LEFT || this.world.keyboard.A) && this.x > 0) {
+        this.moveLeft();
+        this.otherDirection = true;
+        this.walking_sound.play();
+      }
 
-        this.world.camera_x = -this.x + 100;
-      }, 1000 / 60);
+      this.world.camera_x = -this.x + 100;
+    }, 1000 / 60);
 
-      setInterval(() => {
-        if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT  || this.world.keyboard.D  || this.world.keyboard.A ) {
-          this.playAnimation(this.PEPE_WALK);
-        }
-      }, 120);
-    }
+    setInterval(() => {
+      if (
+        this.world.keyboard.RIGHT ||
+        this.world.keyboard.LEFT ||
+        this.world.keyboard.D ||
+        this.world.keyboard.A
+      ) {
+        this.playAnimation(this.PEPE_WALK);
+      }
+    }, 120);
+  }
 
-    pepe_jump() {
-      setInterval(() => {
-        if ((this.world.keyboard.UP || this.world.keyboard.SPACE) && !this.isAboveGround()) {
-          this.jump();
-        }
-      }, 1000 / 60);
+  pepe_jump() {
+    setInterval(() => {
+      if (
+        (this.world.keyboard.UP || this.world.keyboard.SPACE) &&
+        !this.isAboveGround()
+      ) {
+        this.jump();
+      }
+    }, 1000 / 60);
 
-      setInterval(() => {
-        if ((this.world.keyboard.UP || this.world.keyboard.SPACE) && this.isAboveGround()) {
-          this.playAnimation(this.PEPE_JUMP);
-        }
-      }, 120);
-    }
+    setInterval(() => {
+      if (
+        (this.world.keyboard.UP || this.world.keyboard.SPACE) &&
+        this.isAboveGround()
+      ) {
+        this.playAnimation(this.PEPE_JUMP);
+      }
+    }, 120);
+  }
 
-    pepe_hurt() {
-      setInterval(() => {
-        if (this.isHurt()) {
-          this.playAnimation(this.PEPE_HURT);
-        }
-      }, 120);
-    }
+  pepe_hurt() {
+    setInterval(() => {
+      if (this.isHurt()) {
+        this.playAnimation(this.PEPE_HURT);
+      }
+    }, 120);
+  }
 
-    pepe_dead (){
-      setInterval(() => {
-        if (this.isDead()) {
-          this.playAnimation(this.PEPE_DEAD);
-        }
-      }, 120);
-    }
-
-
+  pepe_dead() {
+    setInterval(() => {
+      if (this.isDead()) {
+        this.playAnimation(this.PEPE_DEAD);
+      }
+    }, 120);
+  }
 }

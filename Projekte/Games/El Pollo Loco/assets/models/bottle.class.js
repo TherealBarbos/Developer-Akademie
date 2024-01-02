@@ -6,18 +6,30 @@ class Bottle extends CollectableObject {
   BOTTLE_GROUND = [
     "assets/img/6_salsa_bottle/1_salsa_bottle_on_ground.png",
     "assets/img/6_salsa_bottle/2_salsa_bottle_on_ground.png"
-  ]
-
+  ];
 
   constructor() {
     super();
 
-    const randomImage = this.BOTTLE_GROUND[Math.floor(Math.random() * this.BOTTLE_GROUND.length)];
-
-    this.loadImage(randomImage);
+    // Das erste Bild wird geladen
+    this.currentImageIndex = 0;
+    this.loadImage(this.BOTTLE_GROUND[this.currentImageIndex]);
 
     this.x = 300 + Math.random() * 1850;
-
+    this.startBottleAnimation();
   }
 
+  startBottleAnimation() {
+    this.animationInterval = setInterval(() => {
+      // Die Animation wechselt zwischen den beiden festen Bildern
+      this.currentImageIndex = 1 - this.currentImageIndex;
+      const nextImage = this.BOTTLE_GROUND[this.currentImageIndex];
+
+      this.loadImage(nextImage);
+    }, 550);
+  }
+
+  stopBottleAnimation() {
+    clearInterval(this.animationInterval);
+  }
 }

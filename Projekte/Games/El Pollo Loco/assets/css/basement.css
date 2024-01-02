@@ -1,6 +1,11 @@
 body {
     margin: 0;
+    height: 100vh;
     background-color: #662113;
+    background-image: url('../img/added_stuff/mexican-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     color: black;
     text-align: center;
     display: flex;

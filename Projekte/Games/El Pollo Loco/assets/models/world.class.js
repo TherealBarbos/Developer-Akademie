@@ -3,14 +3,15 @@ class World {
   statusBar = new StatusBar();
   coinBar = new CoinBar();
   bottleBar = new BottleBar();
-  throwableObjects = [new ThrowableObject()];
+  throwableObjects = [];
   level = level1;
   ctx;
   canvas;
   keyboard;
   camera_x = 0;
-  remainingThrows = 0;
+  collectBottle = 0;
   coinCounter = 0;
+  characterNotVulnerable = false;
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -28,38 +29,52 @@ class World {
 
   checkCollisions() {
     setInterval(() => {
+    this.checkEnemyCollisions();
+    this.checkBottleCollisions();
+    this.checkCoinCollisions();
+  }, 150 / 60);
+  }
+
+  checkEnemyCollisions() {
+
       this.level.enemies.forEach((enemy) => {
         if (this.character.isColliding(enemy)) {
-          if (this.character.y < 150 && this.character.y < enemy.y) {
+          if (this.character.isAboveGround() && !this.character.isHurt()) {
             this.killEnemy(enemy);
-          } else {
+            this.characterInvulnerable();
+          } else if (enemy.energy > 0) {
             this.character.hit();
             this.statusBar.setPercentage(this.character.energy);
-
-            if (this.character.energy <= 0) {
-              this.gameOver();
-            }
           }
         }
       });
-    }, 500);
-    setInterval(() => {
-      this.level.coins.forEach((coin) => {
-        if (this.character.isColliding(coin)) {
-          this.collectCoin(coin);
-        }
-      });
-    }, 500);
-    setInterval(() => {
-      this.level.bottles.forEach((bottle) => { 
-        if (this.character.isColliding(bottle)) {
-          console.log("Bottle collected!");
-          this.collectBottle(bottle);
-        }
-      });
-    }, 500);
+
   }
 
+  checkBottleCollisions() {
+    this.level.bottles.forEach((bottle) => {
+      if (this.character.isColliding(bottle)) {
+        this.collectBottle(bottle);
+      }
+    });
+  }
+
+  checkCoinCollisions() {
+    this.level.coins.forEach((coin) => {
+      if (this.character.isColliding(coin)) {
+        this.collectCoin(coin);
+      }
+    });
+  }
+
+  characterInvulnerable() {
+    this.characterNotVulnerable = true;
+    setTimeout(() => {
+        this.characterNotVulnerable = false;
+    }, 1500);
+}
+
+  
   killEnemy(enemy) {
     const index = this.level.enemies.indexOf(enemy);
     if (index !== -1) {
@@ -70,40 +85,56 @@ class World {
 
   collectBottle(bottle) {
     const index = this.level.bottles.indexOf(bottle);
-    if (index !== -1) {
-      console.log("Bottle collected!");
-      console.log(this.bottleBar.percentage);
+    if (index !== -1 && this.character.isColliding(bottle)) {
+        console.log("Bottle collected!");
 
-      const newPercentage = (this.remainingThrows / this.level.maxThrows) * 100;
+        this.level.bottles.splice(index, 1);
+        this.remainingThrows += 2;
 
-      this.level.bottles.splice(index, 1);
-      this.remainingThrows += 2;
-      this.bottleBar.setPercentage(newPercentage);
+        // Annahme: maxBottlesInLevel ist die maximale Anzahl der Flaschen im Level (z.B., 10)
+        const maxBottlesInLevel = 10;
+
+        // Berechne den Prozentsatz
+        const percentage = (this.remainingThrows / maxBottlesInLevel) * 100;
+
+        // Aktualisiere die Bottle-Bar mit dem berechneten Prozentsatz
+        this.bottleBar.setPercentage(percentage);
+
+        console.log(this.remainingThrows, percentage);
     }
-  }
+}
+
+
   collectCoin(coin) {
     const index = this.level.coins.indexOf(coin);
-    if (index !== -1) {
+    if (index !== -1 && this.character.isColliding(coin)) {
       this.level.coins.splice(index, 1);
       this.coinCounter++;
-      this.coinBar.setPercentage(this.coinCounter);
 
+      const maxCoinsInLevel = 10;
+  
+
+      const percentage = (this.coinCounter / maxCoinsInLevel) * 100;
+  
+
+      this.coinBar.setPercentage(percentage);
+  
+      console.log(this.coinCounter, percentage);
     }
   }
 
   newThrow() {
     setInterval(() => {
       if (
-        (this.keyboard.CONTROL || this.keyboard.E) 
-        && this.remainingThrows > 0
+        (this.keyboard.CONTROL || this.keyboard.E) &&
+        this.remainingThrows > 0
       ) {
         if (this.remainingThrows <= this.level.maxThrows) {
           let bottle = new ThrowableObject(this.character.x, this.character.y);
           this.throwableObjects.push(bottle);
           this.remainingThrows--;
 
-          let percentage =
-            (this.remainingThrows / this.level.maxThrows)  * 100;
+          let percentage = (this.remainingThrows / this.level.maxThrows) * 100;
           this.bottleBar.setPercentage(percentage);
 
           console.log(`Verbleibende Würfe: ${this.remainingThrows}`);

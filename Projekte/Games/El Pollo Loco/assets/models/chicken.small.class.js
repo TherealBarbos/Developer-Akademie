@@ -21,8 +21,6 @@ class Chicken_Small extends MoveableObject {
     this.speed = 0.15 + Math.random() * 0.5;
 
     this.walk();
-
-    this.chicken_jump();
   }
 
   walk() {
@@ -35,9 +33,5 @@ class Chicken_Small extends MoveableObject {
     }, 120);
   }
 
-  chicken_jump() {
-    setInterval(() => {
-      this.jump();
-    }, 1000 / 60);
-  }
+
 }

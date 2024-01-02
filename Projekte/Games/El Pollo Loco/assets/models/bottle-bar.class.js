@@ -16,7 +16,7 @@ class BottleBar extends DrawableObject {
       this.y = -5;
       this.width = 150;
       this.height = 50;
-      this.setPercentage();
+      this.setPercentage(0);
     }
   
     setPercentage(percentage) {

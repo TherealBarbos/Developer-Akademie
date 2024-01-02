@@ -9,7 +9,8 @@ class World {
   canvas;
   keyboard;
   camera_x = 0;
-  collectBottle = 0;
+  remainingThrows = 20;
+  bottleCounter = 0;
   coinCounter = 0;
   characterNotVulnerable = false;
 
@@ -86,21 +87,15 @@ class World {
   collectBottle(bottle) {
     const index = this.level.bottles.indexOf(bottle);
     if (index !== -1 && this.character.isColliding(bottle)) {
-        console.log("Bottle collected!");
-
         this.level.bottles.splice(index, 1);
-        this.remainingThrows += 2;
+        this.bottleCounter ++;
 
-        // Annahme: maxBottlesInLevel ist die maximale Anzahl der Flaschen im Level (z.B., 10)
         const maxBottlesInLevel = 10;
+        const percentage = (this.bottleCounter / maxBottlesInLevel) * 100;
 
-        // Berechne den Prozentsatz
-        const percentage = (this.remainingThrows / maxBottlesInLevel) * 100;
-
-        // Aktualisiere die Bottle-Bar mit dem berechneten Prozentsatz
         this.bottleBar.setPercentage(percentage);
 
-        console.log(this.remainingThrows, percentage);
+        console.log(this.bottleCounter, percentage);
     }
 }
 
@@ -112,14 +107,10 @@ class World {
       this.coinCounter++;
 
       const maxCoinsInLevel = 10;
-  
-
       const percentage = (this.coinCounter / maxCoinsInLevel) * 100;
-  
-
+ 
       this.coinBar.setPercentage(percentage);
-  
-      console.log(this.coinCounter, percentage);
+
     }
   }
 

@@ -19,6 +19,7 @@ h1 {
 
 canvas {
     background-color: black;
+    border: solid 2px black;
 }
 .headline {
     font-size: 3rem;

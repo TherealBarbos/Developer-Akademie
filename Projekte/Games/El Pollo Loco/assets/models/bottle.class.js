@@ -21,7 +21,6 @@ class Bottle extends CollectableObject {
 
   startBottleAnimation() {
     this.animationInterval = setInterval(() => {
-      // Die Animation wechselt zwischen den beiden festen Bildern
       this.currentImageIndex = 1 - this.currentImageIndex;
       const nextImage = this.BOTTLE_GROUND[this.currentImageIndex];
 

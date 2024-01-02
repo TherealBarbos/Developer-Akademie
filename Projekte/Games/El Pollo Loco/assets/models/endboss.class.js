@@ -19,18 +19,62 @@ class Endboss extends MoveableObject {
         "assets/img/4_enemie_boss_chicken/2_alert/G10.png",
         "assets/img/4_enemie_boss_chicken/2_alert/G11.png",
         "assets/img/4_enemie_boss_chicken/2_alert/G12.png",
-    ]
+    ];
+    BOSS_ATTACK =[
+      "assets/img/4_enemie_boss_chicken/3_attack/G13.png",
+      "assets/img/4_enemie_boss_chicken/3_attack/G14.png",
+      "assets/img/4_enemie_boss_chicken/3_attack/G15.png",
+      "assets/img/4_enemie_boss_chicken/3_attack/G16.png",
+      "assets/img/4_enemie_boss_chicken/3_attack/G17.png",
+      "assets/img/4_enemie_boss_chicken/3_attack/G18.png",
+      "assets/img/4_enemie_boss_chicken/3_attack/G19.png",
+      "assets/img/4_enemie_boss_chicken/3_attack/G20.png",
+
+    ];
+    BOSS_HURT =[
+      "assets/img/4_enemie_boss_chicken/4_hurt/G21.png",
+      "assets/img/4_enemie_boss_chicken/4_hurt/G22.png",
+      "assets/img/4_enemie_boss_chicken/4_hurt/G23.png",
+    ];
+    BOSS_DEAD =[
+      "assets/img/4_enemie_boss_chicken/5_dead/G24.png",
+      "assets/img/4_enemie_boss_chicken/5_dead/G25.png",
+      "assets/img/4_enemie_boss_chicken/5_dead/G26.png",
+    ];
 
     constructor() {
         super().loadImage(this.BOSS_ALERT[0]);
-        this.loadImages(this.BOSS_ALERT);
         this.loadImages(this.BOSS_WALK);
+        this.loadImages(this.BOSS_ALERT);
+        this.loadImages(this.BOSS_ATTACK);
+        this.loadImages(this.BOSS_HURT);
+        this.loadImages(this.BOSS_DEAD);
         this.x = 2250;
-        this.alert();
+
+        this.boss_hurt();
+        this.boss_walk();
+        this.boss_alert();
     }
 
-    
-  alert() {
+    boss_walk() {
+      setInterval(() => {
+      this.moveLeft();
+      }, 1000 / 60 );
+  
+      setInterval(() => {
+        this.playAnimation(this.BOSS_WALK);
+      }, 120);
+    }
+
+    boss_hurt() {
+      setInterval(() => {
+        if (this.isHurt()) {
+          this.playAnimation(this.BOSS_HURT);
+        }
+      }, 120);
+    }
+
+  boss_alert() {
     setInterval(() => {}, 1000 / 60);
 
     setInterval(() => {

@@ -5,7 +5,7 @@ class MoveableObject extends DrawableObject {
   speedY = 0;
   acceleration = 2.5;
   energy = 100;
-
+  lastHit = 0;
 
 
   applyGravity() {
@@ -16,11 +16,21 @@ class MoveableObject extends DrawableObject {
       }
     }, 1000 / 25);
   }
-
-  isAboveGround() {
-      return this.y < 150;
+  applyGravityBottle() {
+    setInterval(() => {
+      if (this.isAboveGroundBottle() || this.speedY > 0) {
+        this.y -= this.speedY;
+        this.speedY -= this.acceleration;
+      }
+    }, 1000 / 25);
   }
 
+  isAboveGroundBottle() {
+      return this.y < 345;
+  }
+  isAboveGround() {
+    return this.y < 150;
+}
 
   isColliding(obj) {
     return (

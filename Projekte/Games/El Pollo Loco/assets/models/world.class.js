@@ -9,7 +9,7 @@ class World {
   canvas;
   keyboard;
   camera_x = 0;
-  remainingThrows = 20;
+  remainingThrows = 0;
   bottleCounter = 0;
   coinCounter = 0;
   characterNotVulnerable = false;
@@ -40,10 +40,10 @@ class World {
 
       this.level.enemies.forEach((enemy) => {
         if (this.character.isColliding(enemy)) {
-          if (this.character.isAboveGround() && !this.character.isHurt()) {
+          if (this.character.isAboveGround()) {
             this.killEnemy(enemy);
             this.characterInvulnerable();
-          } else if (enemy.energy > 0) {
+          } else if (!this.character.isHurt()){
             this.character.hit();
             this.statusBar.setPercentage(this.character.energy);
           }
@@ -95,7 +95,6 @@ class World {
 
         this.bottleBar.setPercentage(percentage);
 
-        console.log(this.bottleCounter, percentage);
     }
 }
 
@@ -105,6 +104,7 @@ class World {
     if (index !== -1 && this.character.isColliding(coin)) {
       this.level.coins.splice(index, 1);
       this.coinCounter++;
+      this.remainingThrows ++;
 
       const maxCoinsInLevel = 10;
       const percentage = (this.coinCounter / maxCoinsInLevel) * 100;
@@ -120,29 +120,21 @@ class World {
         (this.keyboard.CONTROL || this.keyboard.E) &&
         this.remainingThrows > 0
       ) {
-        if (this.remainingThrows <= this.level.maxThrows) {
+
           let bottle = new ThrowableObject(this.character.x, this.character.y);
           this.throwableObjects.push(bottle);
           this.remainingThrows--;
-
-          let percentage = (this.remainingThrows / this.level.maxThrows) * 100;
+          this.bottleCounter --;
+          const maxBottlesInLevel = 10;
+          const percentage = (this.bottleCounter / maxBottlesInLevel) * 100;
+  
           this.bottleBar.setPercentage(percentage);
 
-          console.log(`Verbleibende Würfe: ${this.remainingThrows}`);
-        }
       }
-    }, 250);
-  }
-
-  gameOver() {
-    // Entferne alle Charaktere
-    setTimeout(() => {
-      this.level.enemies = [];
-      this.character = null;
     }, 1000);
-
-    // Zeige "Game Over"-Text an
   }
+
+
 
   draw() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);

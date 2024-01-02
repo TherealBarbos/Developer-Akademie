@@ -19,7 +19,7 @@ class ThrowableObject extends MoveableObject {
   
     throw() {
       this.speedY = 30;
-      this.applyGravity();
+      this.applyGravityBottle();
   
       setInterval(() => {
         this.rotateBottle();

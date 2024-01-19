@@ -63,7 +63,7 @@ class Endboss extends MoveableObject {
   
       setInterval(() => {
         this.playAnimation(this.BOSS_WALK);
-      }, 120);
+      }, 800);
     }
 
     boss_hurt() {

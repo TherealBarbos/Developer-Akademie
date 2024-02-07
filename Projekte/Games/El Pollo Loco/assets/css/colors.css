@@ -1,5 +1,8 @@
 :root {
-    --mexico: linear-gradient(to right, #006747, #ffffff, #cd1125);
-    /* Mexico Flag Colors */
-  }
-  
+  /* Mexico Flag Colors */
+  --mexico-gradient: linear-gradient(to right, #006747, #ffffff, #cd1125);
+  /* Bachground brown */
+  --background: #c76758;
+
+
+}

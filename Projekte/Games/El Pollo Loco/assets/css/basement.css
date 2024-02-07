@@ -1,28 +1,62 @@
 body {
-    margin: 0;
-    height: 100vh;
-    background-color: #662113;
-    background-image: url('../img/added_stuff/mexican-background.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    color: black;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-h1 {
-    font-size: 3rem;
+  margin: 0;
+  height: 100vh;
+  background-color: #662113;
+  background-image: url("../img/added_stuff/mexican-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "PistolGripPump"
 }
 
 canvas {
-    background-color: black;
-    border: solid 2px black;
+  background-color: black;
+  border: solid 2px black;
 }
 .headline {
-    font-size: 3rem;
-    color: var(--mexico);
-    margin: 2rem;
+  font-size: 4.5rem;
+  color:var(--mexico);
+  margin: 2rem;
+}
+
+.instuctions {
+  text-align: center;
+}
+.instuctions h1 {
+  font-size: 30px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+table {
+  font-size: 25px;
+  color: var(--mexico);
+  border: solid 2px var(--mexico);
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+table th {
+  color: var(--mexico);
+  border: solid 2px var(--mexico);
+  border-radius: 10px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 125px;
+}
+table tr {
+  color: var(--mexico);
+  border: solid 2px var(--mexico);
+  border-radius: 10px;
+    padding: 5px;
+}
+table td {
+  color: var(--mexico);
+  border: solid 2px var(--mexico);
+  border-radius: 10px;
+    padding: 5px;
 }

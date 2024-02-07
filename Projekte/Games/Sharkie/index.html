@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<html translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharkie</title>
+    <link rel="icon" type="image/x-icon" href="img/Wallpaper/Favicon.png">
+    <link rel="stylesheet" href="style.css">
+    
+   
+    <script src="models/keyboard.class.js"></script>
+    <script src="models/drawable-objects.class.js"></script>
+    <script src="models/movable-object.class.js"></script>
+    <script src="models/world.class.js"></script>
+    <script src="models/health-bar.class.js"></script>
+    <script src="models/coin-bar.class.js"></script>
+    <script src="models/poison-bar.class.js"></script>
+    <script src="models/character.class.js"></script>
+    <script src="models/fishPuffer.class.js"></script>
+    <script src="models/jelly-Fish.class.js"></script>
+    <script src="models/coins.class.js"></script>
+    <script src="models/poison-flask.class.js"></script>
+    <script src="models/background-object.class.js"></script>
+    <script src="models/level.class.js"></script>
+    <script src="models/endboss.class.js"></script>
+    <script src="levels/level1.js"></script>
+    <script src="models/bubble-class.js"></script>
+    <script src="models/poison-bubble.class.js"></script>
+    <script src="models/endscreen.class.js"></script>
+    <script src="models/endscreen-lose.class.js"></script>
+    <script src="js/game.js"></script>
+
+</head>
+<body>
+<div class="main-container">
+    <audio id="startPageAudio" controls autoplay loop>
+        <source src="audio/Start Page.mp3" type="audio/mp3">
+    </audio>
+    <img id="rotate-phone" src="img/mobile /rotate-smartphone.jpeg">
+    <div id="background-main"></div>
+    <div id="startscreen-container">
+        <div id="background"></div>
+        <img class="startscreenImg" src="img/menu/StartScreen.png">
+        <button id="start-game-button" onclick="startGame()"><img id="start-game-button-img" src="img/6.Botones/Start/3.png"></button>
+        <div id="menu-buttons-container">
+            <button id="audioControll"> <img onclick="muteAndUnmute()" src="img/menu/muted.png"> </button>
+            <button><img onclick="openControlls()" src="img/menu/controlls.png"></button>
+            <button><img onclick="openInfo()" src="img/menu/info.png"></button>
+        </div>
+        <div style="display: none;" id="controlls">
+            <div class="close"><img onclick="closeControlls()" src="img/controlls/Close .png"></div>
+            <div class="content-controlls">
+                <div class="controll-keys"><div class="keys" ><img src="img/controlls/Arrow.png"></div><div class="controll-text">Move Sharkie</div></div>
+                <div class="controll-keys"><div class="space"><img src="img/controlls/SPACE.png"></div><div class="controll-text">Bubble Shot</div></div>
+                <div class="controll-keys"><div class="keys"><img src="img/controlls/D.png"></div><div class="controll-text">Fin Slap</div></div>
+                <div class="controll-keys"><div class="keys"><img src="img/controlls/F.png"></div><div class="controll-text">Poison Bubble</div></div>
+                <div class="controll-keys"><div class="keys"><img src="img/controlls/R.png"></div><div class="controll-text">Buy Poison</div></div>
+            </div>
+        </div>
+        <div style="display: none;" id="Info">
+            <div class="close"><img onclick="closeInfo()" src="img/controlls/Close .png"></div>
+            <div class="content-Info">
+                <h3>Introductions:</h3>
+                <div>The Puffer Fishes can be beaten by hit them with the Fin Slap on <br><span>"D"</span></div>
+                <div>The Jellyfishes are static. If one is in your Way, you can cage them into a bubble with the Bubble Shot on <br><span>"SPACE"</span></div>
+                <div>For the Unknown you need poison. If you got it, you can use the Poison Bubble for Damage on <br><span>"F"</span></div>
+                <div>If you miss some Flask's, don't worry, you can buy for 4 Gold 1 Poison Flask on <br><span>"R"</span></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="canvas-container">
+        <button id="try-again-button" onclick="TryAgain()"><img id="try-again-button-img" src="img/6.Botones/Try again/Recurso 15.png"></button>
+        <canvas width="720" height="480" id="canvas"></canvas>
+    </div>
+    <div id="mobile-controlls">
+            <div id="mobileMove">
+                <div><img id="mobileUp" src="img/mobile /UP.png"></div>
+                <div><img id="mobileDown" src="img/mobile /DOWN.png"></div>
+                <div><img id="mobileLeft" src="img/mobile /LEFT.png"></div>
+                <div><img id="mobileRight" src="img/mobile /RIGHT.png"></div>
+            </div>
+            <div id="mobileAction">
+                <div><img id="mobileSpace" src="img/mobile /BUBBLES.png"></div>
+                <div><img id="mobileF" src="img/mobile /POISON.png"></div>
+                <div><img id="mobileR" src="img/mobile /BUY.png"></div>
+                <div><img id="mobileD" src="img/mobile /FINSLAP.png"></div>
+            </div>
+    </div>
+    <div class="controlls-under-game">
+        <div class="description-under-game"><span class="keys-under-game">"Arrow Keys"</span><div class="text-under-game">Move Sharkie</div></div>
+        <div class="description-under-game"><span class="keys-under-game">"SPACE"</span><div class="text-under-game">Bubble Shot</div></div>
+        <div class="description-under-game"><span class="keys-under-game">"D"</span><div class="text-under-game">Fin Slap</div></div>
+        <div class="description-under-game"><span class="keys-under-game">"F"</span><div class="text-under-game">Poison Bubble</div></div>
+        <div class="description-under-game"><span class="keys-under-game">"R"</span><div class="text-under-game">Buy Poison with 4 Gold</div></div>
+    </div>
+</div>
+</body>
+</html>

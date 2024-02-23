@@ -31,12 +31,12 @@ class World {
     this.newThrow();
     this.background_sound.loop = true;
     this.background_sound.play();
+
   }
 
   setWorld() {
     this.character.world = this;
   }
-
 
   checkCollisions() {
     setInterval(() => {
@@ -63,7 +63,6 @@ class World {
     });
   }
 
-
   checkBottleCollisions() {
     this.level.bottles.forEach((bottle) => {
       if (this.character.isColliding(bottle)) {
@@ -86,9 +85,11 @@ class World {
     this.throwableObjects.forEach((bottle) => {
       this.level.endboss.forEach((endboss) => {
         if (bottle.isColliding(endboss)) {
-          // this.endboss.endbosshit();
+          this.level.endboss.endbosshit();
           bottle.splash();
-          this.bottleDisapear(bottle);
+          setTimeout(() => {
+            this.bottleDisapear(bottle);
+          }, 100);
           console.log("Endboss HIT!");
         }
       });
@@ -102,7 +103,7 @@ class World {
         bottle.splash();
         setTimeout(() => {
           this.bottleDisapear(bottle);
-        }, 50);
+        }, 75);
       }
     });
   }
@@ -120,11 +121,13 @@ class World {
       console.log("Gegner getötet!");
       enemy.die();
       setTimeout(() => {
-      this.level.enemies.splice(index, 1);
-    }, 50);
+        this.level.enemies.splice(index, 1);
+      }, 50);
     }
   }
-  
+
+
+
   bottleDisapear(bottle) {
     const index = this.throwableObjects.indexOf(bottle);
     if (index !== -1) {

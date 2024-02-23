@@ -67,6 +67,9 @@ class Character extends MoveableObject {
 
   // Sounds
   walking_sound = new Audio("assets/sounds/pepe_walk.mp3");
+  jumping_sound = new Audio("assets/sounds/pepe_jump.mp3");
+  dead_sound = new Audio("assets/sounds/pepe_dead.mp3")
+  hurt_sound = new Audio("assets/sounds/pepe_hurt.mp3")
 
   constructor() {
     super().loadImage(this.PEPE_STAND[0]);
@@ -130,6 +133,7 @@ class Character extends MoveableObject {
         !this.isAboveGround()
       ) {
         this.jump();
+        this.jumping_sound.play();
       }
     }, 1000 / 60);
 
@@ -147,6 +151,7 @@ class Character extends MoveableObject {
     setInterval(() => {
       if (this.isHurt()) {
         this.playAnimation(this.PEPE_HURT);
+        this.hurt_sound.play();
       }
     }, 120);
   }
@@ -155,6 +160,7 @@ class Character extends MoveableObject {
     setInterval(() => {
       if (this.isDead()) {
         this.playAnimation(this.PEPE_DEAD);
+        this.dead_sound.play();
       }
     }, 120);
   }

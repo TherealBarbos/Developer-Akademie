@@ -21,6 +21,7 @@ class Chicken_Small extends MoveableObject {
     this.speed = 0.15 + Math.random() * 0.5;
 
     this.walk();
+    this.die();
   }
 
   walk() {
@@ -33,5 +34,11 @@ class Chicken_Small extends MoveableObject {
     }, 120);
   }
 
+  
+  die() {
+    this.loadImages(this.CHICKEN_SMALL_DEAD);
+    this.playAnimation(this.CHICKEN_SMALL_DEAD);
+
+  }
 
 }

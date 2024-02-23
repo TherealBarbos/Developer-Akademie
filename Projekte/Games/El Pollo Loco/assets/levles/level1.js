@@ -1,3 +1,8 @@
+// let level1;
+
+// function initLevel() {
+
+  
 const level1 = new Level(
 [
     new Chicken(),
@@ -73,3 +78,4 @@ const level1 = new Level(
   ],
   2500,
 );
+// }

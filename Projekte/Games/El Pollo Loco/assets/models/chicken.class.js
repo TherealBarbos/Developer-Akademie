@@ -22,7 +22,7 @@ class Chicken extends MoveableObject {
 
     this.walk();
     this.die();
-    this.chicken_die();
+
   }
 
 
@@ -43,11 +43,5 @@ class Chicken extends MoveableObject {
     this.playAnimation(this.CHICKEN_DEAD);
 
   }
-  chicken_die() {
-    setInterval(() => {
-      if (this.isHurt()) {
-        this.playAnimation(this.CHICKEN_DEAD);
-      }
-    }, 120);
-  }
+  
 }

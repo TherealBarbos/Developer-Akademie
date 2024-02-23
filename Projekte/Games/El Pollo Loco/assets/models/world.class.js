@@ -1,4 +1,5 @@
 class World {
+  startScreen = new StartScreen();
   character = new Character();
   statusBar = new StatusBar();
   coinBar = new CoinBar();
@@ -35,6 +36,7 @@ class World {
   setWorld() {
     this.character.world = this;
   }
+
 
   checkCollisions() {
     setInterval(() => {
@@ -98,7 +100,9 @@ class World {
     this.throwableObjects.forEach((bottle) => {
       if (bottle.y + bottle.height >= groundY) {
         bottle.splash();
-        this.bottleDisapear(bottle)
+        setTimeout(() => {
+          this.bottleDisapear(bottle);
+        }, 50);
       }
     });
   }
@@ -114,9 +118,13 @@ class World {
     const index = this.level.enemies.indexOf(enemy);
     if (index !== -1) {
       console.log("Gegner getötet!");
+      enemy.die();
+      setTimeout(() => {
       this.level.enemies.splice(index, 1);
+    }, 50);
     }
   }
+  
   bottleDisapear(bottle) {
     const index = this.throwableObjects.indexOf(bottle);
     if (index !== -1) {
@@ -168,6 +176,9 @@ class World {
       }
     }, 333);
   }
+  StartScreen() {
+    this.startScreen.draw(this.ctx);
+  }
 
   draw() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -178,6 +189,7 @@ class World {
 
     this.ctx.translate(-this.camera_x, 0);
     // -----------Fixed Objects--------------
+
     this.addToMap(this.statusBar);
     this.addToMap(this.coinBar);
     this.addToMap(this.bottleBar);

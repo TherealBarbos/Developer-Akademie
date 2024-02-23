@@ -5,7 +5,10 @@ class MoveableObject extends DrawableObject {
   speedY = 0;
   acceleration = 2.5;
   energy = 100;
+  bossEnergy = 100;
   lastHit = 0;
+  lastBossHit = 0;
+  
 
 
   applyGravity() {
@@ -52,11 +55,11 @@ class MoveableObject extends DrawableObject {
     }
   }
   endbosshit() {
-    this.energy -= 20;
-    if (this.energy < 0) {
-      this.energy = 0;
+    this.bossEnergy -= 20;
+    if (this.bossEnergy < 0) {
+      this.bossEnergy = 0;
     } else {
-      this.lastHit = new Date().getTime();
+      this.lastBossHit = new Date().getTime();
     }
   }
 
@@ -66,8 +69,18 @@ class MoveableObject extends DrawableObject {
     return timepassed < 1.2;
   }
 
+  bossisHurt() {
+    let timepassed = new Date().getTime() - this.lastbossHit;
+    timepassed = timepassed / 1000;
+    return timepassed < 1.2;
+  }
+  
   isDead() {
     return this.energy == 0;
+  }
+
+  bosskill() {
+    return this.bossEnergy == 0;
   }
 
   playAnimation(images) {

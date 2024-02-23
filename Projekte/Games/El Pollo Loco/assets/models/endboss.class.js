@@ -3,6 +3,7 @@ class Endboss extends MoveableObject {
     height = 500;
     width = 500;
     y = -40;
+    isalert = false;
 
     BOSS_WALK = [
         "assets/img/4_enemie_boss_chicken/1_walk/G1.png",
@@ -51,9 +52,10 @@ class Endboss extends MoveableObject {
         this.loadImages(this.BOSS_DEAD);
         this.x = 2250;
 
-        this.boss_hurt();
-        this.boss_walk();
         this.boss_alert();
+        this.boss_walk();
+        this.boss_hurt();
+        this.boss_died();
     }
 
     boss_walk() {
@@ -63,23 +65,47 @@ class Endboss extends MoveableObject {
   
       setInterval(() => {
         this.playAnimation(this.BOSS_WALK);
-      }, 800);
-    }
-
-    boss_hurt() {
-      setInterval(() => {
-        if (this.isHurt()) {
-          this.playAnimation(this.BOSS_HURT);
-        }
       }, 120);
     }
 
   boss_alert() {
-    setInterval(() => {}, 1000 / 60);
+    let i = 0
+    setInterval(() => {
+
+      if (i < 10 ) {
+      this.playAnimation(this.BOSS_ALERT);
+      } else{
+        this.boss_walk
+      }
+      i++;
+      if(world.character.x > 1950 && !this.isalert){
+        i = 0;
+        this.isalert = true;
+      }
+
+    }, 150);
 
     setInterval(() => {
       this.playAnimation(this.BOSS_ALERT);
     }, 200);
+  }
+
+  
+  boss_hurt() {
+    setInterval(() => {
+      if (this.bossisHurt()) {
+        this.playAnimation(this.BOSS_HURT);
+      }
+    }, 120);
+  }
+
+  
+  boss_died() {
+    setInterval(() => {
+      if (this.bosskill()) {
+        this.playAnimation(this.BOSS_DEAD);
+      }
+    }, 120);
   }
 
 }

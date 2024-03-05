@@ -68,6 +68,7 @@ class MoveableObject extends DrawableObject {
     timepassed = timepassed / 1000;
     return timepassed < 1.2;
   }
+  
 
   bossisHurt() {
     let timepassed = new Date().getTime() - this.lastbossHit;

@@ -38,10 +38,14 @@ class Chicken extends MoveableObject {
     }, 120);
   }
 
-  die() {
-    this.loadImages(this.CHICKEN_DEAD);
-    this.playAnimation(this.CHICKEN_DEAD);
+
+      die() {
+        this.loadImages(this.CHICKEN_DEAD);
+        this.playAnimation(this.CHICKEN_DEAD);
+      }
+      
+  
 
   }
   
-}
+

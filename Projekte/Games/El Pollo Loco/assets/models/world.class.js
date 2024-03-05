@@ -55,6 +55,9 @@ class World {
           this.killEnemy(enemy);
           this.dead_chicken_sound.play();
           this.characterInvulnerable();
+          setTimeout(() => {
+            this.enemyDisappear(enemy);
+          }, 75);
         } else if (!this.character.isHurt()) {
           this.character.hit();
           this.statusBar.setPercentage(this.character.energy);
@@ -120,13 +123,16 @@ class World {
     if (index !== -1) {
       console.log("Gegner getötet!");
       enemy.die();
-      setTimeout(() => {
-        this.level.enemies.splice(index, 1);
-      }, 50);
     }
   }
 
-
+  
+  enemyDisappear(enemy) {
+    const index = this.level.enemies.indexOf(enemy);
+    if (index !== -1) {
+    this.level.enemies.splice(index, 1);
+  }
+  }
 
   bottleDisapear(bottle) {
     const index = this.throwableObjects.indexOf(bottle);

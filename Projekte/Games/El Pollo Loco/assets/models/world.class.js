@@ -43,7 +43,7 @@ class World {
       this.checkEnemyCollisions();
       this.checkBottleCollisions();
       this.checkCoinCollisions();
-      this.checkThrowCollisions();
+      this.checkEndbossCollisions();
       this.checkGroundCollision();
     }, 150 / 60);
   }
@@ -59,7 +59,6 @@ class World {
             this.enemyDisappear(enemy);
           }, 75);
         } else if (!this.character.isHurt()) {
-          this.character.hit();
           this.statusBar.setPercentage(this.character.energy);
         }
       }
@@ -84,11 +83,11 @@ class World {
     });
   }
 
-  checkThrowCollisions() {
+  checkEndbossCollisions() {
     this.throwableObjects.forEach((bottle) => {
       this.level.endboss.forEach((endboss) => {
         if (bottle.isColliding(endboss)) {
-          this.level.endboss.endbosshit();
+
           bottle.splash();
           setTimeout(() => {
             this.bottleDisapear(bottle);

@@ -74,11 +74,9 @@ class Endboss extends MoveableObject {
 
   boss_attack() {
     setInterval(() => {
-      if (this.endbosshit()) {
-        clearInterval(this.boss_walk_interval);
+      clearInterval(this.boss_walk_interval);
       this.playAnimation(this.BOSS_ATTACK);
-      }
-    }, 120);
+      }, 120);
   }
 
   boss_hurt() {

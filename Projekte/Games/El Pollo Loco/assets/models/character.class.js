@@ -162,8 +162,8 @@ class Character extends MoveableObject {
         this.playAnimation(this.PEPE_DEAD);
         this.dead_sound.play();
 
-        console.log("game over")
-        gameover()
+        console.log("game over");
+        gameover();
       }
     }, 120);
   }

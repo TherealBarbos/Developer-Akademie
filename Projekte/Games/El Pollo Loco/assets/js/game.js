@@ -5,10 +5,12 @@ let keyboard = new Keyboard();
 function start() {
   canvas = document.getElementById("canvas");
   start = document.getElementById("start");
+
   world = new World(canvas, keyboard);
   canvas.classList.remove("d-non");
   start.classList.add("d-non");
   button.classList.add("d-non");
+  if (gameover == true) reset();
 }
 
 function gameover() {
@@ -16,13 +18,19 @@ function gameover() {
   button.classList.remove("d-non");
   over.classList.remove("d-non");
   canvas.classList.add("d-non");
+  // stopGame();
 }
+
+// function stopGame() {
+
+// }
+
 
 function win() {
   canvas = document.getElementById("canvas");
   button.classList.remove("d-non");
   win.classList.remove("d-non");
-  canvas.classList.add("d-non");  
+  canvas.classList.add("d-non");
 }
 
 window.addEventListener("keydown", (e) => {

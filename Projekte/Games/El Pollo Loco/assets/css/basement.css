@@ -19,14 +19,24 @@ canvas {
   border: solid 2px black;
 }
 
-.container {
 
+.mainButton {
+  width: 145px;
+  height: 75px;
+  font-size: 2rem;
+  background-color: orange;
+  border-radius: 25px;
+  font-family: "PistolGripPump";
+  position: absolute;
+  margin-top: 175px;
 }
 
 .image {
   position: absolute;
-
 }
+
+
+
 .headline {
   font-size: 4.5rem;
   color: var(--mexico);

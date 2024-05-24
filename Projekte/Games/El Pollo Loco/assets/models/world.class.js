@@ -1,6 +1,7 @@
 class World {
   startScreen = new StartScreen();
   character = new Character();
+  endboss = new Endboss();
   statusBar = new StatusBar();
   coinBar = new CoinBar();
   bottleBar = new BottleBar();
@@ -20,6 +21,8 @@ class World {
   bottle_sound = new Audio("assets/sounds/bottle.mp3");
   dead_chicken_sound = new Audio("assets/sounds/chicken_dead.mp3");
   background_sound = new Audio("assets/sounds/background.mp3");
+  throw_sound = new Audio("assets/sounds/throw.mp3");
+  splash_sound = new Audio("assets/sounds/splash.mp3");
 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
@@ -59,6 +62,7 @@ class World {
             this.enemyDisappear(enemy);
           }, 75);
         } else if (!this.character.isHurt()) {
+          this.character.hit();
           this.statusBar.setPercentage(this.character.energy);
         }
       }
@@ -87,12 +91,15 @@ class World {
     this.throwableObjects.forEach((bottle) => {
       this.level.endboss.forEach((endboss) => {
         if (bottle.isColliding(endboss)) {
-
           bottle.splash();
           setTimeout(() => {
             this.bottleDisapear(bottle);
           }, 100);
+        } else if (!this.endboss.bossisHurt()) {
+
           console.log("Endboss HIT!");
+          this.splash_sound.play();
+          this.endboss.endbosshit();
         }
       });
     });
@@ -106,6 +113,7 @@ class World {
         setTimeout(() => {
           this.bottleDisapear(bottle);
         }, 75);
+        this.splash_sound.play();
       }
     });
   }
@@ -179,7 +187,7 @@ class World {
         this.bottleCounter--;
         const maxBottlesInLevel = 10;
         const percentage = (this.bottleCounter / maxBottlesInLevel) * 100;
-
+        this.throw_sound.play();
         this.bottleBar.setPercentage(percentage);
       }
     }, 333);

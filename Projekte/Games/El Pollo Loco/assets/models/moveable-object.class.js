@@ -60,6 +60,7 @@ class MoveableObject extends DrawableObject {
       this.bossEnergy = 0;
     } else {
       this.lastBossHit = new Date().getTime();
+      console.log(this.bossEnergy);
     }
   }
 
@@ -71,9 +72,9 @@ class MoveableObject extends DrawableObject {
   
 
   bossisHurt() {
-    let timepassed = new Date().getTime() - this.lastbossHit;
+    let timepassed = new Date().getTime() - this.lastBossHit;
     timepassed = timepassed / 1000;
-    return timepassed < 1.2;
+    return timepassed < 0.5;
   }
   
   isDead() {

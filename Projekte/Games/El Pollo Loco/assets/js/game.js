@@ -10,13 +10,16 @@ function start() {
   world = new World(canvas, keyboard);
   canvas.classList.remove("d-non");
   start.classList.add("d-non");
+  button.classList.add("d-non");
+  
+
 }
 
 function gameover() {
   canvas = document.getElementById('canvas');
-  
+  over.classList.remove("d-non");
+  canvas.classList.add("d-non");
 }
-
 
 
 window.addEventListener("keydown", (e) => {

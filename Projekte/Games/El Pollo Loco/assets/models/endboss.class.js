@@ -50,10 +50,10 @@ class Endboss extends MoveableObject {
     this.loadImages(this.BOSS_DEAD);
     this.x = 2700;
 
-    this.boss_alert();
+    // this.boss_alert();
     this.boss_walk();
     this.boss_hurt();
-    this.boss_attack();
+    // this.boss_attack();
   }
 
   boss_walk() {
@@ -66,18 +66,18 @@ class Endboss extends MoveableObject {
     }, 120);
   }
 
-  boss_alert() {
-    setInterval(() => {
-      this.playAnimation(this.BOSS_ALERT);
-    }, 120);
-  }
+  // boss_alert() {
+  //   setInterval(() => {
+  //     this.playAnimation(this.BOSS_ALERT);
+  //   }, 120);
+  // }
 
-  boss_attack() {
-    setInterval(() => {
-      clearInterval(this.boss_walk_interval);
-      this.playAnimation(this.BOSS_ATTACK);
-      }, 120);
-  }
+  // boss_attack() {
+  //   setInterval(() => {
+  //     clearInterval(this.boss_walk_interval);
+  //     this.playAnimation(this.BOSS_ATTACK);
+  //     }, 120);
+  // }
 
   boss_hurt() {
     setInterval(() => {

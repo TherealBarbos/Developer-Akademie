@@ -35,11 +35,22 @@
 
   </head>
 
-  <body onload="init()">
+  <body>
 
     <div class="headline">El Pollo Loco</div>
 
-    <canvas id="canvas"  width="720" height="480"> </canvas>
+    
+    <img  id="start" width="720" height="480" src="assets/img/9_intro_outro_screens/start/startscreen_1.png"  alt="" >
+
+    <canvas id="canvas"  width="720" height="480" class="d-non"> </canvas>
+
+    <div class="container d-non" >
+      <img id="over" class="image" width="720" height="480" src="assets/img/5_background/first_half_background.png" alt="">
+      <img id="over" class="image" width="720" height="480" src="assets/img/9_intro_outro_screens/game_over/oh no you lost!.png" alt="">
+    </div>
+
+
+    <button onclick="start()" margin="25px"> Start </button>
 
     <div class="instuctions">
       <h1>How to Play:</h1> 

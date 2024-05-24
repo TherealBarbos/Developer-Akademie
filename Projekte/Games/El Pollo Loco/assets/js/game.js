@@ -3,11 +3,20 @@ let world
 let keyboard = new Keyboard();
 
 
-function init() {
-  canvas = document.getElementById('canvas');
-  world = new World(canvas, keyboard);
 
+function start() {
+  canvas = document.getElementById('canvas');
+  start = document.getElementById('start');
+  world = new World(canvas, keyboard);
+  canvas.classList.remove("d-non");
+  start.classList.add("d-non");
 }
+
+function gameover() {
+  canvas = document.getElementById('canvas');
+  
+}
+
 
 
 window.addEventListener("keydown", (e) => {

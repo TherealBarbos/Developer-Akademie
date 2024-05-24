@@ -44,6 +44,7 @@ class World {
   checkCollisions() {
     setInterval(() => {
       this.checkEnemyCollisions();
+      this.checkBossCollisions();
       this.checkBottleCollisions();
       this.checkCoinCollisions();
       this.checkEndbossCollisions();
@@ -68,6 +69,14 @@ class World {
       }
     });
   }
+  checkBossCollisions() {
+
+      if (this.character.isColliding(this.endboss)) {
+        this.character.hit();
+        this.statusBar.setPercentage(this.character.energy);
+        } 
+      }
+  
 
   checkBottleCollisions() {
     this.level.bottles.forEach((bottle) => {
@@ -192,9 +201,7 @@ class World {
       }
     }, 333);
   }
-  StartScreen() {
-    this.startScreen.draw(this.ctx);
-  }
+
 
   draw() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -240,7 +247,7 @@ class World {
     }
 
     mo.draw(this.ctx);
-    // mo.drawFrame(this.ctx);
+    mo.drawFrame(this.ctx);
 
     if (mo.otherDirection) {
       this.changeDirectionReturn(mo);

@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 *{
     margin: 0;
-}
-
-.fontRale {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
     font-family: 'Raleway';
 }
+
 
 /* raleway-100 - latin */
 @font-face {

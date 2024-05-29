@@ -1,0 +1,29 @@
+* {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: beige;
+  color: darkred;
+  padding: 75px;
+
+  > img {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+.elements {
+  display: flex;
+  flex-direction: row;
+}
+
+.howtocard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  color: black;
+  font-size: 25px;
+  font-weight: 800;
+}

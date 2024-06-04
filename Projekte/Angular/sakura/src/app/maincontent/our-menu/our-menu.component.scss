@@ -1,0 +1,44 @@
+.mealRight {
+display: flex;
+justify-content: space-evenly;
+
+    img {
+        width: 75px;
+        height: 75px;
+    }
+}
+.mealLeft {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    
+        img {
+            width: 75px;
+            height: 75px;
+        }
+    }
+h1 {
+    display: flex;
+    justify-content: center;
+
+    color: red;
+    padding: 10%;
+}
+section {
+    background-image:url(../../../assets/img/background.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    div {
+       display: flex;
+       justify-content: space-around;
+        padding: 25px;
+        th {
+            font-weight: bold;
+            font-size: 24px;
+        }
+        td{
+            color: darkgrey;
+            font-size: 18px;
+        }
+    }
+}

@@ -11,7 +11,6 @@ import { NavbarComponent } from './navbar/navbar.component';
         <div><app-navbar></app-navbar></div>
         <h1>SAKURA RAMEN</h1>
         <h2>Best Rahmen in Town</h2>
-        </div>
     </section> 
     `,
     styleUrls:['./landingPage.component.scss'],

@@ -9,8 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     template: `    
     <section>
         <div><app-navbar></app-navbar></div>
-        <div class="landingText">
-        <h1>SAKURA RAHMEN</h1>
+        <h1>SAKURA RAMEN</h1>
         <h2>Best Rahmen in Town</h2>
         </div>
     </section> 

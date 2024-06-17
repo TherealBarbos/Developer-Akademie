@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sakura": {
+    "DAFruit": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/sakura",
+            "outputPath": "dist/dafruit",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -34,7 +34,12 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -64,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "sakura:build:production"
+              "buildTarget": "DAFruit:build:production"
             },
             "development": {
-              "buildTarget": "sakura:build:development"
+              "buildTarget": "DAFruit:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -98,8 +103,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }

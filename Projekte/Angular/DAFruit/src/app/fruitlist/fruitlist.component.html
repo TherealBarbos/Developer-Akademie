@@ -21,7 +21,11 @@
                 <div><b>Beschreibung:</b><br>{{fruit.description}}</div>
                 <div>
                     <div>
-                            <!-- <div><b>{{review.name}}:</b><br>{{review.text}}</div> -->
+                        @for(review of fruit.reviews; track review){
+                            <div><b>{{review.name}}:</b><br>{{review.text}}</div>
+                        } @empty {
+                            <div><b>Keine Bewertungen vorhanden</b></div>
+                        }
                     </div>
                     <div><input type="text"><button><img src="./assets/img/arrow-35-32.png" alt="" srcset=""></button>
                     </div>

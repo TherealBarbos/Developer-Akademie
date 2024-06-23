@@ -4,8 +4,10 @@
        
         <div *ngFor="let count of [0,1,2,3,4,5]; let i = index">
             <img src="./img/cards_old/card_cover.png" alt="" [ngStyle]="{'transform': 'rotate(' + (8 * i) + 'deg)'}">
-            <img ngif="pickCardAnimation" class="pick-card" src="./img/cards/clubs_1.png" alt="" style="transform: rotate(40deg);">
+
             <img (click)="takeCard()"  class="top-Card" src="./img/cards_old/card_cover.png" alt="" style="transform: rotate(40deg);">
+
+            <img *ngIf="pickCardAnimation" class="pick-card" src="./img/cards/clubs_1.png" alt="">
             
         </div>
     </div>

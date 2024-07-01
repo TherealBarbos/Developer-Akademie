@@ -13,12 +13,25 @@ h2 {
 section {
     height: 100vh;
     width: 100%;
-    background-image: url(../../../assets/img/bgr1.jpg);
+    background-image: url(../../../../public/assets/img/bgr1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start ;
     align-items: center;
     flex-direction: column;
+
+    
+
+}
+
+.landingText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 25vh;
+
 }

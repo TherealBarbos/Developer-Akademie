@@ -1,0 +1,75 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: gray;
+  }
+  .dice image {
+    width: 25px;   
+    height: 25px;
+  }
+
+  #boody {
+    display: contents;
+    
+  }
+  .diceButtons {
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+  }
+  .rollField {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .field {
+    width: 75px;
+    height: 75px;
+    background-color: yellow;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: black;
+    border: solid 2px rgb(164, 162, 152);
+    border-radius: 10px;
+  }
+  .field:nth-child(2n) {
+    background-color: blue;
+    color: brown;
+  }
+  .field:nth-child(3n) {
+    background-color: green;
+    color: brown;
+  }
+  .field:nth-child(4n) {
+    background-color: red;
+    color: brown;
+  }
+  .field:nth-child(5n) {
+    background-color: purple;
+    color: brown;
+  }
+  .field:nth-child(6n) {
+    background-color: gray;
+    color: brown;
+  }
+  button {
+    background-color: blanchedalmond;
+    width: 75px;
+    height: 50px;
+    border-radius: 20px;
+    color: peru;
+    border: peru solid 2px;
+  }
+
+  a {
+    text-decoration: none;
+  }

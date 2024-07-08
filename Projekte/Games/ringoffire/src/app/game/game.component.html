@@ -7,7 +7,7 @@
 
             <img (click)="takeCard()"  class="top-Card" src="./img/cards_old/card_cover.png" alt="" style="transform: rotate(40deg);">
 
-            <img *ngIf="pickCardAnimation" class="pick-card" src="./img/cards/clubs_1.png" alt="">
+            <img *ngIf="pickCardAnimation" class="pick-card" src="./img/cards/{{ currentCard }}.png" alt="">
             
         </div>
     </div>

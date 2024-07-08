@@ -19,6 +19,18 @@ canvas {
   border: solid 2px black;
 }
 
+.fullscreen {
+  font-family: "PistolGripPump";
+  background-color: orange;
+  color: black;
+  border: solid 2px black;
+  border-radius: 10px;
+  width: 135px;
+  height: 75px;
+  font-size: 1.5rem;
+  margin: 25px;
+}
+
 
 .mainButton {
   width: 145px;
@@ -35,7 +47,12 @@ canvas {
   position: absolute;
 }
 
-
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50, -50);
+}
 
 .headline {
   font-size: 4.5rem;

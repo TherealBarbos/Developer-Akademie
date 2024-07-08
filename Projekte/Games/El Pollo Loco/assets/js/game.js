@@ -9,19 +9,30 @@ function start() {
   world = new World(canvas, keyboard);
   canvas.classList.remove("d-non");
   start.classList.add("d-non");
-  button.classList.add("d-non");
+  buttonStart.classList.add("d-non");
   if (gameover == true) reset();
+}
+
+function reset() {
+  canvas = document.getElementById("canvas");
+  buttonRestart.classList.add("d-non");
+  over.classList.add("d-non");
+  canvas.classList.remove("d-non");
+  world = new World(canvas, keyboard);
+  
+
 }
 
 function gameover() {
   canvas = document.getElementById("canvas");
-  button.classList.remove("d-non");
+  buttonRestart.classList.remove("d-non");
   over.classList.remove("d-non");
   canvas.classList.add("d-non");
   // stopGame();
 }
 
 // function stopGame() {
+
 
 // }
 
@@ -31,6 +42,12 @@ function win() {
   button.classList.remove("d-non");
   win.classList.remove("d-non");
   canvas.classList.add("d-non");
+}
+
+
+function toggleFullScreen() {
+  let element = document.getElementById("canvas");
+  element.requestFullscreen();
 }
 
 window.addEventListener("keydown", (e) => {

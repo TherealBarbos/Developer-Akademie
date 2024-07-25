@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "danotes-9c243": {
+      "hosting": {
+        "danotes": [
+          "danotes-9c243"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "danotes-9c243"
+  }
+}

@@ -7,6 +7,7 @@ import {
   doc,
   onSnapshot,
   addDoc,
+  updateDoc
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -17,8 +18,7 @@ export class NoteListService {
   normalNotes: Note[] = [];
   trashNotes: Note[] = [];
 
-  // items$;
-  // items;
+
 
   unsubNote;
   unsubTrash;
@@ -27,22 +27,40 @@ export class NoteListService {
   firestore: Firestore = inject(Firestore);
 
   constructor() {
-    
-
+  
     this.unsubNote = this.subNoteList();
     this.unsubTrash = this.subTrashList();
 
-    // this.items$ = collectionData(this.getNotesRef());
-    // this.items = this.items$.subscribe((list) => {
-    //   list.forEach((element) => {
-    //     console.log(element);
-    //   });
-    // } )
+  }
 
+  async updateNote(note: Note) {
+    if(note.id) {
+      let docRef = this.getSingelDocRef(this.getColIDFromNotes(note), note.id);
+    await updateDoc(docRef, this.getCleanJason(note)).catch(
+      (err) => {console.error(err)}
+    );
+  }
 
   }
 
-  async addNote(item: {}) {
+  getCleanJason(note: Note):{} {
+    return {
+      type: note.type,
+      title: note.title,
+      content: note.content,
+      marked: note.marked,
+  }
+}
+
+  getColIDFromNotes(note: Note):string {
+    if(note.type === "note") {
+      return "notes";
+    } else {
+      return "trash";
+    }
+  }
+
+  async addNote(item: Note) {
     await addDoc(this.getNotesRef(), item).catch(
       (err) => {console.error(err)}
     ).then(
@@ -55,7 +73,6 @@ export class NoteListService {
   ngoOnDestroy() {
     this.unsubNote();
     this.unsubTrash();
-    // this.items.unsubscribe();
   }
 
   subNoteList(){

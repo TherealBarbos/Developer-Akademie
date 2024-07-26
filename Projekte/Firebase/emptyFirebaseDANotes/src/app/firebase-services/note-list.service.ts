@@ -35,7 +35,7 @@ export class NoteListService {
     this.unsubTrash = this.subTrashList();
   }
 
-  async deleteNote(colID: string, docID: string) {
+  async deleteNote(colID: 'notes' | 'trash', docID: string) {
     await deleteDoc(this.getSingelDocRef(colID, docID)).catch((err) => {
       console.error(err);
     });
@@ -68,6 +68,7 @@ export class NoteListService {
   }
 
   async addNote(item: Note, colID: 'note' | 'trash') {
+    if (colID === 'note'){
     await addDoc(this.getNotesRef(), item)
       .catch((err) => {
         console.error(err);
@@ -75,6 +76,15 @@ export class NoteListService {
       .then((docRef) => {
         console.log('added w. ID:', docRef?.id);
       });
+    } else {
+      await addDoc(this.getTrashRef(), item)
+      .catch((err) => {
+        console.error(err);
+      })
+      .then((docRef) => {
+        console.log('added w. ID:', docRef?.id);
+      });
+    }
   }
 
   ngoOnDestroy() {

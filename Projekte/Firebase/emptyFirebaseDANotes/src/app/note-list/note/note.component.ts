@@ -3,6 +3,7 @@ import { Note } from '../../interfaces/note.interface';
 import { NoteListService } from '../../firebase-services/note-list.service'
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { deleteDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-note',
@@ -43,13 +44,19 @@ export class NoteComponent {
       this.note.type = 'trash';
       let docId = this.note.id;
       delete this.note.id;  
-      this.noteService.addNote(this.note , 'trash');
+      this.noteService.addNote(this.note , "trash");
       this.noteService.deleteNote('notes', docId);
     }
   }
 
   moveToNotes(){
-    this.note.type = 'note';
+    if (this.note.id) {
+      this.note.type = 'note';
+      let docId = this.note.id;
+      delete this.note.id;  
+      this.noteService.addNote(this.note , "note");
+      this.noteService.deleteNote('trash', docId);
+    }
   }
 
   deleteNote(){

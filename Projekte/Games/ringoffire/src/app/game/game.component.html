@@ -1,15 +1,48 @@
 <div class="gameboard">
+  <app-player
+    *ngFor="let player of game.players; let i = index"
+    [ngStyle]="{ 'top.px': 100 + i * 100 }"
+    class="pPosi"
+    [name]="player"
+  ></app-player>
 
-    <div class="stack">
-       
-        <div *ngFor="let count of [0,1,2,3,4,5]; let i = index">
-            <img src="./img/cards_old/card_cover.png" alt="" [ngStyle]="{'transform': 'rotate(' + (8 * i) + 'deg)'}">
+  <div class="stack">
+    <div>
+      <img
+        *ngFor="let count of [0, 1, 2, 3, 4, 5]; let i = index"
+        src="./img/cards_old/card_cover.png"
+        alt=""
+        [ngStyle]="{ transform: 'rotate(' + 8 * i + 'deg)' }"
+      />
 
-            <img (click)="takeCard()"  class="top-Card" src="./img/cards_old/card_cover.png" alt="" style="transform: rotate(40deg);">
+      <img
+        (click)="takeCard()"
+        class="top-Card"
+        src="./img/cards_old/card_cover.png"
+        alt=""
+        style="transform: rotate(40deg)"
+      />
 
-            <img *ngIf="pickCardAnimation" class="pick-card" src="./img/cards/{{ currentCard }}.png" alt="">
-            
-        </div>
+      <img
+        *ngFor="let card of game.playedCards; let i = index"
+        class="played-card"
+        src="./img/cards/{{ card }}.png"
+        alt=""
+      />
+
+      <img
+        *ngIf="pickCardAnimation"
+        class="pick-card"
+        src="./img/cards/{{ currentCard }}.png"
+        alt=""
+      />
     </div>
-    
+  </div>
+</div>
+
+<div class="example-button-container">
+  <button mat-fab extended>
+    <mat-icon>favorite</mat-icon>
+    Basic
+  </button>
 </div>

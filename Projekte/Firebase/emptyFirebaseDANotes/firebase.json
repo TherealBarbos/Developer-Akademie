@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist\\full-firebase-danotes",
+    "public": "dist\\full-firebase-danotes\\browser",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -14,3 +14,4 @@
     ]
   }
 }
+

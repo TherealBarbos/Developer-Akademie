@@ -1,17 +1,17 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-game-info',
   standalone: true,
-  imports: [ MatCardModule],
+  imports: [CommonModule, MatCardModule],
   templateUrl: './game-info.component.html',
   styleUrl: './game-info.component.scss',
 })
 export class GameInfoComponent implements OnInit, OnChanges {
- 
-  ngOnInit(): void {  }
-  
+  ngOnInit(): void {}
+
   cardAction = [
     {
       title: 'Waterfall',
@@ -59,8 +59,11 @@ export class GameInfoComponent implements OnInit, OnChanges {
   description = '';
   @Input() card: string = '';
 
-
   ngOnChanges(): void {
-    console.log('card', this.card);
+    if (this.card) {
+      let cardNumber = +this.card.split('_')[1];
+      this.title = this.cardAction[cardNumber-1].title;
+      this.description = this.cardAction[cardNumber-1].description;
+    }
   }
 }

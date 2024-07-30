@@ -11,7 +11,13 @@ import { GameInfoComponent } from '../game-info/game-info.component';
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [CommonModule, PlayerComponent,GameInfoComponent, MatIconModule, MatButtonModule],
+  imports: [
+    CommonModule,
+    PlayerComponent,
+    GameInfoComponent,
+    MatIconModule,
+    MatButtonModule,
+  ],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss',
 })
@@ -28,7 +34,7 @@ export class GameComponent {
 
   newGame() {
     this.game = new Game();
-    console.log(this.game);
+
   }
 
   takeCard() {
@@ -36,6 +42,9 @@ export class GameComponent {
       this.currentCard = this.game.stack.pop() as string;
       this.pickCardAnimation = true;
 
+      console.log(this.currentCard);
+      this.game.currentPlayer++;
+      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
       setTimeout(() => {
         this.game.playedCards.push(this.currentCard);
         this.pickCardAnimation = false;

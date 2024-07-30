@@ -1,76 +1,76 @@
 .gameboard {
-
-    width: 100vw;
-    height: 100vh;
-    background-image: url('../../../public/img/board.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../../public/img/board.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .stack {
-    position: relative;
-    rotate: -20deg;
-    img {
-        position: absolute;
-        width: 8.5vw;
-        
-    }
+  position: relative;
+  rotate: -20deg;
+  img {
+    position: absolute;
+    width: 8.5vw;
+  }
 }
 
 .top-Card {
-    cursor: pointer;
-    transition: all 225ms ease-in-out;
-    &:hover{
-        scale: 1.2;
-        translate: 15px;
-        rotate: -20deg;
-        
-    }
+  cursor: pointer;
+  transition: all 225ms ease-in-out;
+  &:hover {
+    scale: 1.2;
+    translate: 15px;
+    rotate: -20deg;
+  }
 }
 
 .pick-card {
-    animation: pick-card-animation 1.5s ease-in-out;
-    transform: scale(1.2) translateX(175px) translateY(-180px);
+  animation: pick-card-animation 1.5s ease-in-out;
+  transform: scale(1.2) translateX(175px) translateY(-180px);
 }
 
 .played-card {
-
-    transform: scale(1.2) translateX(175px) translateY(-180px);
+  transform: scale(1.2) translateX(175px) translateY(-180px);
 }
-
 
 @keyframes pick-card-animation {
-
-    0%{
-        transform: scale(1) rotate(20deg) rotateY(3.142rad);
-    }
-    25%{
-        transform: scale(1.5) rotate(20deg);
-    }
-    50% {
-        transform: scale(1.6) translateY(-90px) translateX(85px);
-    }
-    75% {
-        transform: scale(1.6)translateY(-140px) translateX(135px);
-    }
-    100% {
-        transform: scale(1.2) translateY(-180px) translateX(175px);
-    }
-
+  0% {
+    transform: scale(1) rotate(20deg) rotateY(3.142rad);
+  }
+  25% {
+    transform: scale(1.5) rotate(20deg);
+  }
+  50% {
+    transform: scale(1.6) translateY(-90px) translateX(85px);
+  }
+  75% {
+    transform: scale(1.6) translateY(-140px) translateX(135px);
+  }
+  100% {
+    transform: scale(1.2) translateY(-180px) translateX(175px);
+  }
 }
-.pPosi{
-    position: absolute;
-    right: 0px;
+.pPosi {
+  position: absolute;
+  right: 0px;
 }
 
 .addPlayer {
-    position: absolute;
-    bottom: 50px;
-    right: 50px;
-    background-color: rgb(7, 120, 90);
-    color: cyan;
-    
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  background-color: rgb(7, 120, 90);
+  color: cyan;
+}
+
+.pin-Info {
+  position: absolute;
+  bottom: 32px;
+  left: 200px;
+  right: 200px;
+
 }

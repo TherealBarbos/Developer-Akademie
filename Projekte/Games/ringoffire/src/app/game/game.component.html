@@ -41,7 +41,7 @@
   </div>
 </div>
 
-<app-game-info class="pin-Info"></app-game-info>
+<app-game-info [card]="currentCard" class="pin-Info"></app-game-info>
 
 <div class="example-button-container">
   <button mat-fab extended class="addPlayer" (click)="openDialog()">

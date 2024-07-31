@@ -40,7 +40,11 @@ export class GameInfoComponent implements OnInit, OnChanges {
       description:
         'Pick a mate. Your mate must always drink when you drink and the other way around.',
     },
-    { title: 'Thumbmaster', description: '' },
+    {
+      title: 'Thumbmaster',
+      description:
+        '',
+    },
     { title: 'Men', description: 'All men drink.' },
     { title: 'Quizmaster', description: '' },
     {
@@ -61,7 +65,7 @@ export class GameInfoComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     if (this.card) {
-      let cardNumber = +this.card.split('_')[1]-1;
+      let cardNumber = +this.card.split('_')[1] - 1;
       this.title = this.cardAction[cardNumber].title;
       this.description = this.cardAction[cardNumber].description;
     }

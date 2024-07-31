@@ -1,4 +1,4 @@
-<mat-card type MatCardAppearance = 'raised' class="info">
-    <mat-card-title>{{ title }}</mat-card-title>
-    <mat-card-content>{{ description }}</mat-card-content>
+<mat-card type MatCardAppearance = 'raised' class="info" >
+    <mat-card-title>{{ card ? title: 'Preparations:' }}</mat-card-title>
+    <mat-card-content>{{ card ? description: 'Add players and then pick a card.' }}</mat-card-content>
   </mat-card>
